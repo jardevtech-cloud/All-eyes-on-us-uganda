@@ -77,17 +77,102 @@ img { display: block; max-width: 100%; }
   justify-content: space-between;
   gap: 24px;
 }
-.hero-section {
+.hero {
   position: relative;
-  width: 100%;
-  min-height: 80vh; /* Takes up most of the screen height */
-  background: url('assets/breakfast.jpg') center/cover no-repeat; /* Sets background image */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 80px 20px;
+  min-height: 560px;
+  height: min(74vh, 690px);
+  max-height: 690px;
+  overflow: hidden;
+  background: var(--flag-black);
 }
+
+/* Background image */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("assets/hero.jpg"); /* Replace with your image */
+  background-size: 120%;   /* start zoomed in */
+  background-position: center bottom; /* crop top, show lower part */
+  background-repeat: no-repeat;
+  filter: brightness(0.75);
+  z-index: 0;
+
+  /* Cinematic zoom-out animation */
+  animation: zoomOutHero 8s ease-out forwards;
+}
+
+/* Keyframes for zoom-out effect */
+@keyframes zoomOutHero {
+  0% {
+    background-size: 130%; /* more zoomed in at start */
+    background-position: center bottom; /* keep focus lower */
+  }
+  100% {
+    background-size: 100%; /* zooms out to normal */
+    background-position: center bottom; /* still cropped at top */
+  }
+}
+
+/* Fade-in for text */
+.hero-copy, .hero-buttons, .hero-pillars {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInHero 1.5s ease-out forwards;
+  animation-delay: 1s; /* starts after background begins zooming */
+}
+
+@keyframes fadeInHero {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+      90deg,
+      rgba(0,0,0,.96) 0%,
+      rgba(18,18,18,.85) 35%,
+      rgba(0,0,0,.3) 70%
+    ),
+    linear-gradient(0deg, rgba(0,0,0,.7), transparent 40%);
+  z-index: 1;
+}
+
+/* Content sits above background + overlay */
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  padding-top: 130px;
+}
+
+.hero-copy {
+  max-width: 505px;
+}
+
+.hero h1 {
+  font-size: clamp(40px, 4vw, 56px);
+  line-height: 1.08;
+  font-weight: 800;
+  color: var(--white);
+}
+
+.hero h1 em {
+  color: var(--flag-yellow);
+  text-shadow: 0 0 25px var(--flag-yellow-glow);
+}
+
+.hero-description {
+  font-size: 15px;
+  line-height: 1.5;
+  max-width: 460px;
+  margin: 0 0 21px;
+  color: var(--muted);
+}
+
 
 /* Dark Overlay to make yellow/white text pop clearly against the background image */
 .hero-overlay {
@@ -626,32 +711,42 @@ img { display: block; max-width: 100%; }
 .members-avatar {
   width: 90px;
   height: 90px;
-  border-radius: 50%; /* Perfect circle fit */
+  border-radius: 50%;
   overflow: hidden;
   margin-bottom: 12px;
   border: 3px solid transparent;
-  transition: border-color 0.3s ease;
 }
 
 .members-avatar img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Fits photos perfectly inside circle */
+  object-fit: cover;   /* crops image nicely */
+  object-position: center top; /* crop top part if needed */
   display: block;
 }
 
-.member-card h4 {
-  color: #ffffff;
-  font-size: 1rem;
-  margin: 0 0 4px 0;
-  font-weight: 600;
+.member-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
-.member-card p {
-  font-size: 0.8rem;
-  margin: 0;
-  font-weight: 500;
+.member-card:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
 }
+
+.members-avatar img {
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.member-card:hover .members-avatar img {
+  transform: scale(1.1); /* zoom avatar slightly */
+}
+
+.member-card:hover h4 {
+  color: var(--flag-yellow); /* highlight name */
+}
+
 
 /* --- Color Variations --- */
 
@@ -730,4 +825,11 @@ img { display: block; max-width: 100%; }
 }
 .card-orange p {
   color: #e67e22;
+}
+.gallery-video video {
+  width: 100%;
+  height: 112px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid var(--flag-yellow);
 }

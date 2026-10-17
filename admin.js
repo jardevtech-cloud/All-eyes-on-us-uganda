@@ -173,3 +173,87 @@ if (clearAllButton) {
 
 renderCards();
 updateCounts();
+
+document.addEventListener("DOMContentLoaded", () => {
+  const teamGrid = document.getElementById("team-grid");
+  const template = document.getElementById("team-card-template");
+
+  // Example: 10 slots for team members
+  const teamSlots = 10;
+
+  // Load saved members
+  const savedMembers = JSON.parse(localStorage.getItem("teamMembers")) || [];
+
+  for (let i = 0; i < teamSlots; i++) {
+    const card = template.content.cloneNode(true);
+    const nameInput = card.querySelector(".member-name");
+    const roleInput = card.querySelector(".member-role");
+    const photoInput = card.querySelector(".member-photo");
+    const imgPreview = card.querySelector("img");
+    const saveButton = card.querySelector(".save-button");
+
+    if (savedMembers[i]) {
+      nameInput.value = savedMembers[i].name;
+      roleInput.value = savedMembers[i].role;
+      if (savedMembers[i].photo) {
+        imgPreview.src = savedMembers[i].photo;
+      }
+    }
+
+    saveButton.addEventListener("click", () => {
+      const reader = new FileReader();
+      reader.onload = () => {
+        savedMembers[i] = {
+          name: nameInput.value,
+          role: roleInput.value,
+          photo: reader.result
+        };
+        localStorage.setItem("teamMembers", JSON.stringify(savedMembers));
+        alert("Team member saved!");
+      };
+      if (photoInput.files[0]) {
+        reader.readAsDataURL(photoInput.files[0]);
+      } else {
+        savedMembers[i] = {
+          name: nameInput.value,
+          role: roleInput.value,
+          photo: savedMembers[i]?.photo || ""
+        };
+        localStorage.setItem("teamMembers", JSON.stringify(savedMembers));
+        alert("Team member saved!");
+      }
+    });
+
+    teamGrid.appendChild(card);
+  }
+});
+document.addEventListener("DOMContentLoaded", () => {
+  const loginScreen = document.getElementById("login-screen");
+  const adminBoard = document.getElementById("admin-board");
+  const loginForm = document.getElementById("loginForm");
+  const loginError = document.getElementById("login-error");
+
+  // Check if already logged in
+  if (localStorage.getItem("isAdminLoggedIn") === "true") {
+    loginScreen.style.display = "none";
+    adminBoard.style.display = "block";
+  }
+
+  loginForm.addEventListener("submit", function(e) {
+    e.preventDefault();
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value.trim();
+
+    if (username === "moses" && password === "kalleous2026") {
+      localStorage.setItem("isAdminLoggedIn", "true");
+      loginScreen.style.display = "none";
+      adminBoard.style.display = "block";
+    } else {
+      loginError.style.display = "block";
+    }
+  });
+});
+document.getElementById("logout").addEventListener("click", () => {
+  localStorage.removeItem("isAdminLoggedIn");
+  location.reload();
+});
