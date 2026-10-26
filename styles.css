@@ -33,6 +33,26 @@
     #D9232A 83.33% 100%
   );
 }
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;   /* always full viewport width */
+  height: 100vh;  /* always full viewport height */
+  overflow-x: hidden;
+  font-family: 'DM Sans', sans-serif;
+  background: #fff;
+  transition: opacity 0.8s ease; /* smooth fade */
+}
+
+/* Fade states */
+body.fade-in {
+  opacity: 1;
+}
+
+body.fade-out {
+  opacity: 0;
+}
+
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 100px; }
@@ -575,6 +595,44 @@ img { display: block; max-width: 100%; }
   gap: 24px;
   background: var(--flag-surface);
   border: 2px solid var(--flag-red);
+/* Glowing Donate Button */
+.button-gold {
+  background: var(--flag-yellow);
+  color: var(--flag-black);
+  padding: 12px 22px;
+  font-size: 14px;
+  font-weight: 800;
+  border-radius: 30px;
+  box-shadow: 0 0 15px rgba(252, 220, 4, 0.6);
+  position: relative;
+  animation: pulseGlow 2s infinite;
+  transition: transform 0.3s ease;
+}
+
+.button-gold:hover {
+  transform: scale(1.05);
+  background: #fff200; /* brighter yellow on hover */
+  box-shadow: 0 0 25px rgba(252, 220, 4, 0.9);
+}
+
+/* Pulse Glow Animation */
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 10px rgba(252, 220, 4, 0.6),
+                0 0 20px rgba(217, 35, 42, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(252, 220, 4, 0.9),
+                0 0 40px rgba(217, 35, 42, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(252, 220, 4, 0.6),
+                0 0 20px rgba(217, 35, 42, 0.4);
+  }
+}
+
+
+
 }
 .donation-banner > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(0.7); }
 .donation-overlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,0,0,.1), rgba(18,18,18,.9) 35%, rgba(0,0,0,.95) 100%); }
@@ -586,6 +644,27 @@ img { display: block; max-width: 100%; }
 .payment-methods { display: flex; gap: 6px; }
 .payment-methods span { background: var(--flag-dark); color: var(--flag-yellow); border-radius: 5px; padding: 3px 9px; font-size: 8px; line-height: 1.1; text-align: center; border: 1px solid var(--flag-yellow); font-weight: 600; }
 .payment-methods b { font-size: 9px; color: var(--white); }
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  border-radius: 50%;
+  padding: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 9999;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-float img {
+  width: 40px;
+  height: 40px;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
 
 /* --- SITE FOOTER --- */
 .site-footer { background: var(--flag-black); color: var(--muted); border-top: 2px solid var(--flag-yellow); }
@@ -832,4 +911,219 @@ img { display: block; max-width: 100%; }
   object-fit: cover;
   border-radius: 8px;
   border: 2px solid var(--flag-yellow);
+}
+.floating-buttons {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 9999;
+}
+
+.float-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  padding: 10px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  animation: pulseGlow 2s infinite;
+}
+
+.float-btn img {
+  width: 32px;
+  height: 32px;
+}
+
+/* Contact Button */
+.contact-btn {
+  background-color: var(--flag-red);
+  box-shadow: 0 0 15px rgba(217, 35, 42, 0.6);
+}
+.contact-btn:hover {
+  background-color: var(--flag-yellow);
+}
+
+/* WhatsApp Button */
+.whatsapp-btn {
+  background-color: #25D366;
+  box-shadow: 0 0 15px rgba(37, 211, 102, 0.6);
+}
+.whatsapp-btn:hover {
+  background-color: #1ebe5d;
+}
+
+/* Donate Button */
+.donate-btn {
+  background-color: var(--flag-yellow);
+  box-shadow: 0 0 15px rgba(252, 220, 4, 0.6);
+}
+.donate-btn:hover {
+  background-color: #fff200;
+}
+
+/* Pulse Glow Animation */
+@keyframes pulseGlow {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+.contact-section {
+  background: var(--flag-dark);
+  padding: 40px 20px;
+  border-top: 4px solid var(--flag-yellow);
+  border-bottom: 4px solid var(--flag-red);
+}
+
+.contact-banner {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--white);
+}
+
+.contact-banner h2 {
+  color: var(--flag-yellow);
+  margin-bottom: 10px;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.contact-banner p {
+  color: var(--muted);
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+#contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#contactForm label {
+  text-align: left;
+  font-weight: 600;
+  color: var(--flag-yellow);
+}
+
+#contactForm input,
+#contactForm textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 2px solid var(--flag-yellow);
+  background: var(--flag-surface);
+  color: var(--white);
+  font-size: 14px;
+}
+
+#contactForm input:focus,
+#contactForm textarea:focus {
+  outline: none;
+  border-color: var(--flag-red);
+  box-shadow: 0 0 8px var(--flag-red-glow);
+}
+
+.button-gold {
+  background: var(--flag-yellow);
+  color: var(--flag-black);
+  font-weight: 800;
+  border-radius: 30px;
+  padding: 12px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button-gold:hover {
+  transform: scale(1.05);
+  background: #fff200;
+  box-shadow: 0 0 15px rgba(252, 220, 4, 0.6);
+}
+.video-overlay {
+  display: none; /* hidden by default */
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  z-index: 10000;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-container {
+  max-width: 800px;
+  width: 90%;
+  background: #121212;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+}
+
+.video-container video {
+  width: 100%;
+  border-radius: 8px;
+}
+.lightbox-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.95);
+  z-index: 10000;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.8s ease; /* smooth fade */
+}
+
+..lightbox-overlay {
+  display: none;
+  position: fixed;
+  inset: 0; /* covers full viewport */
+  background: rgba(0,0,0,0.95);
+  z-index: 10000;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;   /* full width */
+  height: 100vh;  /* full height */
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.lightbox-overlay.show {
+  display: flex;
+  opacity: 1; /* fade-in */
+}
+
+.lightbox-overlay.fade-out {
+  opacity: 0; /* fade-out */
+}
+
+.lightbox-overlay img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* keeps aspect ratio */
+}
+
+
+.donation-form-overlay {
+  display: none;
+  position: fixed;
+  inset: 0; /* covers entire viewport */
+  background: rgba(0,0,0,0.85);
+  z-index: 10000;
+  justify-content: center;
+  align-items: center;
+}
+
+.donation-form {
+  width: 90vw;       /* responsive width */
+  max-width: 600px;  /* limit on large screens */
+  max-height: 90vh;  /* never exceed viewport height */
+  overflow-y: auto;  /* scroll inside if content too tall */
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
 }

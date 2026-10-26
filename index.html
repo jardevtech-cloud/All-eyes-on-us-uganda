@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#001712">
   <meta name="description" content="All Eyes on Us Uganda — empowering lives through music, talent, culture and community.">
   <title>All Eyes on Us Uganda | Kalleous Organization Ltd.</title>
@@ -32,10 +32,7 @@
         <a href="#donate">Donate</a>
         <a href="#contact">Contact</a>
       </nav>
-      <div class="nav-actions">
-        <a class="login-btn" href="admin.html"><span aria-hidden="true">♙</span> Admin Board</a>
-        <a class="donate-pill" href="#donate"><span aria-hidden="true">♡</span> Donate</a>
-      </div>
+      
     </div>
   </header>
 
@@ -55,9 +52,23 @@
         to build stronger, more connected communities in Uganda and beyond.
       </p>
       <div class="hero-buttons">
-        <a class="button button-lime" href="#programmes"><span class="arrow">→</span> Our Programmes</a>
-        <a class="button button-outline" href="#story"><span class="play">▷</span> Watch Our Story</a>
-      </div>
+  <a class="button button-lime" href="#programmes"><span class="arrow">→</span> Our Programmes</a>
+  <a class="button button-outline" href="#story" id="openVideo"><span class="play">▷</span> Watch Our Story</a>
+</div>
+
+<!-- Hidden Video Modal -->
+<div id="videoModal" class="video-overlay">
+  <div class="video-container">
+    <video id="storyVideo" controls>
+      <source src="assets/our-story.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <button id="closeVideo" class="button button-outline">Close ✖</button>
+  </div>
+</div>
+
+</div>
+
     </div>
 
     <!-- Pillars section -->
@@ -85,7 +96,7 @@
         </article>
         <article class="programme-card" id="dance">
           <img src="assets/Dance.jpg" alt="Traditional dancers performing" loading="lazy">
-          <div class="card-gradient"></div><span class="program-icon">♟</span>
+          <div class="card-gradient"></div><span class="program-icon"></span>
           <div class="programme-card-copy"><h3>Dance</h3><p>Move. Express. Unite.</p></div><a class="card-arrow" href="#contact" aria-label="Learn about Dance">→</a>
         </article>
         <article class="programme-card" id="scouting">
@@ -118,7 +129,7 @@
     <section class="story-section" id="story">
       <div class="container story-grid">
         <div class="story-photo">
-          <img src="assets/our-story.jpg" alt="Members of the organisation standing together" loading="lazy">
+          <img src="assets/our-story.jpg" alt="Members of the organisation standing together" loading="lazy" class="clickable">
           <div class="story-overlay"></div>
           <div class="story-text"><p class="section-kicker">OUR STORY</p><h2>Together for<br>a Brighter Future</h2><p>All Eyes on Us Uganda – Kalleous Organization Ltd. is a community-driven organisation focused on music education, talent development, cultural unity and humanitarian support.</p><a href="#contact" class="button button-gold">Our Story <span>→</span></a></div>
         </div>
@@ -130,7 +141,7 @@
       </div>
     </section>
 
-    <<section class="gallery-section section-dark" id="gallery">
+    <section class="gallery-section section-dark" id="gallery">
   <div class="container gallery-wrap">
     <div class="gallery-intro">
       <p class="section-kicker">OUR GALLERY</p>
@@ -140,17 +151,21 @@
     </div>
 
     <div class="gallery-images" id="gallery-grid">
-      <img src="assets/gallery-band.jpg" alt="Band performing live" loading="lazy">
-      <img src="assets/Dance performance.jpg" alt="Dance performance" loading="lazy">
-      <img src="assets/Acrobatics performance.jpg" alt="Acrobatics performance" loading="lazy">
-      <img src="assets/scout.jpg" alt="Scout group" loading="lazy">
-      <img src="assets/backtoschool.jpg" alt="Back to school" loading="lazy">
-      <img src="assets/aftershow.jpg" alt="After show celebration" loading="lazy">
-      <img src="assets/band2.jpg" alt="Band performance 2" loading="lazy">
-      <img src="assets/dance1.jpg" alt="Dance rehearsal" loading="lazy">
-      <img src="assets/gallery-community.jpg" alt="Community event" loading="lazy">
-      <img src="assets/our-story1.jpg" alt="Our story photo" loading="lazy">
+      <img src="assets/gallery-band.jpg" alt="Band performing live" loading="lazy"  class="clickable"clickable>
+      <img src="assets/Dance performance.jpg" alt="Dance performance" loading="lazy" class="clickable">
+      <img src="assets/Acrobatics performance.jpg" alt="Acrobatics performance" loading="lazy" class="clickable">
+      <img src="assets/scout.jpg" alt="Scout group" loading="lazy" class="clickable">
+      <img src="assets/backtoschool.jpg" alt="Back to school" loading="lazy" class="clickable">
+      <img src="assets/aftershow.jpg" alt="After show celebration" loading="lazy" class="clickable">
+      <img src="assets/band2.jpg" alt="Band performance 2" loading="lazy" class="clickable">
+      <img src="assets/dance1.jpg" alt="Dance rehearsal" loading="lazy" class="clickable">
+      <img src="assets/gallery-community.jpg" alt="Community event" loading="lazy" class="clickable">
+      <img src="assets/our-story1.jpg" alt="Our story photo" loading="lazy" class="clickable">
       <!-- Fixed filename: remove space -->
+       <!-- Hidden Lightbox -->
+<div id="lightbox" class="lightbox-overlay">
+  <img id="lightboxImg" src="" alt="Expanded view">
+</div>
       <!-- Keep video separate from images -->
       <div class="gallery-video">
   <video controls preload="metadata" poster="assets/video-placeholder.jpg">
@@ -195,6 +210,7 @@
 </article>
 
 <!-- Card 3: Cyan -->
+<!-- Card 3: Cyan -->
 <article class="member-card card-cyan">
   <div class="members-avatar">
     <img src="assets/member2.jpg" alt="Akram">
@@ -226,14 +242,14 @@
   <div class="members-avatar">
     <img src="assets/member5.jpg" alt="Peace">
   </div>
-  <h4> Peace </h4>
+  <h4>Peace</h4>
   <p>Member</p>
 </article>
 
 <!-- Card 7: Emerald -->
 <article class="member-card card-emerald">
   <div class="members-avatar">
-    <img src="assets/member6.jpg" alt="Team Member 7">
+    <img src="assets/member6.jpg" alt="Rayan">
   </div>
   <h4>Rayan</h4>
   <p>Member</p>
@@ -242,7 +258,7 @@
 <!-- Card 8: Gold -->
 <article class="member-card card-gold">
   <div class="members-avatar">
-    <img src="assets/member7.jpg" alt="Team Member 8">
+    <img src="assets/member7.jpg" alt="Ivan">
   </div>
   <h4>Ivan</h4>
   <p>Member</p>
@@ -251,43 +267,113 @@
 <!-- Card 9: Purple -->
 <article class="member-card card-purple">
   <div class="members-avatar">
-    <img src="assets/member8.jpg" alt="Team Member 9">
+    <img src="assets/member8.jpg" alt="Imran">
   </div>
   <h4>Imran</h4>
   <p>Member</p>
 </article>
 
-      <!-- Card 9: Purple -->
-      <article class="member-card card-purple">
-        <div class="members-avatar">
-          <img src="assets/member9.jpg" alt="Team Member">
-        </div>
-        <h4>Emma</h4>
-        <p>Member</p>
-      </article>
-      <!-- Card 10: Purple -->
-      <article class="member-card card-purple">
-        <div class="members-avatar">
-          <img src="assets/member10.jpg" alt="Team Member">
-        </div>
-        <h4>Deo</h4>
-        <p>Member</p>
+<!-- Card 10: Purple -->
+<article class="member-card card-purple">
+  <div class="members-avatar">
+    <img src="assets/member9.jpg" alt="Emma">
+  </div>
+  <h4>Emma</h4>
+  <p>Member</p>
+</article>
+
+<!-- Card 11: Purple -->
+<article class="member-card card-purple">
+  <div class="members-avatar">
+    <img src="assets/member10.jpg" alt="Deo">
+  </div>
+  <h4>Deo</h4>
+  <p>Member</p>
+</article>
+
       </article>
 
     </div>
   </div>
 </section>
 
+<!-- Hidden Donation Form -->
+<section class="donation-section" id="donate">
+  <div class="container donation-banner">
+    <img src="assets/donation-hands.jpg" alt="Hands nurturing a young plant" loading="lazy">
+    <div class="donation-overlay"></div>
+    <div class="donation-copy">
+      <p class="section-kicker">MAKE A DIFFERENCE</p>
+      <h2>Support Our Mission</h2>
+      <p>Your support helps us provide education, training, performance spaces and vital social support to those in need.</p>
+    </div>
+    <div class="donation-action">
+      <button class="button button-gold donate-now" id="openDonationForm">♥ &nbsp; Donate Now</button>
+    </div>
+  </div>
+</section>
 
+<!-- Hidden Donation Form -->
+<div id="donationForm" class="donation-form-overlay">
+  <div class="donation-form">
+    <h2>Donation Form</h2>
+    <form id="donationFormContent">
+      <label>Name:</label>
+      <input type="text" name="name" required>
 
-    <section class="donation-section" id="donate">
-      <div class="container donation-banner">
-        <img src="assets/donation-hands.jpg" alt="Hands nurturing a young plant" loading="lazy">
-        <div class="donation-overlay"></div>
-        <div class="donation-copy"><p class="section-kicker">MAKE A DIFFERENCE</p><h2>Support Our Mission</h2><p>Your support helps us provide education, training, performance spaces and vital social support to those in need.</p></div>
-        <div class="donation-action"><a class="button button-gold donate-now" href="#contact">♥ &nbsp; Donate Now</a><div class="payment-methods"><span>MTN<br><b>MoMo</b></span><span>Airtel<br><b>Money</b></span><span>Visa<br><b>Card</b></span></div></div>
+      <label>Contact (Phone/Email):</label>
+      <input type="text" name="contact" required>
+
+      <label>Type of Donation:</label>
+      <select name="type" required>
+        <option value="Money">Money</option>
+        <option value="Materials">Materials</option>
+        <option value="Volunteering">Volunteering</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <label>Method:</label>
+      <select name="method" id="donationMethod" required>
+        <option value="Airtel Money">Airtel Money</option>
+        <option value="Visa">Visa</option>
+      </select>
+
+      <!-- Airtel QR (hidden until Airtel is chosen) -->
+      <div class="qr-item airtel-qr" id="airtelQR" style="display:none;">
+        <img src="assets/airtel-money-qr.png" alt="Airtel Money QR Code">
+        <p>Scan to pay with Airtel Money</p>
       </div>
-    </section>
+
+      <button type="submit" class="button button-green">Submit Donation</button>
+    </form>
+
+    <button id="closeDonationForm" class="button button-outline">Close</button>
+  </div>
+</div>
+
+<!-- Floating Action Buttons -->
+<div class="floating-buttons">
+  <!-- Contact Call Button -->
+  <a href="tel:+256705446043" class="float-btn contact-btn">
+    <img src="assets/contact-icon.png" alt="Call Us" />
+  </a>
+
+  <!-- WhatsApp Chat Button -->
+  <a href="https://wa.me/256705446043" class="float-btn whatsapp-btn">
+    <img src="assets/whatsapp-icon.png" alt="WhatsApp" />
+  </a>
+
+  <!-- Donate Button -->
+  <a href="#donate" class="float-btn donate-btn">
+    <img src="assets/donate-icon.png" alt="Donate" />
+  </a>
+</div>
+
+    </div>
+  </div>
+</section>
+
+
   </main>
 
   <footer class="site-footer" id="contact">
@@ -295,8 +381,29 @@
       <a class="brand footer-brand" href="#top"><img src="assets/logo.img" alt="logo.img" class="brand-logo"><span class="brand-copy"><strong>ALL EYES ON US</strong><b>UGANDA</b><small>Kalleous Organization Ltd.</small></span></a>
       <div class="footer-links"><h4>Quick Links</h4><div><a href="#top">Home</a><a href="#about">About Us</a><a href="#programmes">Programmes</a><a href="#gallery">Gallery</a></div></div>
       <div class="footer-links"><h4>Get Involved</h4><div><a href="#donate">Donate</a><a href="#contact">Contact</a><a href="#programmes">Volunteer</a></div></div>
-      <div class="footer-contact"><h4>Contact Us</h4><p>☎ &nbsp; +256 705446043</p><p>✉ &nbsp; <a href="mailto:luwaga02moses@gmail.com">luwaga02moses@gmail.com</a></p><p>⌖ &nbsp; Kampala, Uganda</p></div>
-      
+      <section class="contact-section" id="contact">
+  <div class="container contact-banner">
+    <h2>Get in Touch</h2>
+    <p>We’d love to hear from you. Please fill out the form below and we’ll respond promptly.</p>
+
+    <form id="contactForm">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="phone">Phone Number:</label>
+      <input type="text" id="phone" name="phone" required>
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit" class="button button-gold">Send Message</button>
+    </form>
+  </div>
+</section>
+
       <div class="footer-social">
         <h4>Follow Us</h4>
         <div class="socials">
@@ -304,9 +411,16 @@
           <a href="https://www.instagram.com/alleyesonusugandaofficial/" class="social-icon instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg></a>
           <a href="https://www.youtube.com/@alleyesonusugandaofficial" class="social-icon youtube" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4" fill="currentColor"/><path d="M10 8.5 16 12l-6 3.5z" fill="#ffffff"/></svg></a>
           <a href="https://www.tiktok.com/@alleyesonusuganda1" class="social-icon tiktok" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M19.6 7.1a6.1 6.1 0 0 1-3.8-1.3v8.1a6 6 0 1 1-6-6c.4 0 .8 0 1.2.1v3.3a2.8 2.8 0 1 0 1.8 2.6V2h3.2c.3 2 1.7 3.6 3.6 4.1z"/></svg></a>
+          
+
         </div>
         <p class="footer-script">Together<br>We Grow <span class="uganda-stroke"></span></p>
       </div>
+<p>
+  <a href="https://www.flaticon.com/free-icons/dancers" title="dancers icons">
+    <!--Dancers icons created by Flat Icons - Flaticon-->
+  </a>
+</p>
 
     </div>
     <div class="footer-bottom">
