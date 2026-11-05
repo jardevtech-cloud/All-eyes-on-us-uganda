@@ -1,0 +1,1021 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080808">
+<meta name="description" content="Explore the Band, Acrobatics, Dance and Scouting programmes of All Eyes on Us Uganda.">
+<title>Our Programmes | All Eyes on Us Uganda</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --black:#080808;
+  --dark:#151515;
+  --yellow:#ffd700;
+  --red:#e5243b;
+  --white:#fff;
+  --green:#00241d;
+}
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html { scroll-behavior:smooth; }
+
+body {
+  font-family:'DM Sans',sans-serif;
+  background:var(--black);
+  color:var(--white);
+  overflow-x:hidden;
+}
+
+a { text-decoration:none;color:inherit; }
+img,video { max-width:100%;display:block; }
+button { font-family:inherit; }
+
+.container {
+  width:92%;
+  max-width:1450px;
+  margin:auto;
+}
+
+/* HEADER */
+.site-header {
+  background:#050505;
+  border-bottom:2px solid var(--yellow);
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+.nav-wrap {
+  min-height:82px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+}
+
+.brand {
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.brand-logo {
+  width:65px;
+  height:65px;
+  object-fit:contain;
+  border-radius:50%;
+  background:#fff;
+}
+
+.brand-copy strong,
+.brand-copy b {
+  display:block;
+  color:var(--yellow);
+  font-size:18px;
+  line-height:1.1;
+}
+
+.brand-copy small {
+  display:block;
+  font-size:12px;
+  color:#fff;
+  margin-top:4px;
+}
+
+.main-nav {
+  display:flex;
+  align-items:center;
+  gap:20px;
+}
+
+.main-nav a {
+  font-size:13px;
+  font-weight:800;
+  padding:29px 0;
+  transition:.3s;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  color:var(--yellow);
+  border-bottom:4px solid var(--yellow);
+}
+
+.menu-toggle {
+  display:none;
+  background:none;
+  color:white;
+  border:0;
+  font-size:28px;
+  cursor:pointer;
+}
+
+/* HERO */
+.program-hero {
+  min-height:390px;
+  position:relative;
+  display:flex;
+  align-items:center;
+  background:
+    linear-gradient(90deg,rgba(0,0,0,.95),rgba(0,0,0,.65) 45%,rgba(0,0,0,.15)),
+    url("assets/our-story.jpg") center 38%/cover no-repeat;
+  border-bottom:7px solid var(--red);
+}
+
+.program-hero:after {
+  content:"";
+  position:absolute;
+  height:12px;
+  bottom:-8px;
+  left:0;
+  width:100%;
+  background:var(--yellow);
+  clip-path:polygon(0 0,30% 100%,100% 0);
+}
+
+.hero-content {
+  position:relative;
+  z-index:1;
+  padding:55px 0;
+}
+
+.hero-tag {
+  display:inline-block;
+  background:var(--yellow);
+  color:#000;
+  font-size:14px;
+  font-weight:800;
+  padding:8px 20px;
+  border-radius:30px;
+  margin-bottom:15px;
+}
+
+.program-hero h1 {
+  max-width:700px;
+  font-size:clamp(38px,5.5vw,65px);
+  line-height:1.04;
+  font-weight:800;
+}
+
+.program-hero h1 span { color:var(--yellow); }
+
+.program-hero p {
+  max-width:570px;
+  color:#eee;
+  font-size:17px;
+  margin-top:17px;
+  line-height:1.6;
+}
+
+/* PROGRAMME QUICK LINKS */
+.quick-programmes {
+  padding:20px 0;
+  background:#101010;
+}
+
+.quick-grid {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+}
+
+.quick-card {
+  height:155px;
+  position:relative;
+  overflow:hidden;
+  border:2px solid var(--yellow);
+  border-radius:13px;
+  background:#222;
+}
+
+.quick-card img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.4s;
+}
+
+.quick-card:hover img { transform:scale(1.08); }
+
+.quick-card:after {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(transparent 20%,rgba(0,0,0,.9));
+}
+
+.quick-card strong {
+  position:absolute;
+  z-index:2;
+  bottom:14px;
+  left:13px;
+  right:13px;
+  font-size:16px;
+  color:var(--yellow);
+}
+
+/* SECTION INTRO */
+.section-heading {
+  text-align:center;
+  padding:48px 0 25px;
+}
+
+.section-heading small {
+  color:var(--red);
+  font-weight:800;
+  letter-spacing:3px;
+}
+
+.section-heading h2 {
+  color:var(--yellow);
+  font-size:clamp(28px,4vw,42px);
+  margin:7px 0;
+}
+
+.section-heading p {
+  color:#ccc;
+  font-size:15px;
+}
+
+/* PROGRAMME DETAILS */
+.programmes-list {
+  padding:5px 0 35px;
+}
+
+.programme-section {
+  display:grid;
+  grid-template-columns:1.05fr .95fr 1.05fr;
+  gap:18px;
+  padding:15px;
+  border:2px solid var(--yellow);
+  border-radius:15px;
+  margin-bottom:20px;
+  background:linear-gradient(120deg,#161616,#090909);
+  align-items:center;
+  scroll-margin-top:105px;
+}
+
+.programme-cover {
+  width:100%;
+  height:245px;
+  object-fit:cover;
+  border-radius:10px;
+  border:1px solid #555;
+}
+
+.programme-info { padding:8px 0; }
+
+.programme-number {
+  display:inline-block;
+  background:var(--red);
+  color:white;
+  border-radius:20px;
+  padding:5px 12px;
+  font-size:11px;
+  font-weight:800;
+  margin-bottom:8px;
+}
+
+.programme-info h2 {
+  font-size:29px;
+  color:var(--yellow);
+  margin-bottom:8px;
+  line-height:1.15;
+}
+
+.programme-info p {
+  font-size:14px;
+  color:#eee;
+  line-height:1.6;
+  margin-bottom:9px;
+}
+
+.programme-info h3 {
+  font-size:14px;
+  color:var(--yellow);
+  margin:10px 0 5px;
+}
+
+.programme-info ul {
+  list-style:none;
+  margin-bottom:14px;
+}
+
+.programme-info li {
+  font-size:13px;
+  color:#eee;
+  margin:5px 0;
+}
+
+.programme-info li:before {
+  content:"✓";
+  color:var(--yellow);
+  font-weight:900;
+  margin-right:8px;
+}
+
+.gallery-link {
+  display:inline-block;
+  background:var(--yellow);
+  color:#000;
+  font-size:13px;
+  font-weight:800;
+  padding:10px 17px;
+  border-radius:25px;
+  transition:.3s;
+}
+
+.gallery-link:hover {
+  background:var(--red);
+  color:#fff;
+}
+
+/* PHOTO AND VIDEO GALLERY */
+.media-area { min-width:0; }
+
+.media-label {
+  color:var(--yellow);
+  font-size:13px;
+  font-weight:800;
+  margin-bottom:8px;
+}
+
+.photo-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:6px;
+  margin-bottom:12px;
+}
+
+.photo-grid img {
+  width:100%;
+  height:76px;
+  object-fit:cover;
+  border-radius:7px;
+  border:1px solid #888;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.photo-grid img:hover {
+  border-color:var(--yellow);
+  transform:scale(1.04);
+}
+
+.video-box {
+  width:100%;
+  background:#000;
+  border:1px solid var(--yellow);
+  border-radius:9px;
+  overflow:hidden;
+}
+
+.video-box video {
+  width:100%;
+  max-height:190px;
+  object-fit:contain;
+  background:#000;
+}
+
+.video-caption {
+  padding:7px 10px;
+  font-size:12px;
+  color:#eee;
+}
+
+/* JOIN BANNER */
+.join-banner {
+  padding:38px 20px;
+  text-align:center;
+  background:
+    linear-gradient(rgba(0,0,0,.68),rgba(0,0,0,.75)),
+    url("assets/our-story.jpg") center/cover;
+  border-top:5px solid var(--yellow);
+  border-bottom:5px solid var(--red);
+}
+
+.join-banner h2 {
+  font-family:'Kalam',cursive;
+  font-size:clamp(27px,4vw,42px);
+  color:var(--yellow);
+}
+
+.join-banner p {
+  margin:8px 0 20px;
+}
+
+.button {
+  display:inline-block;
+  background:var(--red);
+  border:2px solid var(--yellow);
+  color:white;
+  padding:12px 27px;
+  border-radius:30px;
+  font-weight:800;
+  transition:.3s;
+}
+
+.button:hover {
+  background:var(--yellow);
+  color:#000;
+}
+
+/* FOOTER */
+.site-footer {
+  background:#050505;
+  border-bottom:4px solid var(--yellow);
+}
+
+.footer-main {
+  padding:25px 0;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:25px;
+  flex-wrap:wrap;
+}
+
+.footer-main h4 {
+  color:var(--yellow);
+  margin-bottom:10px;
+}
+
+.footer-links div {
+  display:flex;
+  flex-direction:column;
+  gap:7px;
+}
+
+.footer-links a,
+.footer-social a {
+  color:#ddd;
+  font-size:13px;
+}
+
+.footer-links a:hover,
+.footer-social a:hover { color:var(--yellow); }
+
+.footer-social div {
+  display:flex;
+  flex-wrap:wrap;
+  gap:13px;
+}
+
+.footer-bottom {
+  padding:13px 0;
+  border-top:1px solid #333;
+  text-align:center;
+  color:#aaa;
+  font-size:12px;
+}
+
+.footer-bottom a { color:var(--yellow); }
+
+/* IMAGE LIGHTBOX */
+.lightbox {
+  display:none;
+  position:fixed;
+  z-index:3000;
+  inset:0;
+  background:rgba(0,0,0,.96);
+  justify-content:center;
+  align-items:center;
+  padding:25px;
+}
+
+.lightbox.open { display:flex; }
+
+.lightbox img {
+  max-width:95%;
+  max-height:85vh;
+  object-fit:contain;
+  border:2px solid var(--yellow);
+  border-radius:10px;
+}
+
+.lightbox-close {
+  position:absolute;
+  top:18px;
+  right:23px;
+  background:var(--yellow);
+  color:#000;
+  border:0;
+  border-radius:50%;
+  width:42px;
+  height:42px;
+  font-size:24px;
+  cursor:pointer;
+}
+
+/* MOBILE */
+@media(max-width:1050px) {
+  .main-nav { gap:12px; }
+  .main-nav a { font-size:12px; }
+  .programme-section {
+    grid-template-columns:1fr 1fr;
+  }
+  .media-area { grid-column:1/-1; }
+  .photo-grid { grid-template-columns:repeat(6,1fr); }
+}
+
+@media(max-width:780px) {
+  .menu-toggle { display:block; }
+
+  .main-nav {
+    display:none;
+    position:absolute;
+    top:82px;
+    left:0;
+    right:0;
+    background:#080808;
+    padding:15px 5%;
+    flex-direction:column;
+    align-items:flex-start;
+    border-bottom:2px solid var(--yellow);
+    gap:0;
+  }
+
+  .main-nav.open { display:flex; }
+
+  .main-nav a {
+    width:100%;
+    padding:12px 0;
+    font-size:14px;
+  }
+
+  .quick-grid { grid-template-columns:repeat(2,1fr); }
+  .quick-card { height:140px; }
+
+  .programme-section {
+    grid-template-columns:1fr;
+    padding:12px;
+  }
+
+  .programme-cover { height:240px; }
+
+  .media-area { grid-column:auto; }
+
+  .photo-grid { grid-template-columns:repeat(3,1fr); }
+
+  .photo-grid img { height:100px; }
+
+  .programme-info h2 { font-size:27px; }
+
+  .hero-content { padding:55px 0; }
+
+  .program-hero { min-height:410px; }
+}
+
+@media(max-width:480px) {
+  .brand-logo { width:49px;height:49px; }
+  .brand-copy strong,.brand-copy b { font-size:13px; }
+  .brand-copy small { font-size:10px; }
+
+  .program-hero { min-height:390px; }
+
+  .program-hero h1 { font-size:39px; }
+  .program-hero p { font-size:14px; }
+
+  .quick-card { height:115px; }
+  .quick-card strong { font-size:13px; }
+
+  .section-heading { padding-top:35px; }
+
+  .programme-cover { height:210px; }
+
+  .photo-grid img { height:85px; }
+
+  .footer-main { justify-content:center;text-align:center; }
+
+  .footer-links div,
+  .footer-social div { align-items:center;justify-content:center; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container nav-wrap">
+
+    <a href="index.html" class="brand">
+      <img src="assets/logo.png" alt="All Eyes on Us Uganda logo" class="brand-logo">
+      <span class="brand-copy">
+        <strong>ALL EYES ON US</strong>
+        <b>UGANDA</b>
+        <small>Kalleous Organization Ltd.</small>
+      </span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About Us</a>
+      <a href="program.html" class="active">Programmes</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="people.html">Our People</a>
+      <a href="donation.html">Donate</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="program-hero">
+  <div class="container hero-content">
+    <span class="hero-tag">OUR PROGRAMMES</span>
+
+    <h1>
+      Discover Talent.<br>
+      Build Skills.<br>
+      <span>Transform Communities.</span>
+    </h1>
+
+    <p>
+      At All Eyes on Us Uganda, we run dynamic programmes that nurture
+      talent, promote culture and empower young people through music,
+      performance, creativity and community service.
+    </p>
+  </div>
+</section>
+
+<!-- QUICK PROGRAMME LINKS -->
+<section class="quick-programmes">
+  <div class="container quick-grid">
+
+    <a href="#band" class="quick-card">
+      <img src="assets/band.jpg" alt="Band and music programme">
+      <strong>01. Band & Music →</strong>
+    </a>
+
+    <a href="#acrobatics" class="quick-card">
+      <img src="assets/Acrobatics performance.jpg" alt="Acrobatics programme">
+      <strong>02. Acrobatics →</strong>
+    </a>
+
+    <a href="#dance" class="quick-card">
+      <img src="assets/Dance.jpg" alt="Dance programme">
+      <strong>03. Dance & Culture →</strong>
+    </a>
+
+    <a href="#scouting" class="quick-card">
+      <img src="assets/Scout.jpg" alt="Scouting programme">
+      <strong>04. Scouting →</strong>
+    </a>
+
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="section-heading">
+  <div class="container">
+    <small>WHAT WE DO</small>
+    <h2>Explore Our Programmes</h2>
+    <p>Discover our activities, talents and the people behind our journey.</p>
+  </div>
+</section>
+
+<!-- PROGRAMMES -->
+<section class="programmes-list">
+<div class="container">
+
+<!-- BAND -->
+<article class="programme-section" id="band">
+
+  <img class="programme-cover" src="assets/band.jpg" alt="Band musicians performing">
+
+  <div class="programme-info">
+    <span class="programme-number">PROGRAMME 01</span>
+    <h2>Band & Music</h2>
+
+    <p>
+      We provide opportunities for young people to discover, develop
+      and express their musical talents. Through music education,
+      rehearsals and performances, we encourage creativity,
+      discipline and teamwork.
+    </p>
+
+    <h3>Our Activities</h3>
+    <ul>
+      <li>Music training and rehearsals</li>
+      <li>Instrumental skills development</li>
+      <li>Live performances</li>
+      <li>Talent development</li>
+    </ul>
+
+    <a href="contact.html" class="gallery-link">Enquire About Music →</a>
+  </div>
+
+  <div class="media-area">
+    <div class="media-label">PHOTO GALLERY</div>
+
+    <div class="photo-grid">
+      <img src="assets/gallery-band.jpg" alt="Band performance">
+      <img src="assets/band2.jpg" alt="Band members">
+      <img src="assets/band.jpg" alt="Music training">
+      <img src="assets/our-story.jpg" alt="Music programme">
+    </div>
+
+    <div class="media-label">VIDEO HIGHLIGHT</div>
+
+    <div class="video-box">
+      <video controls preload="metadata" poster="assets/band.jpg">
+        <source src="assets/bandtraining.mp4" type="video/mp4">
+        Your browser does not support this video.
+      </video>
+      <div class="video-caption">Band Training & Performance</div>
+    </div>
+  </div>
+
+</article>
+
+<!-- ACROBATICS -->
+<article class="programme-section" id="acrobatics">
+
+  <img class="programme-cover" src="assets/Acrobatics performance.jpg" alt="Acrobatics performance">
+
+  <div class="programme-info">
+    <span class="programme-number">PROGRAMME 02</span>
+    <h2>Acrobatics</h2>
+
+    <p>
+      Our acrobatics programme encourages young people to develop
+      strength, flexibility, coordination and confidence through
+      structured physical activities and group performances.
+    </p>
+
+    <h3>Our Focus</h3>
+    <ul>
+      <li>Gymnastics and acrobatic skills</li>
+      <li>Balance and flexibility</li>
+      <li>Teamwork and discipline</li>
+      <li>Performance development</li>
+    </ul>
+
+    <a href="contact.html" class="gallery-link">Enquire About Acrobatics →</a>
+  </div>
+
+  <div class="media-area">
+    <div class="media-label">PHOTO GALLERY</div>
+
+    <div class="photo-grid">
+      <img src="assets/Acrobatics performance.jpg" alt="Acrobatics performance">
+      <img src="assets/Acrobatics performance.jpg" alt="Acrobatics training">
+      <img src="assets/Acrobatics performance.jpg" alt="Acrobatics team">
+    </div>
+
+    <div class="media-label">VIDEO HIGHLIGHT</div>
+
+    <div class="video-box">
+      <video controls preload="metadata" poster="assets/Acrobatics performance.jpg">
+        <source src="assets/acrobatics.mp4" type="video/mp4">
+        Your browser does not support this video.
+      </video>
+      <div class="video-caption">Acrobatics Performance</div>
+    </div>
+  </div>
+
+</article>
+
+<!-- DANCE -->
+<article class="programme-section" id="dance">
+
+  <img class="programme-cover" src="assets/Dance.jpg" alt="Dance and cultural performance">
+
+  <div class="programme-info">
+    <span class="programme-number">PROGRAMME 03</span>
+    <h2>Dance & Culture</h2>
+
+    <p>
+      We celebrate cultural identity and creativity through dance.
+      Our activities create opportunities for young people to express
+      themselves, appreciate different traditions and build unity.
+    </p>
+
+    <h3>Our Activities</h3>
+    <ul>
+      <li>Traditional and modern dance</li>
+      <li>Cultural performances</li>
+      <li>Dance rehearsals</li>
+      <li>Creative expression</li>
+    </ul>
+
+    <a href="contact.html" class="gallery-link">Enquire About Dance →</a>
+  </div>
+
+  <div class="media-area">
+    <div class="media-label">PHOTO GALLERY</div>
+
+    <div class="photo-grid">
+      <img src="assets/Dance.jpg" alt="Dance performance">
+      <img src="assets/Dance performance.jpg" alt="Cultural dance">
+      <img src="assets/dance1.jpg" alt="Dance rehearsal">
+    </div>
+
+    <div class="media-label">VIDEO HIGHLIGHT</div>
+
+    <div class="video-box">
+      <video controls preload="metadata" poster="assets/Dance.jpg">
+        <source src="assets/dance.mp4" type="video/mp4">
+        Your browser does not support this video.
+      </video>
+      <div class="video-caption">Dance & Cultural Performance</div>
+    </div>
+  </div>
+
+</article>
+
+<!-- SCOUTING -->
+<article class="programme-section" id="scouting">
+
+  <img class="programme-cover" src="assets/Scout.jpg" alt="Scouts in uniform">
+
+  <div class="programme-info">
+    <span class="programme-number">PROGRAMME 04</span>
+    <h2>Scouting</h2>
+
+    <p>
+      Through scouting activities, young people develop leadership,
+      teamwork, responsibility and a spirit of service. We encourage
+      active participation in community development and personal growth.
+    </p>
+
+    <h3>Our Goals</h3>
+    <ul>
+      <li>Leadership development</li>
+      <li>Community service</li>
+      <li>Teamwork and responsibility</li>
+      <li>Practical life skills</li>
+    </ul>
+
+    <a href="contact.html" class="gallery-link">Enquire About Scouting →</a>
+  </div>
+
+  <div class="media-area">
+    <div class="media-label">PHOTO GALLERY</div>
+
+    <div class="photo-grid">
+      <img src="assets/Scout.jpg" alt="Scouts together">
+      <img src="assets/scout.jpg" alt="Scout activities">
+      <img src="assets/backtoschool.jpg" alt="Community activity">
+    </div>
+
+    <div class="media-label">VIDEO HIGHLIGHT</div>
+
+    <div class="video-box">
+      <video controls preload="metadata" poster="assets/Scout.jpg">
+        <source src="assets/scouting.mp4" type="video/mp4">
+        Your browser does not support this video.
+      </video>
+      <div class="video-caption">Scouting Activities</div>
+    </div>
+  </div>
+
+</article>
+
+</div>
+</section>
+
+<!-- CALL TO ACTION -->
+<section class="join-banner">
+  <div class="container">
+    <h2>Be Part of Something Meaningful.</h2>
+    <p>Join, volunteer or support our programmes today.</p>
+    <a href="contact.html" class="button">Contact Us →</a>
+    <a href="donation.html" class="button">Support Our Work →</a>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container footer-main">
+
+    <a href="index.html" class="brand">
+      <img src="assets/logo.png" alt="All Eyes on Us Uganda logo" class="brand-logo">
+      <span class="brand-copy">
+        <strong>ALL EYES ON US</strong>
+        <b>UGANDA</b>
+        <small>Kalleous Organization Ltd.</small>
+      </span>
+    </a>
+
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <div>
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="people.html">Our People</a>
+        <a href="program.html">Programmes</a>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <h4>Get Involved</h4>
+      <div>
+        <a href="donation.html">Donate</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+    </div>
+
+    <div class="footer-social">
+      <h4>Follow Us</h4>
+      <div>
+        <a href="https://www.youtube.com/@alleyesononusugandaofficial" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://www.tiktok.com/@alleyesonuganda" target="_blank" rel="noopener">TikTok</a>
+        <a href="https://www.instagram.com/alleyesonugandaofficial/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.facebook.com/share/1FsStoq5JU/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container">
+      © <span id="year"></span> All Eyes on Us Uganda – Kalleous Organization Ltd.
+      <br>Empowering People. Building Communities.
+      <br>Powered by <a href="mailto:jardevtech@gmail.com">JardevTech</a>
+    </div>
+  </div>
+</footer>
+
+<!-- IMAGE VIEWER -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close image">×</button>
+  <img src="" alt="Expanded gallery photograph" id="lightboxImage">
+</div>
+
+<script>
+/* MOBILE MENU */
+const menuToggle = document.getElementById("menuToggle");
+const mainNav = document.getElementById("mainNav");
+
+menuToggle.addEventListener("click", () => {
+  const opened = mainNav.classList.toggle("open");
+  menuToggle.setAttribute("aria-expanded", opened);
+  menuToggle.textContent = opened ? "×" : "☰";
+});
+
+mainNav.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    mainNav.classList.remove("open");
+    menuToggle.textContent = "☰";
+    menuToggle.setAttribute("aria-expanded", "false");
+  });
+});
+
+/* PHOTO LIGHTBOX */
+const lightbox = document.getElementById("lightbox");
+const lightboxImage = document.getElementById("lightboxImage");
+const closeLightbox = document.getElementById("lightboxClose");
+
+document.querySelectorAll(".photo-grid img").forEach(img => {
+  img.addEventListener("click", () => {
+    lightboxImage.src = img.src;
+    lightboxImage.alt = img.alt;
+    lightbox.classList.add("open");
+  });
+});
+
+closeLightbox.addEventListener("click", () => {
+  lightbox.classList.remove("open");
+  lightboxImage.src = "";
+});
+
+lightbox.addEventListener("click", event => {
+  if (event.target === lightbox) {
+    lightbox.classList.remove("open");
+    lightboxImage.src = "";
+  }
+});
+
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") {
+    lightbox.classList.remove("open");
+    lightboxImage.src = "";
+  }
+});
+
+/* YEAR */
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

@@ -16,7 +16,7 @@
   <header class="site-header" id="top">
     <div class="nav-wrap container">
       <a class="brand" href="#top" aria-label="All Eyes on Us Uganda home">
-        <img src="assets/logo.img" alt="logo.img" class="brand-logo">
+        <img src="assets/logo.png" alt="All Eyes on Us Uganda logo" class="brand-logo">
         <span class="brand-copy"><strong>ALL EYES ON US</strong><b>UGANDA</b><small>Kalleous Organization Ltd.</small></span>
       </a>
       <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -24,13 +24,12 @@
         <a class="active" href="#top">Home</a>
         <a href="#about">About Us</a>
         <div class="nav-dropdown">
-          <a href="#programmes" class="dropdown-trigger">Programmes <span>⌄</span></a>
-          <div class="dropdown-menu"><a href="#band">Band</a><a href="#acrobatics">Acrobatics</a><a href="#dance">Dance</a><a href="#scouting">Scouting</a></div>
+          <a href="program.html">Programmes <span>⌄</span></a>
         </div>
-        <a href="#gallery">Gallery</a>
-        <a href="#people">Our People</a>
-        <a href="#donate">Donate</a>
-        <a href="#contact">Contact</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="people.html">Our People</a>
+        <a href="donation.html">Donate Now</a>
+        <a href="contact.html">Contact Us</a>
       </nav>
       
     </div>
@@ -164,6 +163,7 @@
       <!-- Fixed filename: remove space -->
        <!-- Hidden Lightbox -->
 <div id="lightbox" class="lightbox-overlay">
+  <span id="closeLightbox" class="close-btn">✖</span>
   <img id="lightboxImg" src="" alt="Expanded view">
 </div>
       <!-- Keep video separate from images -->
@@ -211,7 +211,7 @@
 
 <!-- Card 3: Cyan -->
 <!-- Card 3: Cyan -->
-<article class="member-card card-cyan">
+<article class="member-card card-Crimson">
   <div class="members-avatar">
     <img src="assets/member2.jpg" alt="Akram">
   </div>
@@ -229,7 +229,7 @@
 </article>
 
 <!-- Card 5: Crimson -->
-<article class="member-card card-crimson">
+<article class="member-card card-purple">
   <div class="members-avatar">
     <img src="assets/member4.jpg" alt="Ricky">
   </div>
@@ -297,59 +297,9 @@
   </div>
 </section>
 
-<!-- Hidden Donation Form -->
-<section class="donation-section" id="donate">
-  <div class="container donation-banner">
-    <img src="assets/donation-hands.jpg" alt="Hands nurturing a young plant" loading="lazy">
-    <div class="donation-overlay"></div>
-    <div class="donation-copy">
-      <p class="section-kicker">MAKE A DIFFERENCE</p>
-      <h2>Support Our Mission</h2>
-      <p>Your support helps us provide education, training, performance spaces and vital social support to those in need.</p>
-    </div>
-    <div class="donation-action">
-      <button class="button button-gold donate-now" id="openDonationForm">♥ &nbsp; Donate Now</button>
-    </div>
-  </div>
-</section>
 
-<!-- Hidden Donation Form -->
-<div id="donationForm" class="donation-form-overlay">
-  <div class="donation-form">
-    <h2>Donation Form</h2>
-    <form id="donationFormContent">
-      <label>Name:</label>
-      <input type="text" name="name" required>
 
-      <label>Contact (Phone/Email):</label>
-      <input type="text" name="contact" required>
 
-      <label>Type of Donation:</label>
-      <select name="type" required>
-        <option value="Money">Money</option>
-        <option value="Materials">Materials</option>
-        <option value="Volunteering">Volunteering</option>
-        <option value="Other">Other</option>
-      </select>
-
-      <label>Method:</label>
-      <select name="method" id="donationMethod" required>
-        <option value="Airtel Money">Airtel Money</option>
-        <option value="Visa">Visa</option>
-      </select>
-
-      <!-- Airtel QR (hidden until Airtel is chosen) -->
-      <div class="qr-item airtel-qr" id="airtelQR" style="display:none;">
-        <img src="assets/airtel-money-qr.png" alt="Airtel Money QR Code">
-        <p>Scan to pay with Airtel Money</p>
-      </div>
-
-      <button type="submit" class="button button-green">Submit Donation</button>
-    </form>
-
-    <button id="closeDonationForm" class="button button-outline">Close</button>
-  </div>
-</div>
 
 <!-- Floating Action Buttons -->
 <div class="floating-buttons">
@@ -364,7 +314,7 @@
   </a>
 
   <!-- Donate Button -->
-  <a href="#donate" class="float-btn donate-btn">
+  <a href="donation.html" class="float-btn donate-btn">
     <img src="assets/donate-icon.png" alt="Donate" />
   </a>
 </div>
@@ -380,34 +330,12 @@
     <div class="container footer-main">
       <a class="brand footer-brand" href="#top"><img src="assets/logo.img" alt="logo.img" class="brand-logo"><span class="brand-copy"><strong>ALL EYES ON US</strong><b>UGANDA</b><small>Kalleous Organization Ltd.</small></span></a>
       <div class="footer-links"><h4>Quick Links</h4><div><a href="#top">Home</a><a href="#about">About Us</a><a href="#programmes">Programmes</a><a href="#gallery">Gallery</a></div></div>
-      <div class="footer-links"><h4>Get Involved</h4><div><a href="#donate">Donate</a><a href="#contact">Contact</a><a href="#programmes">Volunteer</a></div></div>
-      <section class="contact-section" id="contact">
-  <div class="container contact-banner">
-    <h2>Get in Touch</h2>
-    <p>We’d love to hear from you. Please fill out the form below and we’ll respond promptly.</p>
-
-    <form id="contactForm">
-      <label for="name">Full Name:</label>
-      <input type="text" id="name" name="name" required>
-
-      <label for="email">Email Address:</label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="phone">Phone Number:</label>
-      <input type="text" id="phone" name="phone" required>
-
-      <label for="message">Message:</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
-
-      <button type="submit" class="button button-gold">Send Message</button>
-    </form>
-  </div>
-</section>
-
+      <div class="footer-links"><h4>Get Involved</h4><div><a href="donation.html">Donate</a><a href="#contact">Contact</a><a href="#programmes">Volunteer</a></div></div>
+     
       <div class="footer-social">
         <h4>Follow Us</h4>
         <div class="socials">
-          <a href="https://www.facebook.com/share/1NvZxbcW/?mibextid=wwXIfr" class="social-icon facebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.4-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.5V13h2.7v8z"/></svg></a>
+          <a href="https://www.facebook.com/share/1FsStoq5JU/?mibextid=wwXIfr" class="social-icon facebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.4-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.5V13h2.7v8z"/></svg></a>
           <a href="https://www.instagram.com/alleyesonusugandaofficial/" class="social-icon instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg></a>
           <a href="https://www.youtube.com/@alleyesonusugandaofficial" class="social-icon youtube" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4" fill="currentColor"/><path d="M10 8.5 16 12l-6 3.5z" fill="#ffffff"/></svg></a>
           <a href="https://www.tiktok.com/@alleyesonusuganda1" class="social-icon tiktok" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M19.6 7.1a6.1 6.1 0 0 1-3.8-1.3v8.1a6 6 0 1 1-6-6c.4 0 .8 0 1.2.1v3.3a2.8 2.8 0 1 0 1.8 2.6V2h3.2c.3 2 1.7 3.6 3.6 4.1z"/></svg></a>
@@ -416,18 +344,14 @@
         </div>
         <p class="footer-script">Together<br>We Grow <span class="uganda-stroke"></span></p>
       </div>
-<p>
-  <a href="https://www.flaticon.com/free-icons/dancers" title="dancers icons">
-    <!--Dancers icons created by Flat Icons - Flaticon-->
-  </a>
-</p>
+
 
     </div>
     <div class="footer-bottom">
       <div class="container">
         <span>© <span id="year">2026</span> All Eyes on Us Uganda – Kalleous Organization Ltd.</span>
         <span>Empowering People. Building Communities.</span>
-        <span>Powered by <b>jardevtech web team</b></span>
+        <span>Powered by <b>jardevtech </b> <a href="mailto:jardevtech@gmail.com">jardevtech@gmail.com</a></span>
       </div>
     </div>
   </footer>

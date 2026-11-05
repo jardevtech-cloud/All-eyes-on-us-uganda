@@ -659,7 +659,7 @@ img { display: block; max-width: 100%; }
 
 .whatsapp-float img {
   width: 40px;
-  height: 40px;
+  height: 400px;
 }
 
 .whatsapp-float:hover {
@@ -1069,25 +1069,11 @@ img { display: block; max-width: 100%; }
 .lightbox-overlay {
   display: none;
   position: fixed;
-  inset: 0;
+  inset: 0; /* full viewport */
   background: rgba(0,0,0,0.95);
   z-index: 10000;
   justify-content: center;
   align-items: center;
-  opacity: 0;
-  transition: opacity 0.8s ease; /* smooth fade */
-}
-
-..lightbox-overlay {
-  display: none;
-  position: fixed;
-  inset: 0; /* covers full viewport */
-  background: rgba(0,0,0,0.95);
-  z-index: 10000;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;   /* full width */
-  height: 100vh;  /* full height */
   opacity: 0;
   transition: opacity 0.8s ease;
 }
@@ -1104,26 +1090,7 @@ img { display: block; max-width: 100%; }
 .lightbox-overlay img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* keeps aspect ratio */
+  object-fit: contain;
 }
 
 
-.donation-form-overlay {
-  display: none;
-  position: fixed;
-  inset: 0; /* covers entire viewport */
-  background: rgba(0,0,0,0.85);
-  z-index: 10000;
-  justify-content: center;
-  align-items: center;
-}
-
-.donation-form {
-  width: 90vw;       /* responsive width */
-  max-width: 600px;  /* limit on large screens */
-  max-height: 90vh;  /* never exceed viewport height */
-  overflow-y: auto;  /* scroll inside if content too tall */
-  background: #fff;
-  padding: 20px;
-  border-radius: 12px;
-}

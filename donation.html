@@ -1,0 +1,628 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#17143b">
+  <meta name="description" content="Find out how to support All Eyes on Us Uganda through Airtel Money, Western Union, Centenary Bank or physical donations.">
+  <title>How to Donate | All Eyes on Us Uganda</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #17143b;
+      --purple: #5144a5;
+      --pink: #ed5b91;
+      --background: #f6f5fc;
+      --text: #292744;
+      --muted: #77758d;
+      --border: #c9ff06;
+      --white: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font-family: "DM Sans", sans-serif;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+  /* UGANDA FLAG TOPBAR */
+.topbar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 15px 25px;
+    background: linear-gradient(
+        to right,
+        #000000 0%,
+        #000000 16.66%,
+        #FCDC04 16.66%,
+        #FCDC04 33.33%,
+        #D90000 33.33%,
+        #D90000 50%,
+        #000000 50%,
+        #000000 66.66%,
+        #FCDC04 66.66%,
+        #FCDC04 83.33%,
+        #D90000 83.33%,
+        #D90000 100%
+    );
+    border-bottom: 4px solid #FCDC04;
+}
+
+.topbar .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+    font-weight: 900;
+    text-decoration: none;
+    font-size: 17px;
+    text-shadow: 1px 1px 3px #000;
+}
+
+.topbar .brand img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    background: white;
+    border-radius: 6px;
+}
+
+.topbar .back {
+    color: rgb(65, 64, 64);
+    font-weight: 700;
+    text-decoration: none;
+    padding: 10px 15px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 50px;
+}
+
+.topbar .back:hover {
+    background: white;
+    color: #000;
+}
+
+/* PAGE COLOURS */
+body {
+    background: #f7f7f7;
+    color: #202020;
+}
+
+.hero {
+    background: linear-gradient(135deg, #000000, #D90000);
+    color: white;
+}
+
+.hero h1 {
+    color: #FCDC04;
+}
+
+.intro,
+.donation-card,
+.method-card {
+    background: white;
+    color: #202020;
+}
+
+h2, h3 {
+    color: #111;
+}
+
+button,
+.donate-btn {
+    background: #D90000;
+    color: white;
+}
+
+button:hover,
+.donate-btn:hover {
+    background: #000;
+    color: #FCDC04;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 600px) {
+    .topbar {
+        padding: 10px;
+        flex-wrap: wrap;
+    }
+
+    .topbar .brand {
+        font-size: 13px;
+        gap: 8px;
+    }
+
+    .topbar .brand img {
+        width: 38px;
+        height: 38px;
+    }
+
+    .topbar .back {
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+}
+
+    .hero {
+      background:
+        radial-gradient(circle at 85% 15%, rgba(237,91,145,.3), transparent 28%),
+        linear-gradient(120deg, #17143b, #393078 70%, #5144a5);
+      color: white;
+      text-align: center;
+      padding: 75px 6% 100px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 15px;
+      border: 1px solid rgba(255,255,255,.35);
+      border-radius: 30px;
+      color: #ffd2e3;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(36px, 6vw, 58px);
+      line-height: 1.15;
+      max-width: 750px;
+      margin: 20px auto 15px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: auto;
+      color: #e4e1f7;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .container {
+      width: min(1050px, 92%);
+      margin: -48px auto 65px;
+      position: relative;
+    }
+
+    .intro {
+      background: white;
+      padding: 28px;
+      border-radius: 16px;
+      box-shadow: 0 10px 35px rgba(25,20,60,.07);
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .intro h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 27px;
+      margin: 0 0 10px;
+    }
+
+    .intro p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.8;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .methods {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .method {
+      background: white;
+      padding: 27px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: 0 7px 25px rgba(25,20,60,.045);
+    }
+
+    .method-icon {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    border: 1px solid #e8e5f0;
+    border-radius: 14px;
+    margin-bottom: 16px;
+    overflow: hidden;
+}
+
+.method-icon img {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    display: block;
+}
+.western-union img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+    .method h3 {
+      margin: 0 0 9px;
+      font-size: 20px;
+    }
+
+    .method p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .detail {
+      background: #f7f6fc;
+      border: 1px solid var(--border);
+      border-radius: 11px;
+      padding: 15px;
+      margin: 17px 0;
+    }
+
+    .detail-label {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .8px;
+      margin-bottom: 6px;
+    }
+
+    .detail-value {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--navy);
+      overflow-wrap: anywhere;
+    }
+
+    .detail-sub {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 5px;
+    }
+
+    .copy-btn {
+      background: var(--purple);
+      border: 0;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 8px;
+      font: inherit;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 12px;
+    }
+
+    .copy-btn:hover { background: var(--navy); }
+
+    .steps {
+      padding-left: 19px;
+      color: var(--text);
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .steps li { padding-left: 4px; }
+
+    .important {
+      background: #fff7e7;
+      border: 1px solid #f2dfb7;
+      border-radius: 10px;
+      padding: 13px;
+      color: #76571c;
+      font-size: 12px;
+      line-height: 1.7;
+      margin-top: 15px;
+    }
+
+    .contact-section {
+      margin-top: 25px;
+      padding: 30px;
+      background: var(--navy);
+      color: white;
+      border-radius: 17px;
+      text-align: center;
+    }
+
+    .contact-section h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 27px;
+      margin: 0 0 10px;
+    }
+
+    .contact-section p {
+      color: #dedaf0;
+      font-size: 13px;
+      line-height: 1.8;
+      max-width: 650px;
+      margin: 0 auto 20px;
+    }
+
+    .contact-link {
+      display: inline-block;
+      padding: 12px 20px;
+      border-radius: 9px;
+      background: linear-gradient(100deg, var(--purple), var(--pink));
+      color: white;
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .closing {
+      text-align: center;
+      margin-top: 30px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    footer {
+      background: #11102c;
+      color: #d8d5e8;
+      text-align: center;
+      padding: 28px 6%;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    footer strong { color: white; }
+
+    @media(max-width: 700px) {
+      .methods { grid-template-columns: 1fr; }
+      .hero { padding: 60px 6% 85px; }
+      .method { padding: 23px; }
+      .intro, .contact-section { padding: 24px 19px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="topbar">
+  <a href="index.html" class="brand"><img src="assets/logo.png" alt="ALL EYES ON US UGANDA Logo"/>ALL EYES <span>ON US</span> UGANDA</a>
+  <a href="index.html" class="back">← Back to website</a>
+</header>
+
+<section class="hero">
+  <span class="eyebrow">Your support makes a difference</span>
+  <h1>Be part of the change.</h1>
+  <p>
+    Your generosity helps All Eyes on Us Uganda – Kalleous Organization Ltd.
+    support talent, creativity, culture and community development.
+    There are several ways you can contribute.
+  </p>
+</section>
+
+<main class="container">
+
+  <section class="intro">
+    <h2>How to make a donation</h2>
+    <p>
+      Choose the donation method that is most convenient for you.
+      Read the instructions carefully and contact our organisation
+      if you need assistance before sending your contribution.
+    </p>
+  </section>
+
+  <section class="methods">
+
+    <!-- AIRTEL MONEY -->
+    <article class="method">
+      <div class="method-icon"><img src="assets/airtel-money.png" alt="Airtel Money Icon"/></div>
+      <h3>Airtel Money</h3>
+      <p>
+        You can support our work by sending your financial contribution
+        through Airtel Money.
+      </p>
+
+      <div class="detail">
+        <div class="detail-label">Airtel Money number</div>
+        <div class="detail-value" id="airtelNumber">+256705446043</div>
+        <button class="copy-btn" onclick="copyText('airtelNumber', this)">
+          Copy number
+        </button>
+        <div class="detail-sub">Recipient: Luwaga Moses</div>
+      </div>
+
+      <ol class="steps">
+        <li>Open your Airtel Money menu.</li>
+        <li>Select the option to send money.</li>
+        <li>Enter the number shown above.</li>
+        <li>Check that the recipient name is Luwaga Moses.</li>
+        <li>Confirm only when the recipient details are correct.</li>
+      </ol>
+
+      <div class="important">
+        Always verify the recipient name and number before confirming
+        a transaction. Keep your transaction message as proof.
+      </div>
+    </article>
+
+    <!-- WESTERN UNION -->
+    <article class="method">
+      <div class="method-icon"><img src="assets/western-union.png" alt="Western Union Icon"/></div>
+      <h3>Western Union</h3>
+      <p>
+        International supporters can arrange a money transfer through
+        Western Union using the recipient's registered names.
+      </p>
+
+      <div class="detail">
+        <div class="detail-label">Recipient's full name</div>
+        <div class="detail-value" id="westernName">Luwaga Moses</div>
+        <button class="copy-btn" onclick="copyText('westernName', this)">
+          Copy recipient name
+        </button>
+      </div>
+
+      <ol class="steps">
+        <li>Visit a Western Union agent or use its official service.</li>
+        <li>Ask the organisation to confirm the receiving arrangements.</li>
+        <li>Enter the recipient's full name exactly as provided.</li>
+        <li>Complete the transfer according to Western Union's instructions.</li>
+        <li>Share the transfer reference privately with the organisation.</li>
+      </ol>
+
+      <div class="important">
+        Contact the organisation before sending to confirm the receiving
+        country, collection arrangements and exact recipient details.
+      </div>
+    </article>
+
+    <!-- CENTENARY BANK -->
+    <article class="method">
+      <div class="method-icon"><img src="assets/centenary-bank.png" alt="Centenary Bank Icon"/></div>
+      <h3>Centenary Bank</h3>
+      <p>
+        You can make a contribution through a bank deposit or bank
+        transfer using the account details below.
+      </p>
+
+      <div class="detail">
+        <div class="detail-label">Bank account number</div>
+        <div class="detail-value" id="bankNumber">3202945502</div>
+        <button class="copy-btn" onclick="copyText('bankNumber', this)">
+          Copy account number
+        </button>
+        <div class="detail-sub">Bank: Centenary Bank</div>
+        <div class="detail-sub">Account holder: Luwaga Moses</div>
+      </div>
+
+      <ol class="steps">
+        <li>Visit a Centenary Bank branch or use your bank's transfer service.</li>
+        <li>Enter the account number shown above.</li>
+        <li>Confirm the account holder is Luwaga Moses.</li>
+        <li>Confirm the details with the bank before transferring.</li>
+        <li>Keep your deposit slip or transaction confirmation.</li>
+      </ol>
+
+      <div class="important">
+        Check the account holder's name with the bank before making
+        a transfer. Do not send money if the details do not match.
+      </div>
+    </article>
+
+    <!-- PHYSICAL DONATIONS -->
+    <article class="method">
+      <div class="method-icon"><img src="assets/location.png" alt="Physical Donations Icon"/></div>
+      <h3>Physical Donations</h3>
+      <p>
+        You can also support our work by contributing useful items
+        directly to the organisation.
+      </p>
+
+      <div class="detail">
+        <div class="detail-label">Donation delivery contact/location</div>
+        <div class="detail-value">Nsambya Kevina</div>
+        <div class="detail-sub">Makindye, Uganda</div>
+      </div>
+
+      <p>Examples of physical donations include:</p>
+      <ul class="steps">
+        <li>Food supplies and other essential items.</li>
+        <li>Clothing and shoes in good condition.</li>
+        <li>Educational and creative materials.</li>
+        <li>Equipment and resources for community activities.</li>
+        <li>Other useful items agreed upon with the organisation.</li>
+      </ul>
+
+      <div class="important">
+        Please contact the organisation before delivering items
+        to confirm the exact meeting point, suitable items and
+        a convenient delivery time.
+      </div>
+    </article>
+
+  </section>
+
+  <section class="contact-section">
+    <h2>Need help with your donation?</h2>
+    <p>
+      Contact All Eyes on Us Uganda before making a transfer or
+      arranging a physical delivery. Our team can help you confirm
+      the instructions and explain how to share your donation details.
+    </p>
+    <a class="contact-link" href="index.html#contact">
+      Contact the organisation
+    </a>
+  </section>
+
+  <div class="closing">
+    <strong>Every contribution counts.</strong><br>
+    Thank you for supporting All Eyes on Us Uganda and helping us
+    make a positive difference in our communities.
+  </div>
+
+</main>
+
+<footer>
+  <strong>All Eyes on Us Uganda – Kalleous Organization Ltd.</strong><br>
+  Empowering lives through music, talent, culture and community.<br>
+  Thank you for standing with us.
+</footer>
+
+<script>
+  function copyText(elementId, button) {
+    const value = document.getElementById(elementId).textContent.trim();
+
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(value).then(() => {
+        showCopied(button);
+      }).catch(() => {
+        fallbackCopy(value, button);
+      });
+    } else {
+      fallbackCopy(value, button);
+    }
+  }
+
+  function fallbackCopy(value, button) {
+    const field = document.createElement("textarea");
+    field.value = value;
+    document.body.appendChild(field);
+    field.select();
+
+    try {
+      document.execCommand("copy");
+      showCopied(button);
+    } catch (error) {
+      alert("Please copy this detail manually: " + value);
+    }
+
+    field.remove();
+  }
+
+  function showCopied(button) {
+    const original = button.textContent;
+    button.textContent = "Copied!";
+    setTimeout(() => {
+      button.textContent = original;
+    }, 1800);
+  }
+</script>
+
+</body>
+</html>

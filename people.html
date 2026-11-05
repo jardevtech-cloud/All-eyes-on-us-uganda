@@ -1,0 +1,1207 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#171717">
+  <meta name="description" content="Meet the founder, members and contributors of All Eyes on Us Uganda – Kalleous Organization Ltd.">
+  <title>Our People & History | All Eyes on Us Uganda</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --black: #171717;
+      --dark: #222222;
+      --yellow: #f9d323;
+      --red: #d71920;
+      --white: #ffffff;
+      --light: #f7f7f5;
+      --muted: #707070;
+      --border: #e9e9e9;
+      --shadow: 0 15px 45px rgba(0,0,0,0.09);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: var(--black);
+      background: var(--grey);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1160px, 90%);
+      margin: auto;
+    }
+
+    /* Uganda flag colour strip */
+    .flag-strip {
+      height: 6px;
+      background: linear-gradient(
+        to right,
+        var(--black) 0 33.33%,
+        var(--yellow) 33.33% 66.66%,
+        var(--red) 66.66% 100%
+      );
+    }
+
+    /* Navigation */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(99, 248, 7, 0.97);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 3px 18px rgba(0,0,0,0.06);
+    }
+
+    .nav-wrap {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand img {
+      width: 55px;
+      height: 55px;
+      object-fit: contain;
+    }
+
+    .brand-text {
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 1.3;
+    }
+
+    .brand-text span {
+      display: block;
+      color: var(--red);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 700;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--red);
+    }
+
+    .nav-links .contact-link {
+      background: var(--black);
+      color: var(--white);
+      padding: 12px 20px;
+      border-radius: 5px;
+    }
+
+    .nav-links .contact-link:hover {
+      background: var(--red);
+      color: var(--white);
+    }
+
+    .menu-toggle {
+      display: none;
+      background: var(--black);
+      color: white;
+      border: 0;
+      border-radius: 5px;
+      width: 44px;
+      height: 42px;
+      font-size: 23px;
+      cursor: pointer;
+    }
+
+    /* Hero */
+    .hero {
+    min-height: 480px;
+    padding: 100px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.75)),
+        url("assets/Community group.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero h1 {
+    color: #ffd700;
+    font-size: clamp(32px, 5vw, 55px);
+}
+
+.hero p {
+    color: #ffffff;
+    font-size: 18px;
+    max-width: 700px;
+    margin: 15px auto;
+}
+
+    .hero-button {
+      display: inline-block;
+      padding: 14px 25px;
+      border-radius: 5px;
+      background: var(--yellow);
+      color: var(--black);
+      font-size: 13px;
+      font-weight: 800;
+      transition: 0.2s;
+    }
+
+    .hero-button:hover {
+      background: #e5243b;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    /* General sections */
+    section {
+      padding: 90px 0;
+    }
+
+    .section-heading {
+      max-width: 700px;
+      margin: 0 auto 45px;
+      text-align: center;
+    }
+
+    .section-heading .eyebrow {
+      color: var(--red);
+      margin-bottom: 10px;
+    }
+
+    .section-heading h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(32px, 4vw, 48px);
+      line-height: 1.2;
+      margin-bottom: 15px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    /* Founder */
+    .founder-section {
+      background: var(--light);
+    }
+
+    .founder-card {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      max-width: 1000px;
+      margin: auto;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .founder-image {
+      min-height: 430px;
+      background: #e5e5e5;
+      overflow: hidden;
+    }
+
+    .founder-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 430px;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .founder-info {
+      padding: 55px 45px;
+      align-self: center;
+    }
+
+    .founder-info .eyebrow {
+      color: var(--red);
+      margin-bottom: 12px;
+    }
+
+    .founder-info h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 38px;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    .founder-role {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--red);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 23px;
+    }
+
+    .founder-info p {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 16px;
+    }
+
+    .founder-facts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    .fact {
+      background: #fff8d9;
+      border-left: 3px solid var(--yellow);
+      padding: 12px 16px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    /* Members */
+    .members-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .member-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      overflow: hidden;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .member-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+    }
+
+    .member-photo {
+      height: 250px;
+      background: #ededed;
+      overflow: hidden;
+    }
+
+    .member-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .member-info {
+      padding: 20px;
+    }
+
+    .member-info h3 {
+      font-size: 17px;
+      margin-bottom: 5px;
+    }
+
+    .member-info p {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .member-note {
+      text-align: center;
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* Contributors */
+    .contributors-section {
+      background: var(--black);
+      color: white;
+    }
+
+    .contributors-section .section-heading p {
+      color: #c5c5c5;
+    }
+
+    .contributors-section .section-heading .eyebrow {
+      color: var(--yellow);
+    }
+
+    .contributors-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .contributor-card {
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 12px;
+      padding: 30px;
+      background: rgba(255,255,255,0.05);
+      transition: transform 0.25s, background 0.25s;
+    }
+
+    .contributor-card:hover {
+      transform: translateY(-6px);
+      background: rgba(255,255,255,0.09);
+    }
+
+    .contributor-logo {
+      width: 130px;
+      height: 130px;
+      margin: 0 auto 24px;
+      padding: 12px;
+      border-radius: 14px;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .contributor-logo img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-position: center;
+      object-fit: contain;
+    }
+
+    .contributor-card h3 {
+      font-size: 19px;
+      line-height: 1.4;
+      margin-bottom: 9px;
+    }
+
+    .contributor-role {
+      display: block;
+      color: var(--yellow);
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 14px;
+    }
+
+    .contributor-card p {
+      font-size: 13px;
+      color: #c5c5c5;
+    }
+
+    /* History */
+    .history-section {
+      background: var(--light);
+    }
+
+    .history-card {
+      max-width: 850px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 30px;
+      align-items: center;
+      background: white;
+      border-radius: 10px;
+      padding: 35px;
+      box-shadow: var(--shadow);
+    }
+
+    .history-year {
+      font-family: "Playfair Display", serif;
+      font-size: 48px;
+      font-weight: 800;
+      color: var(--red);
+      border-right: 3px solid var(--yellow);
+      line-height: 1.2;
+    }
+
+    .history-card h3 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .history-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* CTA */
+    .closing-cta {
+      padding: 75px 0;
+      background: var(--yellow);
+      text-align: center;
+    }
+
+    .closing-cta h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(30px, 4vw, 45px);
+      margin-bottom: 12px;
+    }
+
+    .closing-cta p {
+      max-width: 600px;
+      margin: 0 auto 25px;
+      color: #393939;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: var(--black);
+      color: white;
+      padding: 14px 26px;
+      border-radius: 5px;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .cta-button:hover {
+      background: var(--red);
+    }
+
+    /* Footer */
+    footer {
+      background: #111;
+      color: white;
+      padding: 45px 0 20px;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 30px;
+      padding-bottom: 30px;
+    }
+
+    .footer-brand {
+      max-width: 360px;
+    }
+
+    .footer-brand h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .footer-brand p,
+    .footer-links a {
+      color: #bdbdbd;
+      font-size: 13px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links a:hover {
+      color: var(--yellow);
+    }
+
+    .copyright {
+      border-top: 1px solid #333;
+      padding-top: 20px;
+      text-align: center;
+      color: #999;
+      font-size: 12px;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .members-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .contributors-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .founder-info {
+        padding: 35px 28px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .nav-wrap {
+        min-height: 72px;
+      }
+
+      .brand img {
+        width: 46px;
+        height: 46px;
+      }
+
+      .brand-text {
+        font-size: 12px;
+      }
+
+      .menu-toggle {
+        display: block;
+        flex-shrink: 0;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 22px 5%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 13px 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-links .contact-link {
+        margin-top: 12px;
+        padding: 12px 18px;
+        text-align: center;
+        border: 0;
+      }
+
+      .hero {
+        min-height: 520px;
+        background-position: center;
+      }
+
+      .hero-content {
+        padding: 75px 0;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      .founder-card {
+        grid-template-columns: 1fr;
+      }
+
+      .founder-image {
+        height: 360px;
+        min-height: 0;
+      }
+
+      .founder-image img {
+        height: 360px;
+        min-height: 0;
+        object-fit: contain;
+        background: #e5e5e5;
+      }
+
+      .founder-info {
+        padding: 30px 25px;
+      }
+
+      .founder-info h2 {
+        font-size: 32px;
+      }
+
+      .members-grid {
+        gap: 14px;
+      }
+
+      .member-photo {
+        height: 220px;
+        width: 300%;
+        overflow: hidden;
+        background: #eeeeee;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .member-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center top;
+        display: block;
+      }
+
+      .member-info {
+        padding: 14px;
+      }
+
+      .member-info h3 {
+        font-size: 15px;
+      }
+
+      .contributors-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contributor-card {
+        padding: 25px;
+      }
+
+      .history-card {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 25px;
+      }
+
+      .history-year {
+        border-right: 0;
+        border-bottom: 3px solid var(--yellow);
+        padding-bottom: 12px;
+        width: fit-content;
+      }
+
+      .footer-content {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .members-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .member-photo {
+        height: 220px;
+      }
+      .contributor-logo {
+        width: 115px;
+        height: 115px;
+      }
+
+      .brand-text {
+        max-width: 190px;
+      }
+    }
+    /* Colourful profile and contributor cards */
+.founder-card 
+{
+    background: linear-gradient(145deg, orange, #353535);
+    border: 1px solid rgba(255, 215, 0, 0.45);
+    border-radius: 18px;
+    color: #ffffff;
+    padding: 24px;
+    box-shadow: 0 8px 25px purple;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.member-card,
+.contributor-card {
+    background: linear-gradient(145deg, #202020, #353535);
+    border: 1px solid rgba(255, 215, 0, 0.45);
+    border-radius: 18px;
+    color: #ffffff;
+    padding: 24px;
+    box-shadow: 0 8px 25px purple;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.founder-card:hover,
+.member-card:hover,
+.contributor-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(255, 193, 7, 0.2);
+}
+
+/* Card headings */
+.founder-card h2,
+.member-card h3,
+.contributor-card h3 {
+    color: #ffd700;
+}
+
+/* Card descriptions */
+.founder-card p,
+.member-card p,
+.contributor-card p {
+    color: #f1f1f1;
+    line-height: 1.7;
+}
+
+/* Highlight roles */
+.member-card .role,
+.contributor-card .role {
+    color: #ff5252;
+    font-weight: 700;
+}
+
+/* Image backgrounds */
+.member-photo {
+    background: #f5f5f5;
+    border: 3px solid #ffd700;
+    border-radius: 14px;
+}
+
+.contributor-logo {
+    background: #ffffff;
+    border: 3px solid #ffd700;
+    border-radius: 14px;
+}
+  </style>
+</head>
+
+<body>
+
+  <div class="flag-strip"></div>
+
+  <!-- NAVIGATION -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+
+      <a href="index.html" class="brand">
+        <img src="assets/logo.png" alt="All Eyes on Us Uganda logo">
+        <div class="brand-text">
+          ALL EYES ON US UGANDA
+          <span>Kalleous Organization Ltd.</span>
+        </div>
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="navLinks">
+        ☰
+      </button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="people.html" class="active">Our People</a>
+        <a href="donation.html">Donate</a>
+        <a href="contact.html" class="contact-link">Contact Us</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-content">
+
+        <span class="eyebrow">Our People · Our Story</span>
+
+        <h1>
+          United by People.<br>
+          <span>Driven by Purpose.</span>
+        </h1>
+
+        <p>
+          Behind All Eyes on Us Uganda is a community of people united by
+          creativity, talent, culture and a shared commitment to making a
+          positive difference.
+        </p>
+
+        <a href="#founder" class="hero-button">
+          Meet Our Founder
+        </a>
+
+      </div>
+    </section>
+
+    <!-- FOUNDER -->
+    <section class="founder-section" id="founder">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="eyebrow">The Beginning</span>
+          <h2>Meet Our Founder</h2>
+          <p>
+            Every meaningful journey begins with an idea and the determination
+            to turn that idea into something bigger.
+          </p>
+        </div>
+
+        <div class="founder-card">
+
+          <div class="founder-image">
+            <img
+              src="assets/founder.jpg"
+              alt="Luwaga Moses, founder of All Eyes on Us Uganda"
+              loading="lazy">
+          </div>
+
+          <div class="founder-info">
+
+            <span class="eyebrow">Founder</span>
+
+            <h2>Luwaga Moses</h2>
+
+            <span class="founder-role">
+              Founder – All Eyes on Us Uganda
+            </span>
+
+            <p>
+              Luwaga Moses is the founder of All Eyes on Us Uganda –
+              Kalleous Organization Ltd. His vision helped establish an
+              organization focused on bringing people together through
+              music, talent, culture and community.
+            </p>
+
+            <p>
+              The organization continues to build its identity around
+              participation, creativity and opportunities for people to
+              contribute their talents and ideas.
+            </p>
+
+            <div class="founder-facts">
+              <div class="fact">Established: 2016</div>
+              <div class="fact">Uganda</div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- MEMBERS -->
+    <section id="members">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="eyebrow">The People Behind Us</span>
+          <h2>Our Members</h2>
+          <p>
+            Our members are an important part of our story. Their participation,
+            ideas and commitment help bring the organization's vision to life.
+          </p>
+        </div>
+
+        <div class="members-grid">
+
+          <article class="member-card">
+            <div class="member-photo">
+              <img src="assets/member1.jpg"
+                alt="Organization member" loading="lazy">
+            </div>
+            <div class="member-info">
+              <h3>jacky</h3>
+              <p>Organization Member</p>
+            </div>
+          </article>
+
+          <article class="member-card">
+            <div class="member-photo">
+              <img src="assets/member3.jpg"
+                alt="Organization member" loading="lazy">
+            </div>
+            <div class="member-info">
+              <h3>Malik</h3>
+              <p>Organization Member</p>
+            </div>
+          </article>
+
+          <article class="member-card">
+            <div class="member-photo">
+               <img src="assets/member2.jpg" alt="Akram" loading="lazy">
+            </div>
+            <div class="member-info">
+              <h3>Akram</h3>
+              <p>Organization Member</p>
+            </div>
+          </article>
+
+          <article class="member-card">
+            <div class="member-photo">
+              <img src="assets/jarsila.png"
+                alt="Website Developer" loading="lazy">
+            </div>
+            <div class="member-info">
+              <h3>JARSILA PAUL</h3>
+              <p>Website Developer</p>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="member-note">
+          Our members are a diverse group of individuals who contribute
+          their time, skills and ideas to support the organization's mission.</p>
+      </div>
+    </section>
+
+    <!-- OTHER CONTRIBUTORS AND PARTNERS -->
+    <section class="contributors-section" id="contributors">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="eyebrow">Every Contribution Matters</span>
+          <h2>Our Partners & Contributors</h2>
+          <p>
+            We recognise the organisations and people whose creativity,
+            technology and community support contribute to our journey.
+          </p>
+        </div>
+
+        <div class="contributors-grid">
+
+          <!-- JARDEVTECH -->
+          <article class="contributor-card">
+
+            <div class="contributor-logo">
+              <img
+                src="assets/jardevtech.jpg"
+                alt="JardevTech logo"
+                loading="lazy">
+            </div>
+
+            <h3>JardevTech</h3>
+
+            <span class="contributor-role">
+              Website Development & Technology
+            </span>
+
+            <p>
+              Supporting All Eyes on Us Uganda through website development,
+              digital solutions, technology and online presence.
+            </p>
+
+          </article>
+
+          <!-- ALL EYES ON US ART AND CREATIVITY -->
+          <article class="contributor-card">
+
+            <div class="contributor-logo">
+              <img
+                src="assets/logo.png"
+                alt="All Eyes on Us Uganda logo"
+                loading="lazy">
+            </div>
+
+            <h3>All Eyes on Us – Art & Creativity</h3>
+
+            <span class="contributor-role">
+              Creative Contributions
+            </span>
+
+            <p>
+              Celebrating and promoting art, music, talent, creativity
+              and cultural expression within the community.
+            </p>
+
+          </article>
+
+          <!-- SCOUT COUNCIL -->
+          <article class="contributor-card">
+
+            <div class="contributor-logo">
+              <img
+                src="assets/scout-logo.png"
+                alt="Scout Council logo"
+                loading="lazy">
+            </div>
+
+            <h3>Scout Council</h3>
+
+            <span class="contributor-role">
+              Community Support
+            </span>
+
+            <p>
+              Recognising the Scout Council's contribution to community
+              engagement, service, teamwork and youth development.
+            </p>
+
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- HISTORY -->
+    <section class="history-section" id="history">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="eyebrow">Our Journey</span>
+          <h2>Our History</h2>
+          <p>
+            A journey built on people, creativity and the belief that
+            meaningful change begins when people come together.
+          </p>
+        </div>
+
+        <div class="history-card">
+
+          <div class="history-year">2016</div>
+
+          <div>
+            <h3>The Beginning of All Eyes on Us Uganda</h3>
+            <p>
+              All Eyes on Us Uganda – Kalleous Organization Ltd. was
+              established in 2016 under the vision of its founder,
+              Luwaga Moses. This marked the beginning of the organization's
+              journey in bringing people together through music, talent,
+              culture and community.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CLOSING CTA -->
+    <section class="closing-cta">
+      <div class="container">
+
+        <h2>Be Part of Our Story</h2>
+
+        <p>
+          Every person has something valuable to contribute.
+          Connect with All Eyes on Us Uganda and become part of our journey.
+        </p>
+
+        <a href="contact.html" class="cta-button">
+          Get in Touch
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+
+      <div class="footer-content">
+
+        <div class="footer-brand">
+          <h3>All Eyes on Us Uganda</h3>
+          <p>
+            Kalleous Organization Ltd. – bringing people together through
+            music, talent, culture and community.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="people.html">Our People & History</a>
+          <a href="donation.html">Support Our Work</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+
+        <div class="footer-links">
+          <a href="https://www.youtube.com/@alleyesononusugandaofficial"
+             target="_blank" rel="noopener noreferrer">YouTube</a>
+
+          <a href="https://www.tiktok.com/@alleyesonuganda"
+             target="_blank" rel="noopener noreferrer">TikTok</a>
+
+          <a href="https://www.instagram.com/alleyesonugandaofficial/"
+             target="_blank" rel="noopener noreferrer">Instagram</a>
+
+          <a href="https://www.facebook.com/share/1FsStoq5JU/?mibextid=wwXIfr"
+             target="_blank" rel="noopener noreferrer">Facebook</a>
+        </div>
+
+      </div>
+
+      <div class="copyright">
+        © <span id="currentYear"></span>
+        All Eyes on Us Uganda – Kalleous Organization Ltd.
+        All rights reserved.
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    // Mobile navigation
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", function () {
+      const isOpen = navLinks.classList.toggle("open");
+
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+
+      menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation menu" : "Open navigation menu"
+      );
+
+      menuToggle.textContent = isOpen ? "×" : "☰";
+    });
+
+    // Close menu after selecting a link
+    navLinks.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation menu");
+        menuToggle.textContent = "☰";
+      });
+    });
+
+    // Automatically update copyright year
+    document.getElementById("currentYear").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
