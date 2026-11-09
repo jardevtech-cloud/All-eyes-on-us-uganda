@@ -396,68 +396,138 @@
       background: var(--red);
     }
 
-    /* MEMBERS */
 
-    .members-section {
-      padding: 75px 0;
-      background: #151515;
-    }
+/
+/* MEMBERS GRID */
+.members-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+    width: 100%;
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    align-items: stretch;
+}
 
+/* MEMBER CARD */
+.member-card {
+    position: relative;
+    width: 100%;
+    height: 380px;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: center;
+    background: #111b17;
+    border: 2px solid #f5d928;
+    border-bottom: 5px solid #e53945;
+    border-radius: 18px;
+}
+
+/* MEMBER IMAGE - 90% */
+.member-photo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+}
+
+/* IMAGE OVERLAY */
+.member-card::before {
+    content: "";
+    position: absolute;
+    inset: 65% 0 10% 0;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(0,0,0,.85)
+    );
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* MEMBER NAME */
+.member-card h3 {
+    position: relative;
+    z-index: 2;
+    color: white;
+    font-size: 20px;
+    margin: 0 0 3px;
+}
+
+/* MEMBER ROLE */
+.member-card p {
+    position: relative;
+    z-index: 2;
+    color: #f5d928;
+    font-size: 13px;
+    margin: 0 0 8px;
+}
+
+/* HOVER */
+.member-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(245,217,40,.2);
+}
+
+/* SMALL DESKTOP / LAPTOP */
+@media (max-width: 1100px) {
     .members-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 17px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* TABLET */
+@media (max-width: 768px) {
+    .members-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
     }
 
     .member-card {
-      background: #222222;
-      padding: 25px 15px;
-      border-radius: 13px;
-      text-align: center;
-      border-bottom: 4px solid var(--yellow);
-      transition: .3s;
+        height: 320px;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+    .members-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        padding: 8px;
     }
 
-    .member-card:nth-child(even) {
-      border-bottom-color: var(--red);
-    }
-
-    .member-card:hover {
-      transform: translateY(-6px);
-      background: #292929;
-    }
-
-    .member-avatar {
-      width: 85px;
-      height: 85px;
-      border-radius: 50%;
-      margin: 0 auto 15px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--yellow);
-      color: #080808;
-      font-size: 25px;
-      font-weight: 900;
-      border: 4px solid white;
-    }
-
-    .member-card:nth-child(even) .member-avatar {
-      background: var(--red);
-      color: white;
+    .member-card {
+        height: 270px;
     }
 
     .member-card h3 {
-      color: white;
-      font-size: 16px;
-      margin: 8px 0;
+        font-size: 16px;
     }
 
     .member-card p {
-      color: #cccccc;
-      font-size: 12px;
-      margin: 0;
+        font-size: 11px;
     }
+}
+
+/* VERY SMALL PHONES */
+@media (max-width: 320px) {
+    .members-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 
     /* CONTRIBUTORS */
 
@@ -956,65 +1026,117 @@
 
         <div class="members-grid">
 
-          <article class="member-card">
-            <div class="member-avatar">J</div>
-            <h3>Jacky</h3>
-            <p>Member</p>
+          
+            <article class="member-card">
+               <img src="assets/jacky.jpg"
+                  alt="Jacky – Member of All Eyes on Us Uganda"
+                  class="member-photo"
+                 loading="lazy"
+    >
+
+             <h3>Jacky</h3>
+             <p>Member</p>
           </article>
 
+          
           <article class="member-card">
-            <div class="member-avatar">A</div>
+            <img
+               src="assets/Akram.jpg"
+               alt="Akram – Member of All Eyes on Us Uganda"
+                class="member-photo"
+                loading="lazy"
+    >
             <h3>Akram</h3>
             <p>Member</p>
           </article>
 
           <article class="member-card">
-            <div class="member-avatar">M</div>
+         <img
+        src="assets/malik.jpg"
+        alt="Malik – Member of All Eyes on Us Uganda"
+        class="member-photo"
+        loading="lazy"
+    >
             <h3>Malik</h3>
             <p>Member</p>
           </article>
 
           <article class="member-card">
-            <div class="member-avatar">R</div>
+              <img
+               src="assets/ricky.jpg"
+             alt="Ricky – Member of All Eyes on Us Uganda"
+            class="member-photo"
+             loading="lazy"
+    >
             <h3>Ricky</h3>
             <p>Member</p>
           </article>
 
           <article class="member-card">
-            <div class="member-avatar">P</div>
+              <img
+                src="assets/peace.jpg"
+                  alt="Peace – Member of All Eyes on Us Uganda"
+                 class="member-photo"
+                  loading="lazy"
+    >
             <h3>Peace</h3>
             <p>Member</p>
           </article>
 
           <article class="member-card">
-            <div class="member-avatar">R</div>
+            <img
+        src="assets/rayan.jpg"
+        alt="Rayan – Member of All Eyes on Us Uganda"
+        class="member-photo"
+        loading="lazy"
+      >
             <h3>Rayan</h3>
             <p>Member</p>
           </article>
 
           <article class="member-card">
-            <div class="member-avatar">I</div>
+          <img
+        src="assets/ivan.jpg"
+        alt="Ivan – Member of All Eyes on Us Uganda"
+        class="member-photo"
+        loading="lazy"
+    >
             <h3>Ivan</h3>
             <p>Member</p>
           </article>
 
-          <article class="member-card">
-            <div class="member-avatar">I</div>
+           <article class="member-card">
+          <img
+        src="assets/imran.jpg"
+        alt="Imran – Member of All Eyes on Us Uganda"
+        class="member-photo"
+        loading="lazy">
             <h3>Imran</h3>
             <p>Member</p>
           </article>
 
           <article class="member-card">
-            <div class="member-avatar">E</div>
+            <img
+        src="assets/Emma.jpg"
+        alt="Emma – Member of All Eyes on Us Uganda"
+        class="member-photo"
+        loading="lazy"
+    >
             <h3>Emma</h3>
             <p>Member</p>
           </article>
 
           <article class="member-card">
-            <div class="member-avatar">D</div>
+            <img
+        src="assets/Deo1.jpg"
+        alt="Deo – Member of All Eyes on Us Uganda"
+        class="member-photo"
+        loading="lazy"
+    >
             <h3>Deo</h3>
             <p>Member</p>
           </article>
+          </div>
 
         </div>
       </div>
