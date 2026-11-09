@@ -1,0 +1,178 @@
+/* SHARED ALL EYES ON US UGANDA NAVIGATION */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    background: #ffffff;
+    color: #111111;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+    font-family: 'DM Sans', sans-serif;
+}
+
+.site-nav-wrap {
+    width: min(1300px, 94%);
+    min-height: 88px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+}
+
+.site-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 220px;
+    text-decoration: none;
+}
+
+.site-brand img {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+}
+
+.site-brand strong {
+    display: block;
+    color: #111111;
+    font-size: 19px;
+    font-weight: 900;
+    line-height: 1.1;
+}
+
+.site-brand b {
+    display: block;
+    color: #D9232A;
+    font-size: 19px;
+}
+
+.site-brand small {
+    display: block;
+    color: #444444;
+    font-size: 10px;
+    margin-top: 4px;
+}
+
+.site-main-nav {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.site-main-nav a {
+    color: #111111;
+    padding: 12px 10px;
+    font-size: 12px;
+    font-weight: 800;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.25s;
+    white-space: nowrap;
+}
+
+.site-main-nav a:hover,
+.site-main-nav a.active {
+    background: #FCDC04;
+    color: #000000;
+}
+
+.site-main-nav a.donate-link {
+    background: #D9232A;
+    color: #ffffff;
+    padding: 13px 16px;
+}
+
+.site-main-nav a.donate-link:hover {
+    background: #a90008;
+}
+
+.site-menu-toggle {
+    display: none;
+    background: #FCDC04;
+    color: #000000;
+    border: 0;
+    padding: 10px 14px;
+    font-size: 24px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+@media (max-width: 1050px) {
+    .site-nav-wrap {
+        width: 96%;
+    }
+
+    .site-brand {
+        min-width: 190px;
+    }
+
+    .site-brand img {
+        width: 55px;
+        height: 55px;
+    }
+
+    .site-brand strong,
+    .site-brand b {
+        font-size: 16px;
+    }
+
+    .site-main-nav a {
+        padding: 10px 7px;
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 850px) {
+    .site-menu-toggle {
+        display: block;
+    }
+
+    .site-nav-wrap {
+        min-height: 75px;
+    }
+
+    .site-main-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #ffffff;
+        padding: 14px 5%;
+        flex-direction: column;
+        align-items: stretch;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .site-main-nav.open {
+        display: flex;
+    }
+
+    .site-main-nav a {
+        padding: 13px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 500px) {
+    .site-brand {
+        min-width: 0;
+    }
+
+    .site-brand img {
+        width: 48px;
+        height: 48px;
+    }
+
+    .site-brand strong,
+    .site-brand b {
+        font-size: 14px;
+    }
+
+    .site-brand small {
+        font-size: 9px;
+    }
+}

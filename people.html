@@ -1,52 +1,49 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#171717">
+  <meta name="theme-color" content="#080808">
   <meta name="description" content="Meet the founder, members and contributors of All Eyes on Us Uganda – Kalleous Organization Ltd.">
-  <title>Our People & History | All Eyes on Us Uganda</title>
+  <title>About Us | All Eyes on Us Uganda</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="header.css">
+  <script src="header.js" defer></script>
 
   <style>
     :root {
-      --black: #171717;
-      --dark: #222222;
-      --yellow: #f9d323;
-      --red: #d71920;
+      --black: #080808;
+      --dark: #151515;
+      --yellow: #FCDC04;
+      --red: #D9232A;
       --white: #ffffff;
-      --light: #f7f7f5;
-      --muted: #707070;
-      --border: #e9e9e9;
-      --shadow: 0 15px 45px rgba(0,0,0,0.09);
+      --muted: #cccccc;
     }
 
     * {
-      margin: 0;
-      padding: 0;
       box-sizing: border-box;
     }
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 90px;
     }
 
     body {
-      font-family: "DM Sans", sans-serif;
-      color: var(--black);
-      background: var(--light);
-      line-height: 1.7;
+      margin: 0;
+      background: var(--black);
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
       overflow-x: hidden;
     }
 
     img {
-      display: block;
       max-width: 100%;
+      display: block;
     }
 
     a {
@@ -55,1025 +52,1041 @@
     }
 
     .container {
-      width: min(1160px, 90%);
+      width: min(1200px, 92%);
       margin: auto;
     }
 
-    /* Uganda flag colour strip */
-    .flag-strip {
-      height: 6px;
+    /* UGANDA FLAG STRIPE */
+
+    .flag-stripe {
+      height: 8px;
       background: linear-gradient(
-        to right,
-        var(--black) 0 33.33%,
-        var(--yellow) 33.33% 66.66%,
-        var(--red) 66.66% 100%
+        to bottom,
+        #000000 0 33.33%,
+        #FCDC04 33.33% 66.66%,
+        #D9232A 66.66% 100%
       );
     }
 
-    /* Navigation */
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(99, 248, 7, 0.97);
-      backdrop-filter: blur(12px);
-      box-shadow: 0 3px 18px rgba(0,0,0,0.06);
-    }
+    /* HERO */
 
-    .nav-wrap {
-      min-height: 82px;
+    .about-hero {
+      min-height: 440px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 20px;
+      position: relative;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(0,0,0,.92),
+          rgba(0,0,0,.65),
+          rgba(0,0,0,.25)
+        ),
+        url("assets/our-story1.jpg") center 38% / cover no-repeat;
+      border-bottom: 6px solid var(--yellow);
     }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      min-width: 0;
+    .hero-content {
+      max-width: 760px;
+      padding: 85px 0;
     }
 
-    .brand img {
-      width: 55px;
-      height: 55px;
-      object-fit: contain;
-    }
-
-    .brand-text {
-      font-size: 14px;
-      font-weight: 800;
-      line-height: 1.3;
-    }
-
-    .brand-text span {
-      display: block;
-      color: var(--red);
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-    }
-
-    .nav-links a {
-      font-size: 13px;
-      font-weight: 700;
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--red);
-    }
-
-    .nav-links .contact-link {
-      background: var(--black);
-      color: var(--white);
-      padding: 12px 20px;
-      border-radius: 5px;
-    }
-
-    .nav-links .contact-link:hover {
-      background: var(--red);
-      color: var(--white);
-    }
-
-    .menu-toggle {
-      display: none;
-      background: var(--black);
-      color: white;
-      border: 0;
-      border-radius: 5px;
-      width: 44px;
-      height: 42px;
-      font-size: 23px;
-      cursor: pointer;
-    }
-
-    /* Hero */
-    .hero {
-    min-height: 480px;
-    padding: 100px 25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: #ffffff;
-
-    background:
-        linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.75)),
-        url("assets/Community group.jpg");
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.hero h1 {
-    color: #ffd700;
-    font-size: clamp(32px, 5vw, 55px);
-}
-
-.hero p {
-    color: #ffffff;
-    font-size: 18px;
-    max-width: 700px;
-    margin: 15px auto;
-}
-
-    .hero-button {
+    .hero-label {
       display: inline-block;
-      padding: 14px 25px;
-      border-radius: 5px;
-      background: var(--yellow);
-      color: var(--black);
-      font-size: 13px;
-      font-weight: 800;
-      transition: 0.2s;
+      padding: 9px 16px;
+      border: 1px solid var(--yellow);
+      border-radius: 30px;
+      color: var(--yellow);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 2px;
     }
 
-    .hero-button:hover {
-      background: #e5243b;
+    .about-hero h1 {
+      font-size: clamp(38px, 6vw, 68px);
+      line-height: 1.08;
+      margin: 20px 0;
+      font-weight: 900;
+    }
+
+    .about-hero h1 span {
+      color: var(--yellow);
+    }
+
+    .about-hero p {
+      max-width: 650px;
+      color: #eeeeee;
+      line-height: 1.9;
+      font-size: 16px;
+    }
+
+    /* INTRODUCTION */
+
+    .intro-section {
+      padding: 75px 0;
+      background: #ffffff;
+      color: #111111;
+    }
+
+    .intro-layout {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .section-label {
+      color: var(--red);
+      font-weight: 900;
+      letter-spacing: 3px;
+      font-size: 12px;
+    }
+
+    .intro-section h2 {
+      font-size: clamp(30px, 4vw, 45px);
+      margin: 12px 0 20px;
+      line-height: 1.2;
+    }
+
+    .intro-section p {
+      color: #444444;
+      line-height: 1.9;
+      font-size: 15px;
+    }
+
+    .history-image {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 15px;
+      border: 5px solid var(--yellow);
+    }
+
+    .history-card {
+      background: #111111;
       color: white;
-      transform: translateY(-2px);
+      padding: 25px;
+      border-radius: 13px;
+      margin-top: 20px;
+      border-left: 5px solid var(--red);
     }
 
-    /* General sections */
-    section {
-      padding: 90px 0;
+    .history-card h3 {
+      color: var(--yellow);
+      margin-top: 0;
     }
 
-    .section-heading {
-      max-width: 700px;
-      margin: 0 auto 45px;
+    .history-card p {
+      color: #eeeeee;
+      margin-bottom: 0;
+    }
+
+    /* ORGANISATION HISTORY */
+
+    .history-section {
+      padding: 70px 0;
+      background: #151515;
+    }
+
+    .history-section h2 {
+      font-size: clamp(30px, 4vw, 43px);
+      margin: 12px 0;
+    }
+
+    .history-intro {
+      color: #cccccc;
+      max-width: 800px;
+      line-height: 1.8;
+    }
+
+    .history-highlight {
+      margin-top: 35px;
+      display: grid;
+      grid-template-columns: .7fr 1.3fr;
+      gap: 25px;
+      align-items: stretch;
+    }
+
+    .year-card {
+      background: var(--yellow);
+      color: #080808;
+      border-radius: 15px;
+      padding: 35px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       text-align: center;
     }
 
-    .section-heading .eyebrow {
-      color: var(--red);
-      margin-bottom: 10px;
+    .year-card strong {
+      font-size: clamp(48px, 7vw, 75px);
+      line-height: 1;
+      font-weight: 900;
+    }
+
+    .year-card span {
+      margin-top: 12px;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+
+    .history-text {
+      background: #222222;
+      padding: 30px;
+      border-radius: 15px;
+      border: 1px solid #444444;
+    }
+
+    .history-text h3 {
+      color: var(--yellow);
+      margin-top: 0;
+    }
+
+    .history-text p {
+      color: #dddddd;
+      line-height: 1.9;
+    }
+
+    /* VALUES */
+
+    .values-section {
+      padding: 70px 0;
+      background: #080808;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 35px;
+    }
+
+    .section-heading .section-label {
+      color: var(--yellow);
     }
 
     .section-heading h2 {
-      font-family: "Playfair Display", serif;
-      font-size: clamp(32px, 4vw, 48px);
-      line-height: 1.2;
-      margin-bottom: 15px;
+      font-size: clamp(30px, 4vw, 44px);
+      margin: 12px 0;
     }
 
     .section-heading p {
-      color: var(--muted);
-      font-size: 15px;
+      color: #cccccc;
+      line-height: 1.8;
     }
 
-    /* Founder */
-    .founder-section {
-      background: var(--light);
-    }
-
-    .founder-card {
+    .values-grid {
       display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      max-width: 1000px;
-      margin: auto;
-      background: white;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
     }
 
-    .founder-image {
-      min-height: 430px;
-      background: #e5e5e5;
-      overflow: hidden;
+    .value-card {
+      padding: 25px;
+      border-radius: 13px;
+      background: #181818;
+      border-bottom: 4px solid var(--yellow);
     }
 
-    .founder-image img {
+    .value-card:nth-child(even) {
+      border-bottom-color: var(--red);
+    }
+
+    .value-icon {
+      font-size: 32px;
+    }
+
+    .value-card h3 {
+      color: var(--yellow);
+      font-size: 18px;
+    }
+
+    .value-card p {
+      color: #cccccc;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    /* FOUNDER */
+
+    .founder-section {
+      padding: 80px 0;
+      background: #ffffff;
+      color: #111111;
+    }
+
+    .founder-layout {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 45px;
+      align-items: center;
+    }
+
+    .founder-photo-wrap {
+      position: relative;
+    }
+
+    .founder-photo {
       width: 100%;
-      height: 100%;
-      min-height: 430px;
+      height: 470px;
       object-fit: cover;
       object-position: center top;
+      border-radius: 15px;
+      border: 6px solid var(--yellow);
     }
 
-    .founder-info {
-      padding: 55px 45px;
-      align-self: center;
+    .founder-caption {
+      position: absolute;
+      bottom: 15px;
+      left: 15px;
+      right: 15px;
+      background: rgba(0,0,0,.85);
+      color: white;
+      padding: 15px;
+      border-radius: 10px;
     }
 
-    .founder-info .eyebrow {
-      color: var(--red);
-      margin-bottom: 12px;
+    .founder-caption strong {
+      display: block;
+      color: var(--yellow);
+      font-size: 18px;
     }
 
-    .founder-info h2 {
-      font-family: "Playfair Display", serif;
-      font-size: 38px;
-      line-height: 1.2;
-      margin-bottom: 8px;
-    }
-
-    .founder-role {
-      display: inline-block;
+    .founder-caption span {
       font-size: 12px;
-      font-weight: 800;
+    }
+
+    .founder-content .section-label {
       color: var(--red);
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-bottom: 23px;
     }
 
-    .founder-info p {
-      color: var(--muted);
+    .founder-content h2 {
+      font-size: clamp(32px, 4vw, 45px);
+      margin: 12px 0;
+    }
+
+    .founder-content h3 {
+      color: var(--red);
+      font-size: 18px;
+    }
+
+    .founder-content p {
+      color: #444444;
+      line-height: 1.9;
       font-size: 15px;
-      margin-bottom: 16px;
     }
 
-    .founder-facts {
+    .founder-contact {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 25px;
+      margin-top: 22px;
     }
 
-    .fact {
-      background: #fff8d9;
-      border-left: 3px solid var(--yellow);
-      padding: 12px 16px;
+    .founder-contact a {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 30px;
+      background: #111111;
+      color: white;
       font-size: 12px;
-      font-weight: 700;
+      font-weight: 800;
     }
 
-    /* Members */
+    .founder-contact a:hover {
+      background: var(--red);
+    }
+
+    /* MEMBERS */
+
+    .members-section {
+      padding: 75px 0;
+      background: #151515;
+    }
+
     .members-grid {
-      width: 100%;
-      max-width: 100%;
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 22px;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 17px;
     }
 
     .member-card {
-      min-width: 0;
-      max-width: 100%;
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 9px;
-      overflow: hidden;
-      transition: transform 0.25s, box-shadow 0.25s;
+      background: #222222;
+      padding: 25px 15px;
+      border-radius: 13px;
+      text-align: center;
+      border-bottom: 4px solid var(--yellow);
+      transition: .3s;
+    }
+
+    .member-card:nth-child(even) {
+      border-bottom-color: var(--red);
     }
 
     .member-card:hover {
       transform: translateY(-6px);
-      box-shadow: var(--shadow);
+      background: #292929;
     }
 
-    .member-photo {
-      height: 250px;
-      width: 100%;
-      max-width: 100%;
+    .member-avatar {
+      width: 85px;
+      height: 85px;
+      border-radius: 50%;
+      margin: 0 auto 15px;
+      display: flex;
       align-items: center;
       justify-content: center;
-      background: #ededed;
-      overflow: hidden;
+      background: var(--yellow);
+      color: #080808;
+      font-size: 25px;
+      font-weight: 900;
+      border: 4px solid white;
     }
 
-    .member-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      object-position: center Center;
-      Display: block;
-    }
-
-    .member-info {
-      padding: 20px;
-    }
-
-    .member-info h3 {
-      font-size: 17px;
-      margin-bottom: 5px;
-    }
-
-    .member-info p {
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .member-note {
-      text-align: center;
-      margin-top: 28px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    /* Contributors */
-    .contributors-section {
-      background: var(--black);
+    .member-card:nth-child(even) .member-avatar {
+      background: var(--red);
       color: white;
     }
 
-    .contributors-section .section-heading p {
-      color: #c5c5c5;
+    .member-card h3 {
+      color: white;
+      font-size: 16px;
+      margin: 8px 0;
     }
 
-    .contributors-section .section-heading .eyebrow {
-      color: var(--yellow);
+    .member-card p {
+      color: #cccccc;
+      font-size: 12px;
+      margin: 0;
+    }
+
+    /* CONTRIBUTORS */
+
+    .contributors-section {
+      padding: 75px 0;
+      background: #ffffff;
+      color: #111111;
+    }
+
+    .contributors-section .section-heading .section-label {
+      color: var(--red);
+    }
+
+    .contributors-section .section-heading p {
+      color: #555555;
     }
 
     .contributors-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 22px;
     }
 
     .contributor-card {
-      border: 1px solid rgba(255,255,255,0.16);
-      border-radius: 12px;
-      padding: 30px;
-      background: rgba(255,255,255,0.05);
-      transition: transform 0.25s, background 0.25s;
+      background: #f5f5f5;
+      border-radius: 14px;
+      padding: 25px;
+      text-align: center;
+      border-top: 5px solid var(--yellow);
+      box-shadow: 0 5px 20px rgba(0,0,0,.07);
     }
 
-    .contributor-card:hover {
-      transform: translateY(-6px);
-      background: rgba(255,255,255,0.09);
+    .contributor-card:nth-child(2) {
+      border-top-color: var(--red);
+    }
+
+    .contributor-card:nth-child(3) {
+      border-top-color: #111111;
     }
 
     .contributor-logo {
-      width: 130px;
-      height: 130px;
-      margin: 0 auto 24px;
-      padding: 12px;
-      border-radius: 14px;
-      background: #ffffff;
+      height: 105px;
+      width: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
+      margin-bottom: 15px;
     }
 
     .contributor-logo img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-position: center;
+      max-width: 150px;
+      max-height: 95px;
+      width: auto;
+      height: auto;
       object-fit: contain;
     }
 
-    .contributor-card h3 {
-      font-size: 19px;
-      line-height: 1.4;
-      margin-bottom: 9px;
+    .contributor-logo .text-logo {
+      font-size: 23px;
+      font-weight: 900;
+      color: #111111;
     }
 
-    .contributor-role {
-      display: block;
-      color: var(--yellow);
-      font-size: 11px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 14px;
+    .contributor-card h3 {
+      font-size: 18px;
+      margin: 12px 0 8px;
     }
 
     .contributor-card p {
+      color: #555555;
       font-size: 13px;
-      color: #c5c5c5;
+      line-height: 1.8;
     }
 
-    /* History */
-    .history-section {
-      background: var(--light);
-    }
+    /* CLOSING BANNER */
 
-    .history-card {
-      max-width: 850px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: 150px 1fr;
-      gap: 30px;
-      align-items: center;
-      background: white;
-      border-radius: 10px;
-      padding: 35px;
-      box-shadow: var(--shadow);
-    }
-
-    .history-year {
-      font-family: "Playfair Display", serif;
-      font-size: 48px;
-      font-weight: 800;
-      color: var(--red);
-      border-right: 3px solid var(--yellow);
-      line-height: 1.2;
-    }
-
-    .history-card h3 {
-      font-size: 20px;
-      margin-bottom: 8px;
-    }
-
-    .history-card p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    /* CTA */
-    .closing-cta {
-      padding: 75px 0;
-      background: var(--yellow);
+    .closing-section {
+      padding: 65px 0;
+      background: linear-gradient(120deg, #111111, #580000);
+      border-top: 5px solid var(--yellow);
       text-align: center;
     }
 
-    .closing-cta h2 {
-      font-family: "Playfair Display", serif;
-      font-size: clamp(30px, 4vw, 45px);
-      margin-bottom: 12px;
+    .closing-section h2 {
+      color: var(--yellow);
+      font-size: clamp(28px, 4vw, 42px);
     }
 
-    .closing-cta p {
-      max-width: 600px;
-      margin: 0 auto 25px;
-      color: #393939;
+    .closing-section p {
+      color: #eeeeee;
+      max-width: 720px;
+      margin: 15px auto 25px;
+      line-height: 1.8;
     }
 
-    .cta-button {
+    .button {
       display: inline-block;
-      background: var(--black);
-      color: white;
-      padding: 14px 26px;
-      border-radius: 5px;
+      padding: 14px 23px;
+      border-radius: 35px;
       font-size: 13px;
-      font-weight: 800;
+      font-weight: 900;
+      transition: .3s;
+      margin: 5px;
     }
 
-    .cta-button:hover {
-      background: var(--red);
+    .button-yellow {
+      background: var(--yellow);
+      color: #080808;
     }
 
-    /* Footer */
-    footer {
-      background: #111;
+    .button-outline {
+      border: 2px solid white;
       color: white;
-      padding: 45px 0 20px;
     }
 
-    .footer-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      flex-wrap: wrap;
+    .button:hover {
+      transform: translateY(-3px);
+    }
+
+    /* FOOTER */
+
+    .site-footer {
+      background: #050505;
+      border-top: 4px solid var(--yellow);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
       gap: 30px;
-      padding-bottom: 30px;
+      padding: 45px 0;
     }
 
-    .footer-brand {
-      max-width: 360px;
-    }
-
-    .footer-brand h3 {
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
-
-    .footer-brand p,
-    .footer-links a {
-      color: #bdbdbd;
-      font-size: 13px;
-    }
-
-    .footer-links {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .footer-links a:hover {
+    .footer-grid h3 {
       color: var(--yellow);
     }
 
-    .copyright {
-      border-top: 1px solid #333;
-      padding-top: 20px;
-      text-align: center;
-      color: #999;
-      font-size: 12px;
+    .footer-grid p,
+    .footer-grid a {
+      color: #cccccc;
+      font-size: 13px;
+      line-height: 2;
     }
 
-    /* Responsive */
-    @media (max-width: 380px) {
+    .footer-grid a:hover {
+      color: var(--yellow);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #333333;
+      text-align: center;
+      padding: 17px;
+      color: #aaaaaa;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width: 950px) {
       .members-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media(max-width: 800px) {
+      .intro-layout,
+      .founder-layout,
+      .history-highlight {
+        grid-template-columns: 1fr;
       }
 
       .contributors-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr 1fr;
       }
 
-      .founder-info {
-        padding: 35px 28px;
+      .founder-photo {
+        height: 400px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
       }
     }
 
-    @media (max-width: 700px) {
-      .nav-wrap {
-        min-height: 72px;
-      }
-
-      .brand img {
-        width: 46px;
-        height: 46px;
-      }
-
-      .brand-text {
-        font-size: 12px;
-      }
-
-      .menu-toggle {
-        display: block;
-        flex-shrink: 0;
-      }
-
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 72px;
-        left: 0;
-        right: 0;
-        background: white;
-        padding: 22px 5%;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-      }
-
-      .nav-links.open {
-        display: flex;
-      }
-
-      .nav-links a {
-        padding: 13px 0;
-        border-bottom: 1px solid var(--border);
-      }
-
-      .nav-links .contact-link {
-        margin-top: 12px;
-        padding: 12px 18px;
-        text-align: center;
-        border: 0;
-      }
-
-      .hero {
-        min-height: 520px;
-        background-position: center;
+    @media(max-width: 550px) {
+      .about-hero {
+        min-height: 420px;
       }
 
       .hero-content {
-        padding: 75px 0;
+        padding: 60px 0;
       }
 
-      .hero p {
-        font-size: 15px;
-      }
-
-      section {
-        padding: 65px 0;
-      }
-
-      .founder-card {
-        grid-template-columns: 1fr;
-      }
-
-      .founder-image {
-        height: 360px;
-        min-height: 0;
-      }
-
-      .founder-image img {
-        height: 360px;
-        min-height: 0;
-        object-fit: contain;
-        background: #e5e5e5;
-      }
-
-      .founder-info {
-        padding: 30px 25px;
-      }
-
-      .founder-info h2 {
-        font-size: 32px;
+      .about-hero p {
+        font-size: 14px;
       }
 
       .members-grid {
-        gap: 14px;
+        grid-template-columns: repeat(2, 1fr);
       }
 
-      .member-photo {
-        height: 220px;
-        width: 300%;
-        overflow: hidden;
-        background: #eeeeee;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .member-photo img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        object-position: center top;
-        display: block;
-      }
-
-      .member-info {
-        padding: 14px;
-      }
-
-      .member-info h3 {
-        font-size: 15px;
-      }
-
+      .values-grid,
       .contributors-grid {
         grid-template-columns: 1fr;
       }
 
-      .contributor-card {
-        padding: 25px;
+      .history-text {
+        padding: 22px;
       }
 
-      .history-card {
-        grid-template-columns: 1fr;
-        gap: 15px;
-        padding: 25px;
+      .founder-photo {
+        height: 350px;
       }
 
-      .history-year {
-        border-right: 0;
-        border-bottom: 3px solid var(--yellow);
-        padding-bottom: 12px;
-        width: fit-content;
-      }
-
-      .footer-content {
-        flex-direction: column;
-      }
-    }
-
-    @media (max-width: 380px) {
-      .members-grid {
+      .footer-grid {
         grid-template-columns: 1fr;
       }
-
-      .member-photo {
-        height: 220px;
-      }
-      .contributor-logo {
-        width: 115px;
-        height: 115px;
-      }
-
-      .brand-text {
-        max-width: 190px;
-      }
     }
-    /* Colourful profile and contributor cards */
-.founder-card 
-{
-    background: linear-gradient(145deg, orange, #353535);
-    border: 1px solid rgba(255, 215, 0, 0.45);
-    border-radius: 18px;
-    color: #ffffff;
-    padding: 24px;
-    box-shadow: 0 8px 25px purple;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.member-card,
-.contributor-card {
-    background: linear-gradient(145deg, #202020, #353535);
-    border: 1px solid rgba(255, 215, 0, 0.45);
-    border-radius: 18px;
-    color: #ffffff;
-    padding: 24px;
-    box-shadow: 0 8px 25px purple;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.founder-card:hover,
-.member-card:hover,
-.contributor-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 30px rgba(255, 193, 7, 0.2);
-}
-
-/* Card headings */
-.founder-card h2,
-.member-card h3,
-.contributor-card h3 {
-    color: #ffd700;
-}
-
-/* Card descriptions */
-.founder-card p,
-.member-card p,
-.contributor-card p {
-    color: #f1f1f1;
-    line-height: 1.7;
-}
-
-/* Highlight roles */
-.member-card .role,
-.contributor-card .role {
-    color: #ff5252;
-    font-weight: 700;
-}
-
-/* Image backgrounds */
-.member-photo {
-    background: #f5f5f5;
-    border: 3px solid #ffd700;
-    border-radius: 14px;
-}
-
-.contributor-logo {
-    background: #ffffff;
-    border: 3px solid #ffd700;
-    border-radius: 14px;
-}
   </style>
 </head>
 
 <body>
 
-  <div class="flag-strip"></div>
+  <!-- SHARED NAVIGATION -->
+  <div id="site-header"></div>
 
-  <!-- NAVIGATION -->
-  <header class="site-header">
-    <div class="container nav-wrap">
-
-      <a href="index.html" class="brand">
-        <img src="assets/logo.png" alt="All Eyes on Us Uganda logo">
-        <div class="brand-text">
-          ALL EYES ON US UGANDA
-          <span>Kalleous Organization Ltd.</span>
-        </div>
-      </a>
-
-      <button
-        class="menu-toggle"
-        id="menuToggle"
-        aria-label="Open navigation menu"
-        aria-expanded="false"
-        aria-controls="navLinks">
-        ☰
-      </button>
-
-      <nav class="nav-links" id="navLinks">
-        <a href="index.html">Home</a>
-        <a href="people.html" class="active">Our People</a>
-        <a href="donation.html">Donate</a>
-        <a href="contact.html" class="contact-link">Contact Us</a>
-      </nav>
-
-    </div>
-  </header>
+  <div class="flag-stripe"></div>
 
   <main>
 
     <!-- HERO -->
-    <section class="hero">
-      <div class="container hero-content">
+    <section class="about-hero">
+      <div class="container">
+        <div class="hero-content">
 
-        <span class="eyebrow">Our People · Our Story</span>
+          <span class="hero-label">
+            OUR STORY • OUR PEOPLE • OUR PURPOSE
+          </span>
 
-        <h1>
-          United by People.<br>
-          <span>Driven by Purpose.</span>
-        </h1>
+          <h1>
+            Together, We Are
+            <span>All Eyes on Us Uganda.</span>
+          </h1>
 
-        <p>
-          Behind All Eyes on Us Uganda is a community of people united by
-          creativity, talent, culture and a shared commitment to making a
-          positive difference.
-        </p>
+          <p>
+            We are a community-driven organization using creativity,
+            music, dance, acrobatics and cultural expression to create
+            opportunities for children and young people.
+          </p>
 
-        <a href="#founder" class="hero-button">
-          Meet Our Founder
-        </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTRODUCTION -->
+    <section class="intro-section">
+      <div class="container intro-layout">
+
+        <div>
+          <span class="section-label">WHO WE ARE</span>
+
+          <h2>
+            Turning Talent Into Opportunity.
+            Transforming Lives Through Creativity.
+          </h2>
+
+          <p>
+            All Eyes on Us Uganda – Kalleous Organization Ltd. is a
+            community-driven organization committed to empowering
+            vulnerable children and young people.
+          </p>
+
+          <p>
+            Through dance, acrobatics, music, cultural activities,
+            scouting and education support, we create opportunities
+            for young people to discover their abilities and develop
+            their potential.
+          </p>
+
+          <p>
+            We believe that talent can become a pathway to confidence,
+            personal development, meaningful participation and a
+            better future.
+          </p>
+
+          <div class="history-card">
+            <h3>Our Belief</h3>
+            <p>
+              Every child deserves a chance to be seen, heard,
+              supported and given an opportunity to shine.
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <img
+            src="assets/our-story.jpg"
+            alt="All Eyes on Us Uganda community activities"
+            class="history-image"
+          >
+        </div>
 
       </div>
     </section>
 
-    <!-- FOUNDER -->
-    <section class="founder-section" id="founder">
+    <!-- OUR HISTORY -->
+    <section class="history-section">
+      <div class="container">
+
+        <span class="section-label">OUR JOURNEY</span>
+
+        <h2>Growing Through Creativity and Community.</h2>
+
+        <p class="history-intro">
+          Our journey is built around bringing children and young
+          people together, nurturing their abilities and creating
+          opportunities for them to participate in community life.
+        </p>
+
+        <div class="history-highlight">
+
+          <div class="year-card">
+            <strong>2016</strong>
+            <span>OUR ESTABLISHMENT</span>
+          </div>
+
+          <div class="history-text">
+            <h3>A Journey of Purpose</h3>
+
+            <p>
+              Since 2016, All Eyes on Us Uganda has been committed
+              to using creativity, talent and community participation
+              as tools for positive change.
+            </p>
+
+            <p>
+              Our work focuses on creating an environment where
+              children and young people can learn, express themselves,
+              develop confidence and discover their potential.
+            </p>
+
+            <p>
+              We continue to build relationships with individuals,
+              schools, organizations and partners who share our vision.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- MISSION AND VALUES -->
+    <section class="values-section">
       <div class="container">
 
         <div class="section-heading">
-          <span class="eyebrow">The Beginning</span>
-          <h2>Meet Our Founder</h2>
+          <span class="section-label">WHAT GUIDES US</span>
+          <h2>Our Mission, Vision and Values</h2>
+
           <p>
-            Every meaningful journey begins with an idea and the determination
-            to turn that idea into something bigger.
+            Our work is guided by a commitment to opportunity,
+            creativity, personal development and community.
           </p>
         </div>
 
-        <div class="founder-card">
+        <div class="values-grid">
 
-          <div class="founder-image">
-            <img
-              src="assets/founder.jpg"
-              alt="Luwaga Moses, founder of All Eyes on Us Uganda"
-              loading="lazy">
+          <article class="value-card">
+            <div class="value-icon">🎯</div>
+            <h3>Our Mission</h3>
+            <p>
+              To empower vulnerable children and young people by
+              nurturing their talents, developing practical skills
+              and creating opportunities through creative expression.
+            </p>
+          </article>
+
+          <article class="value-card">
+            <div class="value-icon">🌍</div>
+            <h3>Our Vision</h3>
+            <p>
+              A society where every child and young person has
+              the opportunity to discover their potential and
+              build a better future.
+            </p>
+          </article>
+
+          <article class="value-card">
+            <div class="value-icon">🤝</div>
+            <h3>Unity</h3>
+            <p>
+              We believe in working together, respecting one
+              another and building strong community relationships.
+            </p>
+          </article>
+
+          <article class="value-card">
+            <div class="value-icon">⭐</div>
+            <h3>Opportunity</h3>
+            <p>
+              We believe that every young person deserves the
+              opportunity to learn, grow and showcase their abilities.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FOUNDER -->
+    <section class="founder-section">
+      <div class="container founder-layout">
+
+        <div class="founder-photo-wrap">
+
+          <img
+            src="assets/founder.jpg"
+            alt="Founder of All Eyes on Us Uganda, Luwaga Moses"
+            class="founder-photo"
+            loading="lazy"
+          >
+
+          <div class="founder-caption">
+            <strong>Luwaga Moses</strong>
+            <span>Founder – All Eyes on Us Uganda</span>
           </div>
 
-          <div class="founder-info">
+        </div>
 
-            <span class="eyebrow">Founder</span>
+        <div class="founder-content">
 
-            <h2>Luwaga Moses</h2>
+          <span class="section-label">MEET OUR FOUNDER</span>
 
-            <span class="founder-role">
-              Founder – All Eyes on Us Uganda
-            </span>
+          <h2>Luwaga Moses</h2>
 
-            <p>
-              Luwaga Moses is the founder of All Eyes on Us Uganda –
-              Kalleous Organization Ltd. His vision helped establish an
-              organization focused on bringing people together through
-              music, talent, culture and community.
-            </p>
+          <h3>Founder of All Eyes on Us Uganda</h3>
 
-            <p>
-              The organization continues to build its identity around
-              participation, creativity and opportunities for people to
-              contribute their talents and ideas.
-            </p>
+          <p>
+            All Eyes on Us Uganda was established with a commitment
+            to creating opportunities for children and young people
+            through creativity, talent development and community
+            participation.
+          </p>
 
-            <div class="founder-facts">
-              <div class="fact">Established: 2016</div>
-              <div class="fact">Uganda</div>
-            </div>
+          <p>
+            As the founder, Luwaga Moses is associated with the
+            organization's vision of empowering young people and
+            helping them discover their abilities through music,
+            dance, acrobatics and cultural expression.
+          </p>
+
+          <p>
+            The organization continues to welcome people and
+            institutions that believe in supporting children,
+            developing talent and building stronger communities.
+          </p>
+
+          <div class="founder-contact">
+
+            <a href="mailto:luwaga02moses@gmail.com">
+              Email the Founder
+            </a>
+
+            <a href="https://wa.me/256705446043" target="_blank" rel="noopener">
+              Contact on WhatsApp
+            </a>
 
           </div>
+
         </div>
 
       </div>
     </section>
 
     <!-- MEMBERS -->
-    <section id="members">
+    <section class="members-section">
       <div class="container">
 
         <div class="section-heading">
-          <span class="eyebrow">The People Behind Us</span>
-          <h2>Our Members</h2>
+          <span class="section-label">OUR PEOPLE</span>
+
+          <h2>Meet Our Members</h2>
+
           <p>
-            Our members are an important part of our story. Their participation,
-            ideas and commitment help bring the organization's vision to life.
+            Our members are part of the community that makes
+            All Eyes on Us Uganda possible. Together, we contribute
+            to creativity, participation and the development
+            of young people.
           </p>
         </div>
 
         <div class="members-grid">
 
           <article class="member-card">
-            <div class="member-photo">
-              <img src="assets/member1.jpg"
-                alt="Organization member" loading="lazy">
-            </div>
-            <div class="member-info">
-              <h3>jacky</h3>
-              <p>Organization Member</p>
-            </div>
+            <div class="member-avatar">J</div>
+            <h3>Jacky</h3>
+            <p>Member</p>
           </article>
 
           <article class="member-card">
-            <div class="member-photo">
-              <img src="assets/member3.jpg"
-                alt="Organization member" loading="lazy">
-            </div>
-            <div class="member-info">
-              <h3>Malik</h3>
-              <p>Organization Member</p>
-            </div>
+            <div class="member-avatar">A</div>
+            <h3>Akram</h3>
+            <p>Member</p>
           </article>
 
           <article class="member-card">
-            <div class="member-photo">
-               <img src="assets/member2.jpg" alt="Akram" loading="lazy">
-            </div>
-            <div class="member-info">
-              <h3>Akram</h3>
-              <p>Organization Member</p>
-            </div>
+            <div class="member-avatar">M</div>
+            <h3>Malik</h3>
+            <p>Member</p>
           </article>
 
           <article class="member-card">
-            <div class="member-photo">
-              <img src="assets/jarsila.png"
-                alt="Website Developer" loading="lazy">
-            </div>
-            <div class="member-info">
-              <h3>JARSILA PAUL</h3>
-              <p>Website Developer</p>
-            </div>
+            <div class="member-avatar">R</div>
+            <h3>Ricky</h3>
+            <p>Member</p>
+          </article>
+
+          <article class="member-card">
+            <div class="member-avatar">P</div>
+            <h3>Peace</h3>
+            <p>Member</p>
+          </article>
+
+          <article class="member-card">
+            <div class="member-avatar">R</div>
+            <h3>Rayan</h3>
+            <p>Member</p>
+          </article>
+
+          <article class="member-card">
+            <div class="member-avatar">I</div>
+            <h3>Ivan</h3>
+            <p>Member</p>
+          </article>
+
+          <article class="member-card">
+            <div class="member-avatar">I</div>
+            <h3>Imran</h3>
+            <p>Member</p>
+          </article>
+
+          <article class="member-card">
+            <div class="member-avatar">E</div>
+            <h3>Emma</h3>
+            <p>Member</p>
+          </article>
+
+          <article class="member-card">
+            <div class="member-avatar">D</div>
+            <h3>Deo</h3>
+            <p>Member</p>
           </article>
 
         </div>
-
-        <p class="member-note">
-          Our members are a diverse group of individuals who contribute
-          their time, skills and ideas to support the organization's mission.</p>
       </div>
     </section>
 
-    <!-- OTHER CONTRIBUTORS AND PARTNERS -->
-    <section class="contributors-section" id="contributors">
+    <!-- OTHER CONTRIBUTORS -->
+    <section class="contributors-section">
       <div class="container">
 
         <div class="section-heading">
-          <span class="eyebrow">Every Contribution Matters</span>
-          <h2>Our Partners & Contributors</h2>
+          <span class="section-label">OUR SUPPORT NETWORK</span>
+
+          <h2>Other Contributors</h2>
+
           <p>
-            We recognise the organisations and people whose creativity,
-            technology and community support contribute to our journey.
+            We appreciate the organizations and contributors whose
+            skills, creativity and support help strengthen our work.
           </p>
         </div>
 
         <div class="contributors-grid">
 
-          <!-- JARDEVTECH -->
-          <article class="contributor-card">
-
-            <div class="contributor-logo">
-              <img
-                src="assets/jardevtech.jpg"
-                alt="JardevTech logo"
-                loading="lazy">
-            </div>
-
-            <h3>JardevTech</h3>
-
-            <span class="contributor-role">
-              Website Development & Technology
-            </span>
-
-            <p>
-              Supporting All Eyes on Us Uganda through website development,
-              digital solutions, technology and online presence.
-            </p>
-
-          </article>
-
-          <!-- ALL EYES ON US ART AND CREATIVITY -->
           <article class="contributor-card">
 
             <div class="contributor-logo">
               <img
                 src="assets/logo.png"
                 alt="All Eyes on Us Uganda logo"
-                loading="lazy">
+              >
             </div>
 
-            <h3>All Eyes on Us – Art & Creativity</h3>
-
-            <span class="contributor-role">
-              Creative Contributions
-            </span>
+            <h3>All Eyes on Us Art & Creativity</h3>
 
             <p>
-              Celebrating and promoting art, music, talent, creativity
-              and cultural expression within the community.
+              Supporting the creative identity, artistic expression
+              and cultural activities of the organization.
             </p>
 
           </article>
 
-          <!-- SCOUT COUNCIL -->
+          <article class="contributor-card">
+
+            <div class="contributor-logo">
+              <img
+                src="assets/jardevtech.jpg"
+                alt="JardevTech logo"
+              >
+            </div>
+
+            <h3>JardevTech</h3>
+
+            <p>
+              Supporting the organization's digital presence,
+              website development and technology-related services.
+            </p>
+
+          </article>
+
           <article class="contributor-card">
 
             <div class="contributor-logo">
               <img
                 src="assets/scout-logo.png"
-                alt="Scout Council logo"
-                loading="lazy">
+                alt="Makindye Scout Council logo"
+              >
             </div>
 
-            <h3>Scout Council</h3>
-
-            <span class="contributor-role">
-              Community Support
-            </span>
+            <h3>Makindye Scout Council</h3>
 
             <p>
-              Recognising the Scout Council's contribution to community
-              engagement, service, teamwork and youth development.
+              A community contributor connected with scouting,
+              youth participation and community development.
             </p>
 
           </article>
@@ -1082,51 +1095,24 @@
       </div>
     </section>
 
-    <!-- HISTORY -->
-    <section class="history-section" id="history">
+    <!-- CLOSING -->
+    <section class="closing-section">
       <div class="container">
 
-        <div class="section-heading">
-          <span class="eyebrow">Our Journey</span>
-          <h2>Our History</h2>
-          <p>
-            A journey built on people, creativity and the belief that
-            meaningful change begins when people come together.
-          </p>
-        </div>
-
-        <div class="history-card">
-
-          <div class="history-year">2016</div>
-
-          <div>
-            <h3>The Beginning of All Eyes on Us Uganda</h3>
-            <p>
-              All Eyes on Us Uganda – Kalleous Organization Ltd. was
-              established in 2016 under the vision of its founder,
-              Luwaga Moses. This marked the beginning of the organization's
-              journey in bringing people together through music, talent,
-              culture and community.
-            </p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- CLOSING CTA -->
-    <section class="closing-cta">
-      <div class="container">
-
-        <h2>Be Part of Our Story</h2>
+        <h2>Be Part of Our Journey.</h2>
 
         <p>
-          Every person has something valuable to contribute.
-          Connect with All Eyes on Us Uganda and become part of our journey.
+          We welcome individuals, organizations, schools and partners
+          who want to support children and young people through
+          creativity, talent development and meaningful opportunities.
         </p>
 
-        <a href="contact.html" class="cta-button">
-          Get in Touch
+        <a href="partners.html" class="button button-yellow">
+          Partner With Us →
+        </a>
+
+        <a href="contact.html" class="button button-outline">
+          Contact Us
         </a>
 
       </div>
@@ -1135,81 +1121,66 @@
   </main>
 
   <!-- FOOTER -->
-  <footer>
-    <div class="container">
+  <footer class="site-footer">
 
-      <div class="footer-content">
+    <div class="container footer-grid">
 
-        <div class="footer-brand">
-          <h3>All Eyes on Us Uganda</h3>
-          <p>
-            Kalleous Organization Ltd. – bringing people together through
-            music, talent, culture and community.
-          </p>
-        </div>
+      <div>
+        <h3>ALL EYES ON US UGANDA</h3>
 
-        <div class="footer-links">
-          <a href="index.html">Home</a>
-          <a href="people.html">Our People & History</a>
-          <a href="donation.html">Support Our Work</a>
-          <a href="contact.html">Contact Us</a>
-        </div>
+        <p>Kalleous Organization Ltd.</p>
 
-        <div class="footer-links">
-          <a href="https://www.youtube.com/@alleyesononusugandaofficial"
-             target="_blank" rel="noopener noreferrer">YouTube</a>
+        <p>
+          Turning Talent Into Opportunity.
+          Transforming Lives Through Creativity.
+        </p>
 
-          <a href="https://www.tiktok.com/@alleyesonuganda"
-             target="_blank" rel="noopener noreferrer">TikTok</a>
-
-          <a href="https://www.instagram.com/alleyesonugandaofficial/"
-             target="_blank" rel="noopener noreferrer">Instagram</a>
-
-          <a href="https://www.facebook.com/share/1FsStoq5JU/?mibextid=wwXIfr"
-             target="_blank" rel="noopener noreferrer">Facebook</a>
-        </div>
-
+        <p>Uganda • Community-Based Organization</p>
       </div>
 
-      <div class="copyright">
-        © <span id="currentYear"></span>
-        All Eyes on Us Uganda – Kalleous Organization Ltd.
-        All rights reserved.
+      <div>
+        <h3>Explore</h3>
+
+        <a href="index.html">Home</a><br>
+        <a href="program.html">Our Programmes</a><br>
+        <a href="impact.html">Our Impact</a><br>
+        <a href="gallery.html">Gallery</a><br>
+        <a href="partners.html">Partner With Us</a><br>
+        <a href="donation.html">Donate</a>
+      </div>
+
+      <div>
+        <h3>Contact Us</h3>
+
+        <p>Phone: +256 705 446043</p>
+
+        <p>
+          Email:
+          <a href="mailto:luwaga02moses@gmail.com">
+            luwaga02moses@gmail.com
+          </a>
+        </p>
+
+        <p>Location: Nsambya Kevina, Kampala, Uganda</p>
+
+        <a href="https://wa.me/256705446043" target="_blank" rel="noopener">
+          WhatsApp Us →
+        </a>
       </div>
 
     </div>
+
+    <div class="footer-bottom">
+      © <span id="year"></span>
+      All Eyes on Us Uganda – Kalleous Organization Ltd.
+      <br>
+      Website supported by JardevTech.
+    </div>
+
   </footer>
 
   <script>
-    // Mobile navigation
-    const menuToggle = document.getElementById("menuToggle");
-    const navLinks = document.getElementById("navLinks");
-
-    menuToggle.addEventListener("click", function () {
-      const isOpen = navLinks.classList.toggle("open");
-
-      menuToggle.setAttribute("aria-expanded", String(isOpen));
-
-      menuToggle.setAttribute(
-        "aria-label",
-        isOpen ? "Close navigation menu" : "Open navigation menu"
-      );
-
-      menuToggle.textContent = isOpen ? "×" : "☰";
-    });
-
-    // Close menu after selecting a link
-    navLinks.querySelectorAll("a").forEach(function (link) {
-      link.addEventListener("click", function () {
-        navLinks.classList.remove("open");
-        menuToggle.setAttribute("aria-expanded", "false");
-        menuToggle.setAttribute("aria-label", "Open navigation menu");
-        menuToggle.textContent = "☰";
-      });
-    });
-
-    // Automatically update copyright year
-    document.getElementById("currentYear").textContent =
+    document.getElementById("year").textContent =
       new Date().getFullYear();
   </script>
 

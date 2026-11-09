@@ -4,483 +4,499 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact All Eyes on Us Uganda - Kalleous Organization Ltd.">
-    <meta name="theme-color" content="#000000">
 
     <title>Contact Us | All Eyes on Us Uganda</title>
 
+    <meta name="description" content="Contact All Eyes on Us Uganda – Kalleous Organization Ltd. Connect with us about our programmes, partnerships, volunteering and community initiatives.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="header.css">
+
+    <script src="header.js" defer></script>
+
     <style>
+        :root {
+            --uganda-black: #171717;
+            --uganda-yellow: #FCDC04;
+            --uganda-red: #D9232A;
+            --dark: #171717;
+            --muted: #666666;
+            --light: #f7f7f5;
+            --white: #ffffff;
+        }
+
         * {
-            margin: 0;
-            padding: 0;
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f6f6f6;
-            color: #222;
-            line-height: 1.7;
+            margin: 0;
+            font-family: 'DM Sans', sans-serif;
+            color: var(--dark);
+            background: var(--white);
         }
 
         a {
             text-decoration: none;
         }
 
-        /* UGANDA FLAG TOPBAR */
-        .topbar {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 15px;
-            padding: 12px 6%;
+        .uganda-stripe {
+            height: 7px;
             background: linear-gradient(
-                to right,
-                #000 0%, #000 16.66%,
-                #FCDC04 16.66%, #FCDC04 33.33%,
-                #D90000 33.33%, #D90000 50%,
-                #000 50%, #000 66.66%,
-                #FCDC04 66.66%, #FCDC04 83.33%,
-                #D90000 83.33%, #D90000 100%
+                to bottom,
+                #000000 0 33.33%,
+                #FCDC04 33.33% 66.66%,
+                #D9232A 66.66% 100%
             );
-            border-bottom: 4px solid #FCDC04;
-        }
-
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: white;
-            font-weight: 900;
-            font-size: 15px;
-            text-shadow: 1px 1px 3px #000;
-        }
-
-        .brand img {
-            width: 48px;
-            height: 48px;
-            object-fit: contain;
-            background: white;
-            border-radius: 7px;
-        }
-
-        .back-link {
-            color: white;
-            font-weight: bold;
-            font-size: 13px;
-            border: 1px solid white;
-            border-radius: 30px;
-            padding: 9px 16px;
-        }
-
-        .back-link:hover {
-            background: white;
-            color: black;
         }
 
         /* HERO */
-        .hero {
-            background: linear-gradient(135deg, #080808, #a90000);
+
+        .contact-hero {
+            position: relative;
+            min-height: 390px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
             color: white;
-            text-align: center;
-            padding: 85px 20px 105px;
+            background:
+                linear-gradient(90deg, rgba(0,0,0,.88), rgba(0,0,0,.48)),
+                url("assets/our-story.jpg") center 45% / cover no-repeat;
         }
 
-        .eyebrow {
+        .contact-hero::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 7px;
+            background: linear-gradient(
+                90deg,
+                #000000 0 33.33%,
+                #FCDC04 33.33% 66.66%,
+                #D9232A 66.66% 100%
+            );
+        }
+
+        .hero-content {
+            width: min(1150px, 90%);
+            margin: auto;
+            padding: 75px 0 85px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-label {
             display: inline-block;
-            border: 1px solid #FCDC04;
+            padding: 9px 15px;
+            background: rgba(252,220,4,.16);
+            border: 1px solid var(--uganda-yellow);
+            color: var(--uganda-yellow);
             border-radius: 30px;
-            color: #FCDC04;
-            padding: 6px 16px;
-            font-size: 11px;
-            font-weight: bold;
+            font-size: 12px;
+            font-weight: 800;
             letter-spacing: 1.5px;
+            text-transform: uppercase;
         }
 
-        .hero h1 {
-            font-family: Georgia, serif;
-            color: #FCDC04;
-            font-size: clamp(38px, 6vw, 62px);
-            line-height: 1.2;
-            margin: 20px 0;
+        .contact-hero h1 {
+            max-width: 750px;
+            margin: 22px 0 15px;
+            font-size: clamp(42px, 7vw, 76px);
+            line-height: 1.04;
+            font-weight: 900;
         }
 
-        .hero p {
+        .contact-hero h1 span {
+            color: var(--uganda-yellow);
+        }
+
+        .contact-hero p {
+            max-width: 620px;
+            color: #eeeeee;
+            font-size: 17px;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        /* INTRO */
+
+        .contact-intro {
+            text-align: center;
+            padding: 75px 20px 35px;
+        }
+
+        .section-label {
+            color: var(--uganda-red);
+            font-size: 12px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .contact-intro h2 {
+            font-size: clamp(29px, 4vw, 43px);
+            margin: 12px 0;
+            font-weight: 900;
+        }
+
+        .contact-intro p {
             max-width: 680px;
             margin: auto;
-            font-size: 16px;
-            color: #f3f3f3;
+            color: var(--muted);
+            line-height: 1.8;
+            font-size: 15px;
         }
 
-        /* MAIN CONTAINER */
-        .container {
-            width: min(1100px, 90%);
-            margin: -45px auto 60px;
-            position: relative;
-        }
+        /* MAIN LAYOUT */
 
-        .intro {
-            background: white;
-            text-align: center;
-            padding: 35px 25px;
-            border-radius: 15px;
-            box-shadow: 0 8px 30px rgba(0,0,0,.08);
-            margin-bottom: 30px;
-        }
-
-        .intro h2 {
-            font-family: Georgia, serif;
-            font-size: 30px;
-            margin-bottom: 10px;
-        }
-
-        .intro p {
-            color: #666;
-            max-width: 750px;
-            margin: auto;
-        }
-
-        /* CONTACT CARDS */
-        .contact-grid {
+        .contact-layout {
+            width: min(1150px, 90%);
+            margin: 35px auto 85px;
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
+            grid-template-columns: .9fr 1.1fr;
+            gap: 30px;
+            align-items: start;
         }
 
-        .card {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 8px 25px rgba(0,0,0,.06);
-            border-top: 5px solid #D90000;
+        .contact-information {
+            background: #171717;
+            color: white;
+            border-radius: 20px;
+            padding: 35px;
+            position: relative;
+            overflow: hidden;
         }
 
-        .card h2 {
-            font-family: Georgia, serif;
-            font-size: 24px;
-            margin-bottom: 18px;
+        .contact-information::before {
+            content: "";
+            position: absolute;
+            width: 190px;
+            height: 190px;
+            border: 35px solid rgba(252,220,4,.10);
+            border-radius: 50%;
+            right: -85px;
+            bottom: -85px;
         }
 
-        .contact-item {
-            padding: 15px 0;
-            border-bottom: 1px solid #eee;
+        .contact-information h2 {
+            font-size: 27px;
+            margin: 0 0 12px;
+            font-weight: 900;
         }
 
-        .contact-item:last-child {
-            border-bottom: none;
+        .contact-information > p {
+            color: #cccccc;
+            line-height: 1.7;
+            font-size: 14px;
+            margin-bottom: 32px;
         }
 
-        .contact-item strong {
-            display: block;
-            color: #222;
-            margin-bottom: 5px;
-        }
-
-        .contact-item p {
-            color: #666;
-            overflow-wrap: anywhere;
-        }
-
-        .contact-item a {
-            color: #b00000;
-            font-weight: bold;
-            overflow-wrap: anywhere;
+        .contact-detail {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin: 25px 0;
+            position: relative;
+            z-index: 1;
         }
 
         .contact-icon {
+            width: 45px;
+            height: 45px;
+            flex: 0 0 45px;
+            border-radius: 12px;
+            display: grid;
+            place-items: center;
+            background: var(--uganda-yellow);
+            color: #111111;
+            font-size: 21px;
+        }
+
+        .contact-detail h3 {
+            margin: 0 0 5px;
+            font-size: 14px;
+            color: var(--uganda-yellow);
+        }
+
+        .contact-detail p,
+        .contact-detail a {
+            color: #eeeeee;
+            font-size: 14px;
+            line-height: 1.7;
+            margin: 0;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-detail a:hover {
+            color: var(--uganda-yellow);
+        }
+
+        .whatsapp-button {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 42px;
-            height: 42px;
-            background: #fff0f0;
-            border-radius: 50%;
-            margin-bottom: 10px;
-            font-size: 20px;
-        }
-
-        /* CONTACT ACTION BUTTONS */
-        .action-buttons {
-            display: flex;
-            flex-wrap: wrap;
             gap: 10px;
             margin-top: 20px;
+            padding: 15px 20px;
+            border-radius: 9px;
+            background: #20c66b;
+            color: #ffffff;
+            font-weight: 800;
+            font-size: 14px;
+            transition: .25s;
+            position: relative;
+            z-index: 1;
         }
 
-        .action-btn {
-            display: inline-block;
-            padding: 12px 18px;
-            border-radius: 30px;
-            color: white;
-            font-size: 13px;
-            font-weight: bold;
-            transition: .3s;
-        }
-
-        .call-btn {
-            background: #111;
-        }
-
-        .whatsapp-btn {
-            background: #168b48;
-        }
-
-        .email-btn {
-            background: #D90000;
-        }
-
-        .action-btn:hover {
+        .whatsapp-button:hover {
+            background: #159c51;
             transform: translateY(-3px);
-            opacity: .85;
-        }
-
-        /* SOCIAL MEDIA */
-
-.social-icons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 25px;
-    margin-top: 25px;
-}
-
-.social-icons a {
-    width: 58px;
-    height: 58px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: white;
-    border-radius: 50%;
-    padding: 10px;
-    transition: .3s ease;
-}
-
-.social-icons img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.social-icons a:hover {
-    transform: translateY(-6px) scale(1.08);
-    box-shadow: 0 8px 20px rgba(255,255,255,.2);
-}
-
-@media(max-width: 600px) {
-    .social-icons {
-        gap: 18px;
-    }
-
-    .social-icons a {
-        width: 50px;
-        height: 50px;
-    }
-}
-
-        .social-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 18px;
-        }
-
-        .social-links a {
-            display: inline-block;
-            background: #111;
-            color: white;
-            padding: 11px 17px;
-            border-radius: 25px;
-            font-size: 13px;
-            font-weight: bold;
-            transition: .3s;
-        }
-
-        .social-links a:hover {
-            background: #D90000;
         }
 
         /* MESSAGE FORM */
-        .message-section {
-            background: white;
+
+        .contact-form-card {
             padding: 35px;
-            margin-top: 30px;
-            border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(0,0,0,.06);
+            border: 1px solid #e8e8e8;
+            border-radius: 20px;
+            background: white;
+            box-shadow: 0 15px 45px rgba(0,0,0,.06);
         }
 
-        .message-section h2 {
-            font-family: Georgia, serif;
-            font-size: 28px;
-            margin-bottom: 8px;
+        .contact-form-card h2 {
+            font-size: 27px;
+            font-weight: 900;
+            margin: 0 0 10px;
         }
 
-        .message-section > p {
-            color: #666;
-            margin-bottom: 20px;
+        .contact-form-card > p {
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 27px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
         }
 
         .form-group {
             margin-bottom: 18px;
         }
 
-        label {
+        .form-group label {
             display: block;
-            font-weight: bold;
-            margin-bottom: 7px;
+            margin-bottom: 8px;
+            font-size: 13px;
+            font-weight: 800;
         }
 
-        input,
-        textarea {
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
             width: 100%;
             padding: 14px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
+            border: 1px solid #dddddd;
+            border-radius: 9px;
+            background: #fafafa;
             font-family: inherit;
             font-size: 14px;
             outline: none;
+            transition: .2s;
         }
 
-        input:focus,
-        textarea:focus {
-            border-color: #D90000;
-            box-shadow: 0 0 0 3px rgba(217,0,0,.08);
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--uganda-red);
+            background: white;
+            box-shadow: 0 0 0 3px rgba(217,35,42,.08);
         }
 
-        textarea {
-            min-height: 150px;
+        .form-group textarea {
+            min-height: 145px;
             resize: vertical;
         }
 
-        .submit-btn {
-            display: inline-block;
-            padding: 14px 27px;
-            background: #D90000;
-            color: white;
+        .send-button {
+            width: 100%;
+            padding: 16px;
             border: none;
-            border-radius: 30px;
-            font-size: 14px;
-            font-weight: bold;
+            border-radius: 9px;
+            background: var(--uganda-red);
+            color: white;
+            font-family: inherit;
+            font-size: 15px;
+            font-weight: 900;
             cursor: pointer;
-            transition: .3s;
+            transition: .25s;
         }
 
-        .submit-btn:hover {
-            background: #111;
-            color: #FCDC04;
+        .send-button:hover {
+            background: #a90008;
+            transform: translateY(-2px);
         }
 
-        /* DONATION SECTION */
-        .support {
-            background: #111;
-            color: white;
+        .form-note {
+            color: #777777;
+            font-size: 11px;
+            line-height: 1.6;
+            margin-top: 13px;
+        }
+
+        /* SOCIAL MEDIA */
+
+        .social-section {
+            background: var(--light);
+            padding: 65px 20px;
             text-align: center;
-            padding: 40px 20px;
-            margin-top: 30px;
-            border-radius: 15px;
         }
 
-        .support h2 {
-            color: #FCDC04;
-            font-family: Georgia, serif;
-            font-size: 28px;
-            margin-bottom: 10px;
+        .social-section h2 {
+            font-size: 30px;
+            font-weight: 900;
+            margin: 0 0 10px;
         }
 
-        .support p {
-            max-width: 650px;
-            margin: auto;
+        .social-section p {
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.7;
         }
 
-        .support a {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 13px 25px;
-            background: #D90000;
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 27px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 125px;
+            padding: 13px 20px;
+            border: 1px solid #dddddd;
+            border-radius: 9px;
+            background: white;
+            color: #171717;
+            font-size: 13px;
+            font-weight: 800;
+            transition: .25s;
+        }
+
+        .social-links a:hover {
+            background: var(--uganda-yellow);
+            border-color: var(--uganda-yellow);
+            transform: translateY(-3px);
+        }
+
+        /* FINAL CTA */
+
+        .contact-cta {
+            padding: 75px 20px;
+            text-align: center;
+            background: #171717;
             color: white;
-            border-radius: 30px;
-            font-weight: bold;
         }
 
-        .support a:hover {
-            background: #FCDC04;
-            color: #111;
+        .contact-cta h2 {
+            font-size: clamp(27px, 4vw, 40px);
+            font-weight: 900;
+            margin: 0 0 13px;
+        }
+
+        .contact-cta p {
+            max-width: 650px;
+            margin: 0 auto 25px;
+            color: #cccccc;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .cta-link {
+            display: inline-block;
+            background: var(--uganda-yellow);
+            color: #111111;
+            padding: 15px 25px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 900;
+            transition: .25s;
+        }
+
+        .cta-link:hover {
+            background: white;
+            transform: translateY(-3px);
         }
 
         /* FOOTER */
-        footer {
-            background: #080808;
-            color: white;
+
+        .contact-footer {
+            padding: 25px 20px;
             text-align: center;
-            padding: 30px 15px;
+            background: #101010;
+            color: #aaaaaa;
+            font-size: 12px;
+            line-height: 1.8;
         }
 
-        footer p {
-            margin: 5px 0;
-            font-size: 13px;
-            color: #ccc;
-        }
-
-        footer a {
-            color: #FCDC04;
-            margin: 0 8px;
+        .contact-footer strong {
+            color: white;
         }
 
         /* MOBILE */
-        @media (max-width: 700px) {
-            .topbar {
-                padding: 10px;
-                flex-wrap: wrap;
-            }
 
-            .brand {
-                font-size: 12px;
-                gap: 7px;
-            }
-
-            .brand img {
-                width: 38px;
-                height: 38px;
-            }
-
-            .back-link {
-                font-size: 11px;
-                padding: 8px 10px;
-            }
-
-            .hero {
-                padding: 65px 18px 85px;
-            }
-
-            .hero p {
-                font-size: 14px;
-            }
-
-            .contact-grid {
+        @media (max-width: 800px) {
+            .contact-layout {
                 grid-template-columns: 1fr;
             }
 
-            .card,
-            .message-section {
-                padding: 23px;
+            .contact-hero {
+                min-height: 340px;
             }
 
-            .intro h2,
-            .message-section h2 {
-                font-size: 25px;
+            .contact-hero p {
+                font-size: 15px;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .hero-content {
+                padding: 65px 0 75px;
             }
 
-            .action-buttons {
-                flex-direction: column;
+            .contact-intro {
+                padding-top: 55px;
             }
 
-            .action-btn {
-                text-align: center;
+            .contact-layout {
+                width: 92%;
+                margin-top: 25px;
+            }
+
+            .contact-information,
+            .contact-form-card {
+                padding: 25px 20px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .social-links a {
+                flex: 1 1 40%;
             }
         }
     </style>
@@ -488,334 +504,267 @@
 
 <body>
 
-    <!-- HEADER -->
-    <header class="topbar">
+    <div id="site-header"></div>
 
-        <a href="index.html" class="brand">
-            <img src="assets/logo.img"
-                 alt="All Eyes on Us Uganda Logo">
-
-            <span>ALL EYES ON US UGANDA</span>
-        </a>
-
-        <a href="index.html" class="back-link">
-            ← Back to Website
-        </a>
-
-    </header>
+    <div class="uganda-stripe"></div>
 
     <!-- HERO -->
-    <section class="hero">
+    <section class="contact-hero">
+        <div class="hero-content">
+            <span class="hero-label">We would love to hear from you</span>
 
-        <span class="eyebrow">LET'S CONNECT</span>
-
-        <h1>Get in Touch</h1>
-
-        <p>
-            We welcome your questions, ideas, partnerships and support.
-            Connect with All Eyes on Us Uganda and become part of our journey.
-        </p>
-
-    </section>
-
-    <main class="container">
-
-        <!-- INTRODUCTION -->
-        <section class="intro">
-
-            <h2>We'd Love to Hear From You</h2>
+            <h1>
+                Let's Start a <span>Conversation.</span>
+            </h1>
 
             <p>
-                All Eyes on Us Uganda – Kalleous Organization Ltd.
-                believes in the power of talent, creativity, culture
-                and community development. Whether you are interested
-                in partnering with us, supporting our programmes or
-                simply learning more about our work, we are ready to connect.
+                Have a question, partnership idea, donation offer or
+                opportunity to support young talent? Reach out to
+                All Eyes on Us Uganda. Every meaningful connection
+                can help create a brighter future.
+            </p>
+        </div>
+    </section>
+
+    <!-- INTRO -->
+    <section class="contact-intro">
+        <span class="section-label">Get in touch</span>
+
+        <h2>Connect With Our Organisation</h2>
+
+        <p>
+            Whether you are a parent, school, organisation, supporter,
+            volunteer or potential partner, we welcome your message.
+            Let's explore how we can work together to empower children
+            and young people through creativity and community.
+        </p>
+    </section>
+
+    <!-- CONTACT INFORMATION AND FORM -->
+    <main class="contact-layout">
+
+        <section class="contact-information">
+            <h2>Contact Information</h2>
+
+            <p>
+                You can contact our organisation directly using
+                the details below.
             </p>
 
-        </section>
-
-        <!-- CONTACT INFORMATION -->
-        <section class="contact-grid">
-
-            <div class="card">
-
-                <div class="contact-icon">👤</div>
-
-                <h2>Contact Our Founder</h2>
-
-                <div class="contact-item">
-                    <strong>Founder</strong>
-                    <p>Luwaga Moses</p>
+            <div class="contact-detail">
+                <div class="contact-icon">📍</div>
+                <div>
+                    <h3>Our Location</h3>
+                    <p>Nsambya Kevina, Makindye,<br>Kampala, Uganda</p>
                 </div>
+            </div>
 
-                <div class="contact-item">
-                    <strong>Email Address</strong>
+            <div class="contact-detail">
+                <div class="contact-icon">📞</div>
+                <div>
+                    <h3>Call Us</h3>
+                    <a href="tel:+256705446043">+256 705 446 043</a>
+                </div>
+            </div>
+
+            <div class="contact-detail">
+                <div class="contact-icon">✉️</div>
+                <div>
+                    <h3>Email Address</h3>
                     <a href="mailto:luwaga02moses@gmail.com">
                         luwaga02moses@gmail.com
                     </a>
                 </div>
-
-                <div class="contact-item">
-                    <strong>Phone Number</strong>
-                    <a href="tel:+256705446043">
-                        +256 705 446 043
-                    </a>
-                </div>
-
-                <div class="action-buttons">
-
-                    <a class="action-btn call-btn"
-                       href="tel:+256705446043">
-                        ☎ Call Founder
-                    </a>
-
-                    <a class="action-btn whatsapp-btn"
-                       href="https://wa.me/256705446043"
-                       target="_blank"
-                       rel="noopener noreferrer">
-                        WhatsApp Founder
-                    </a>
-
-                    <a class="action-btn email-btn"
-                       href="mailto:luwaga02moses@gmail.com">
-                        ✉ Send Email
-                    </a>
-
-                </div>
-
             </div>
 
-            <div class="card">
-
-                <div class="contact-icon">🤝</div>
-
-                <h2>Partnerships & Enquiries</h2>
-
-                <div class="contact-item">
-                    <strong>Partnership Opportunities</strong>
-                    <p>
-                        We welcome organisations, companies,
-                        institutions and individuals interested
-                        in working with us.
-                    </p>
+            <div class="contact-detail">
+                <div class="contact-icon">👤</div>
+                <div>
+                    <h3>Organisation Founder</h3>
+                    <p>Luwaga Moses</p>
                 </div>
-
-                <div class="contact-item">
-                    <strong>Community Programmes</strong>
-                    <p>
-                        Contact us about our talent, creativity,
-                        music, culture and community initiatives.
-                    </p>
-                </div>
-
-                <div class="contact-item">
-                    <strong>General Enquiries</strong>
-                    <p>
-                        For information about our organisation,
-                        activities and opportunities, reach out
-                        to our founder.
-                    </p>
-                </div>
-
-                <div class="action-buttons">
-                    <a class="action-btn email-btn"
-                       href="mailto:luwaga02moses@gmail.com?subject=Organisation%20Enquiry">
-                        Make an Enquiry
-                    </a>
-                </div>
-
             </div>
 
+            <a
+                class="whatsapp-button"
+                href="https://wa.me/256705446043"
+                target="_blank"
+                rel="noopener"
+            >
+                <span>💬</span> Chat With Us on WhatsApp
+            </a>
         </section>
 
-        
-<section class="social-section">
-
-    <span class="social-label">STAY CONNECTED</span>
-
-    <h2>Follow Our Journey</h2>
-
-    <p>
-        Follow All Eyes on Us Uganda for our latest activities,
-        events, talent showcases and community updates.
-    </p>
-
-    <div class="social-icons">
-         
-        <a href="https://www.facebook.com/share/1FsStoq5JU/?mibextid=wwXIfr"
-           target="_blank" rel="noopener noreferrer"
-           aria-label="Facebook">
-            <img src="assets/facebook.png" alt="Facebook">
-        </a>
-
-        <a href="https://www.tiktok.com/@alleyesonusuganda1"
-           target="_blank" rel="noopener noreferrer"
-           aria-label="TikTok">
-            <img src="assets/tiktok.png" alt="TikTok">
-        </a>
-
-        <a href="https://www.instagram.com/alleyesonusugandaofficial/"
-           target="_blank" rel="noopener noreferrer"
-           aria-label="Instagram">
-            <img src="assets/instagram.png" alt="Instagram">
-        </a>
-
-        <a href="https://www.youtube.com/@alleyesonusugandaofficial"
-           target="_blank" rel="noopener noreferrer"
-           aria-label="YouTube">
-            <img src="assets/YouTube.png" alt="YouTube">
-        </a>
-
-    </div>
-
-</section>
-
-
-        <!-- MESSAGE FORM -->
-        <section class="message-section">
-
+        <section class="contact-form-card">
             <h2>Send Us a Message</h2>
 
             <p>
-                Fill in the details below. Your email application
-                will open with your message prepared for the founder.
+                Tell us a little about your enquiry. Complete the form
+                and your email application will open with your message
+                ready to send.
             </p>
 
             <form id="contactForm">
 
-                <div class="form-group">
-                    <label for="name">Your Full Name</label>
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        placeholder="Enter your full name"
-                        required>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fullName">Your Name *</label>
+                        <input
+                            type="text"
+                            id="fullName"
+                            placeholder="Enter your name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Your Email *</label>
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter your email"
+                            required
+                        >
+                    </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="email">Your Email Address</label>
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder="Enter your email address"
-                        required>
+                    <label for="subject">What is your enquiry about? *</label>
+
+                    <select id="subject" required>
+                        <option value="">Select an enquiry</option>
+                        <option>General Enquiry</option>
+                        <option>Partnership Opportunity</option>
+                        <option>Volunteering</option>
+                        <option>Donations and Support</option>
+                        <option>Programmes and Participation</option>
+                        <option>School or Institutional Enquiry</option>
+                        <option>Media and Public Relations</option>
+                        <option>Other</option>
+                    </select>
                 </div>
 
                 <div class="form-group">
-                    <label for="subject">Subject</label>
-                    <input
-                        type="text"
-                        id="subject"
-                        name="subject"
-                        placeholder="What is your message about?"
-                        required>
-                </div>
+                    <label for="message">Your Message *</label>
 
-                <div class="form-group">
-                    <label for="message">Your Message</label>
                     <textarea
                         id="message"
-                        name="message"
                         placeholder="Write your message here..."
-                        required></textarea>
+                        required
+                    ></textarea>
                 </div>
 
-                <button type="submit" class="submit-btn">
-                    Prepare Email Message →
+                <button type="submit" class="send-button">
+                    Send Your Message →
                 </button>
 
+                <p class="form-note">
+                    This form opens your device's email application.
+                    Your message is not submitted automatically by this
+                    website.
+                </p>
+
             </form>
-
-        </section>
-
-        <!-- DONATION -->
-        <section class="support">
-
-            <h2>Support Our Mission</h2>
-
-            <p>
-                Your contribution helps us support talent,
-                creativity, culture and community development.
-                Every contribution makes a difference.
-            </p>
-
-            <a href="donation.html">
-                Visit Our Donation Page
-            </a>
-
         </section>
 
     </main>
 
+    <!-- SOCIAL MEDIA -->
+    <section class="social-section">
+        <span class="section-label">Stay connected</span>
+
+        <h2>Follow Our Journey</h2>
+
+        <p>
+            Discover our activities, performances, stories and
+            community initiatives through our social platforms.
+        </p>
+
+        <div class="social-links">
+            <a
+                href="https://www.facebook.com/share/1FsStoq5JU/?mibextid=wwXIfr"
+                target="_blank"
+                rel="noopener"
+            >Facebook</a>
+
+            <a
+                href="https://www.youtube.com/@alleyesonusugandaofficial"
+                target="_blank"
+                rel="noopener"
+            >YouTube</a>
+
+            <a
+                href="https://www.tiktok.com/@alleyesonusuganda"
+                target="_blank"
+                rel="noopener"
+            >TikTok</a>
+
+            <a
+                href="https://www.instagram.com/alleyesonusugandaofficial/"
+                target="_blank"
+                rel="noopener"
+            >Instagram</a>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="contact-cta">
+        <h2>Let's Make a Difference Together.</h2>
+
+        <p>
+            Talent deserves opportunity. Young people deserve support.
+            Communities deserve to thrive. Join us in turning these
+            possibilities into reality.
+        </p>
+
+        <a href="partners.html" class="cta-link">
+            Explore Partnership Opportunities
+        </a>
+    </section>
+
     <!-- FOOTER -->
-    <footer>
-
-        <p>
-            © <span id="year"></span>
-            All Eyes on Us Uganda – Kalleous Organization Ltd.
-        </p>
-
-        <p>
-            <a href="index.html">Home</a> |
-            <a href="donation.html">Donate</a> |
-            <a href="contact.html">Contact</a>
-        </p>
-
-        <p>Talent • Creativity • Culture • Community</p>
-
+    <footer class="contact-footer">
+        <strong>ALL EYES ON US UGANDA</strong><br>
+        Kalleous Organization Ltd. · Established 2016<br>
+        Turning Talent Into Opportunity. Transforming Lives Through Creativity.<br><br>
+        © <span id="currentYear"></span> All Eyes on Us Uganda. All rights reserved.
     </footer>
 
-    <!-- JAVASCRIPT -->
     <script>
+        // CONTACT FORM
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault();
 
-        // Automatic copyright year
-        document.getElementById("year").textContent =
-            new Date().getFullYear();
+            const name = document.getElementById("fullName").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const subject = document.getElementById("subject").value;
+            const message = document.getElementById("message").value.trim();
 
-        // Prepare email message
-        document.getElementById("contactForm").addEventListener(
-            "submit",
-            function(event) {
-
-                event.preventDefault();
-
-                const name =
-                    document.getElementById("name").value.trim();
-
-                const email =
-                    document.getElementById("email").value.trim();
-
-                const subject =
-                    document.getElementById("subject").value.trim();
-
-                const message =
-                    document.getElementById("message").value.trim();
-
-                if (!name || !email || !subject || !message) {
-                    alert("Please complete all the fields.");
-                    return;
-                }
-
-                const recipient = "luwaga02moses@gmail.com";
-
-                const body =
-                    "Name: " + name + "\n" +
-                    "Email: " + email + "\n\n" +
-                    "Message:\n" + message;
-
-                const mailto =
-                    "mailto:" + recipient +
-                    "?subject=" + encodeURIComponent(subject) +
-                    "&body=" + encodeURIComponent(body);
-
-                window.location.href = mailto;
-
+            if (!name || !email || !subject || !message) {
+                alert("Please complete all required fields.");
+                return;
             }
-        );
 
+            const emailSubject = encodeURIComponent(
+                "Website Enquiry: " + subject
+            );
+
+            const emailBody = encodeURIComponent(
+                "Name: " + name + "\n" +
+                "Email: " + email + "\n" +
+                "Enquiry: " + subject + "\n\n" +
+                "Message:\n" + message
+            );
+
+            window.location.href =
+                "mailto:luwaga02moses@gmail.com" +
+                "?subject=" + emailSubject +
+                "&body=" + emailBody;
+        });
+
+        // AUTOMATIC COPYRIGHT YEAR
+        document.getElementById("currentYear").textContent =
+            new Date().getFullYear();
     </script>
 
 </body>

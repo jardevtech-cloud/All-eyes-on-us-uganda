@@ -1,0 +1,685 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Our Impact | All Eyes on Us Uganda</title>
+
+    <meta name="description" content="Discover how All Eyes on Us Uganda supports children and young people through creativity, talent development and community participation.">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="header.css">
+    <script src="header.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'DM Sans', sans-serif;
+            color: #222;
+            background: #fff;
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .uganda-stripe {
+            height: 7px;
+            background: linear-gradient(
+                to right,
+                #000 0 33.33%,
+                #FCDC04 33.33% 66.66%,
+                #D9232A 66.66% 100%
+            );
+        }
+
+        .impact-hero {
+            min-height: 440px;
+            padding: 90px 7%;
+            display: flex;
+            align-items: center;
+            color: #fff;
+            background:
+                linear-gradient(90deg, rgba(0,0,0,.82), rgba(0,0,0,.32)),
+                url("assets/gallery/our-story7.jpg") center/cover no-repeat;
+        }
+
+        .hero-content {
+            max-width: 760px;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            padding: 7px 15px;
+            background: #FCDC04;
+            color: #111;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .impact-hero h1 {
+            font-size: clamp(38px, 6vw, 65px);
+            line-height: 1.1;
+            margin: 22px 0;
+            font-weight: 900;
+        }
+
+        .impact-hero p {
+            max-width: 650px;
+            font-size: 17px;
+            color: #eee;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 14px 24px;
+            margin: 8px 5px 0 0;
+            border-radius: 7px;
+            background: #FCDC04;
+            color: #111;
+            font-weight: 900;
+            transition: .25s;
+        }
+
+        .button:hover {
+            background: #fff;
+            transform: translateY(-2px);
+        }
+
+        .button.red {
+            background: #D9232A;
+            color: #fff;
+        }
+
+        .button.red:hover {
+            background: #a90008;
+        }
+
+        .section {
+            padding: 75px 7%;
+        }
+
+        .section-heading {
+            max-width: 760px;
+            margin: 0 auto 42px;
+            text-align: center;
+        }
+
+        .section-heading span {
+            color: #D9232A;
+            font-size: 13px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .section-heading h2 {
+            color: #171717;
+            font-size: clamp(29px, 4vw, 42px);
+            line-height: 1.2;
+            margin: 12px 0;
+        }
+
+        .section-heading p {
+            color: #666;
+        }
+
+        .intro-section {
+            background: #f8f8f8;
+        }
+
+        .intro-content {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .intro-content p {
+            color: #555;
+            font-size: 16px;
+        }
+
+        .impact-areas {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        .impact-card {
+            padding: 30px 25px;
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 14px;
+            box-shadow: 0 8px 25px rgba(0,0,0,.06);
+        }
+
+        .impact-icon {
+            width: 55px;
+            height: 55px;
+            display: grid;
+            place-items: center;
+            background: #fff5c7;
+            border-radius: 12px;
+            font-size: 27px;
+        }
+
+        .impact-card h3 {
+            margin: 17px 0 9px;
+            font-size: 21px;
+            color: #171717;
+        }
+
+        .impact-card p {
+            color: #666;
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .stories-section {
+            background: #f8f8f8;
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 25px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .story-card {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,.07);
+        }
+
+        .story-card img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .story-card-content {
+            padding: 25px;
+        }
+
+        .story-card h3 {
+            margin: 0 0 10px;
+            font-size: 22px;
+        }
+
+        .story-card p {
+            color: #666;
+            margin: 0;
+        }
+
+        .transparency {
+            max-width: 1000px;
+            margin: auto;
+            padding: 35px;
+            border-left: 5px solid #FCDC04;
+            background: #fff9dc;
+            border-radius: 10px;
+        }
+
+        .transparency h3 {
+            margin-top: 0;
+            color: #171717;
+        }
+
+        .transparency p {
+            color: #555;
+            margin-bottom: 0;
+        }
+
+        .join-section {
+            padding: 75px 7%;
+            text-align: center;
+            color: #fff;
+            background: #171717;
+        }
+
+        .join-section h2 {
+            font-size: clamp(30px, 4vw, 42px);
+            margin: 0 0 15px;
+        }
+
+        .join-section p {
+            max-width: 700px;
+            margin: 0 auto 25px;
+            color: #ddd;
+        }
+
+        .site-footer {
+            background: #090909;
+            color: #fff;
+            padding: 45px 7% 20px;
+        }
+
+        .footer-content {
+            max-width: 1150px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 35px;
+        }
+
+        .site-footer h3 {
+            color: #FCDC04;
+            margin-top: 0;
+        }
+
+        .site-footer p,
+        .site-footer a {
+            color: #ccc;
+            font-size: 14px;
+        }
+
+        .site-footer a:hover {
+            color: #FCDC04;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .copyright {
+            max-width: 1150px;
+            margin: 30px auto 0;
+            padding-top: 18px;
+            border-top: 1px solid #333;
+            text-align: center;
+            color: #aaa;
+            font-size: 12px;
+        }
+
+        @media (max-width: 850px) {
+            .impact-areas {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 650px) {
+            .impact-areas,
+            .story-grid,
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .impact-hero {
+                min-height: 370px;
+                padding: 65px 6%;
+            }
+
+            .section {
+                padding: 55px 6%;
+            }
+
+            .story-card img {
+                height: 220px;
+            }
+
+            .transparency {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="site-header"></div>
+    <div class="uganda-stripe"></div>
+
+    <!-- HERO -->
+    <section class="impact-hero">
+        <div class="hero-content">
+
+            <span class="eyebrow">Making a Difference</span>
+
+            <h1>Our Impact</h1>
+
+            <p>
+                We believe every child and young person deserves
+                opportunities to discover their potential, develop
+                their abilities and contribute positively to society.
+            </p>
+
+            <a href="#our-work" class="button">
+                Explore Our Impact
+            </a>
+
+        </div>
+    </section>
+
+    <!-- INTRODUCTION -->
+    <section class="section intro-section">
+        <div class="intro-content">
+
+            <div class="section-heading">
+                <span>Why Our Work Matters</span>
+                <h2>Creating Opportunities. Inspiring Possibilities.</h2>
+            </div>
+
+            <p>
+                All Eyes on Us Uganda – Kalleous Organization Ltd.
+                works to create opportunities for children and young
+                people through creativity, talent development,
+                education support and community participation.
+            </p>
+
+            <p>
+                We believe that talent can become a powerful tool
+                for personal growth, confidence, connection and
+                positive community change.
+            </p>
+
+        </div>
+    </section>
+
+    <!-- IMPACT AREAS -->
+    <section class="section" id="our-work">
+
+        <div class="section-heading">
+            <span>Areas of Impact</span>
+            <h2>Where We Aim to Make a Difference</h2>
+            <p>
+                Our work focuses on opportunities that help young
+                people grow and participate in their communities.
+            </p>
+        </div>
+
+        <div class="impact-areas">
+
+            <article class="impact-card">
+                <div class="impact-icon">🎭</div>
+                <h3>Talent Development</h3>
+                <p>
+                    Creating spaces where children and young people
+                    can explore dance, music, acrobatics and other
+                    creative interests.
+                </p>
+            </article>
+
+            <article class="impact-card">
+                <div class="impact-icon">🌱</div>
+                <h3>Personal Growth</h3>
+                <p>
+                    Encouraging confidence, discipline, teamwork
+                    and positive self-expression through participation.
+                </p>
+            </article>
+
+            <article class="impact-card">
+                <div class="impact-icon">📚</div>
+                <h3>Education Support</h3>
+                <p>
+                    Promoting learning and helping connect young
+                    people with educational opportunities and support.
+                </p>
+            </article>
+
+            <article class="impact-card">
+                <div class="impact-icon">🤝</div>
+                <h3>Community Participation</h3>
+                <p>
+                    Encouraging young people to work together,
+                    participate in community activities and contribute
+                    positively to society.
+                </p>
+            </article>
+
+            <article class="impact-card">
+                <div class="impact-icon">🎶</div>
+                <h3>Culture and Expression</h3>
+                <p>
+                    Supporting music, dance and cultural activities
+                    as ways to celebrate creativity and shared identity.
+                </p>
+            </article>
+
+            <article class="impact-card">
+                <div class="impact-icon">🌍</div>
+                <h3>Partnership Opportunities</h3>
+                <p>
+                    Building relationships with individuals,
+                    organisations, schools and institutions that
+                    share our commitment to young people.
+                </p>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- OUR WORK IN ACTION -->
+    <section class="section stories-section">
+
+        <div class="section-heading">
+            <span>Our Work in Action</span>
+            <h2>Experiences That Bring People Together</h2>
+            <p>
+                Our activities create opportunities for participation,
+                learning, expression and connection.
+            </p>
+        </div>
+
+        <div class="story-grid">
+
+            <article class="story-card">
+                <img
+                    src="assets/gallery/Dance7.jpg"
+                    alt="Dance and cultural expression"
+                    loading="lazy"
+                >
+
+                <div class="story-card-content">
+                    <h3>Creative Expression</h3>
+                    <p>
+                        Dance and cultural activities give young
+                        people opportunities to express themselves
+                        and develop their creative abilities.
+                    </p>
+                </div>
+            </article>
+
+            <article class="story-card">
+                <img
+                    src="assets/Acrobatics performance.jpg"
+                    alt="Acrobatics activity"
+                    loading="lazy"
+                >
+
+                <div class="story-card-content">
+                    <h3>Building Skills Together</h3>
+                    <p>
+                        Group activities encourage cooperation,
+                        practice, discipline and learning from
+                        one another.
+                    </p>
+                </div>
+            </article>
+
+            <article class="story-card">
+                <img
+                    src="assets/band.jpg"
+                    alt="Music and band activities"
+                    loading="lazy"
+                >
+
+                <div class="story-card-content">
+                    <h3>Music and Performance</h3>
+                    <p>
+                        Music and performance activities create
+                        opportunities for creativity, teamwork
+                        and community engagement.
+                    </p>
+                </div>
+            </article>
+
+            <article class="story-card">
+                <img
+                    src="assets/Scout.jpg"
+                    alt="Scouting and community participation"
+                    loading="lazy"
+                >
+
+                <div class="story-card-content">
+                    <h3>Community Participation</h3>
+                    <p>
+                        Group and community activities encourage
+                        responsibility, service and positive
+                        participation.
+                    </p>
+                </div>
+            </article>
+
+        </div>
+
+    </section>
+
+    <!-- TRANSPARENCY -->
+    <section class="section">
+
+        <div class="section-heading">
+            <span>Accountability</span>
+            <h2>Measuring Our Progress Honestly</h2>
+        </div>
+
+        <div class="transparency">
+
+            <h3>Our Commitment to Transparency</h3>
+
+            <p>
+                We want our impact reporting to reflect real activities
+                and verifiable results. We are working to document
+                participation, programmes, community engagement,
+                achievements and personal stories. Numerical results
+                will be published when they have been properly
+                documented and verified. Photographs and personal
+                stories will be shared with appropriate consent.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section class="join-section">
+
+        <h2>Help Us Create More Opportunities</h2>
+
+        <p>
+            Your time, skills, resources, partnership or donation
+            can help us strengthen opportunities for children and
+            young people.
+        </p>
+
+        <a href="partners.html" class="button">
+            Partner With Us
+        </a>
+
+        <a href="donation.html" class="button red">
+            Support Our Work
+        </a>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+
+        <div class="footer-content">
+
+            <div>
+                <h3>All Eyes on Us Uganda</h3>
+
+                <p>Kalleous Organization Ltd.</p>
+
+                <p>
+                    Turning Talent Into Opportunity.
+                    Transforming Lives Through Creativity.
+                </p>
+
+                <p>
+                    Nsambya Kevina, Makindye, Kampala, Uganda.
+                </p>
+            </div>
+
+            <div>
+                <h3>Quick Links</h3>
+
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="people.html">About Us</a>
+                    <a href="program.html">Our Programs</a>
+                    <a href="impact.html">Our Impact</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="partners.html">Partner With Us</a>
+                    <a href="donation.html">Donate</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+
+            <div>
+                <h3>Contact</h3>
+
+                <p>
+                    <a href="tel:+256705446043">
+                        +256 705 446 043
+                    </a>
+                </p>
+
+                <p>
+                    <a href="mailto:luwaga02moses@gmail.com">
+                        luwaga02moses@gmail.com
+                    </a>
+                </p>
+
+                <p>
+                    <a href="https://wa.me/256705446043"
+                       target="_blank" rel="noopener">
+                        WhatsApp Us
+                    </a>
+                </p>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © <span id="copyright-year"></span>
+            All Eyes on Us Uganda – Kalleous Organization Ltd.
+            All rights reserved.
+        </div>
+
+    </footer>
+
+    <script>
+        document.getElementById("copyright-year").textContent =
+            new Date().getFullYear();
+    </script>
+
+</body>
+</html>

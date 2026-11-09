@@ -2,530 +2,1802 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#080808">
-<meta name="description" content="Explore the memories, people, creativity and community journey of All Eyes on Us Uganda.">
-<title>Gallery | All Eyes on Us Uganda</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Gallery | All Eyes on Us Uganda</title>
+    <meta name="description" content="Explore photographs of dance, acrobatics, music, scouting and community activities at All Eyes on Us Uganda.">
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:'DM Sans',sans-serif;background:#090909;color:#fff}
-a{text-decoration:none;color:inherit}
-button{font-family:inherit}
-.container{width:92%;max-width:1450px;margin:auto}
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="header.css">
+    <script src="header.js" defer></script>
 
-/* HEADER */
-header{
-  background:#050505;
-  border-bottom:2px solid #d4aa00;
-  position:sticky;top:0;z-index:1000
-}
-.nav-wrap{
-  min-height:82px;display:flex;align-items:center;
-  justify-content:space-between;gap:20px
-}
-.brand{display:flex;align-items:center;gap:14px}
-.brand img{
-  width:68px;height:68px;object-fit:contain;
-  border-radius:50%;background:#fff
-}
-.brand strong{font-size:21px;line-height:1.15;color:#ffd700}
-.brand small{display:block;color:#fff;font-size:13px;margin-top:4px}
-.nav-links{display:flex;align-items:center;gap:25px;list-style:none}
-.nav-links a{font-size:15px;font-weight:800;padding:28px 0}
-.nav-links a:hover,.nav-links a.active{
-  color:#ffd700;border-bottom:5px solid #ffd700
-}
-.social-top{display:flex;gap:12px;align-items:center}
-.social-top a{font-size:21px}
-.menu-toggle{display:none;background:none;border:0;color:#fff;font-size:29px}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-/* HERO */
-.hero {
-  min-height: 420px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-  background:
-    linear-gradient(
-      90deg,
-      rgba(0, 0, 0, 0.90) 0%,
-      rgba(0, 0, 0, 0.65) 45%,
-      rgba(0, 0, 0, 0.20) 100%
-    ),
-    url("assets/dance1.jpg");
+        html {
+            scroll-behavior: smooth;
+        }
 
-  background-size: cover;
-  background-position: center 40%;
-  background-repeat: no-repeat;
-}
+        body {
+            margin: 0;
+            font-family: 'DM Sans', sans-serif;
+            color: #222;
+            background: #fff;
+            line-height: 1.7;
+        }
 
-.hero:after{
-  content:"";position:absolute;bottom:-1px;left:0;width:100%;
-  height:18px;background:#ffd700;
-  clip-path:polygon(0 0,15% 100%,100% 0,100% 100%,0 100%);
-  opacity:.9
-}
-.hero-content{position:relative;z-index:2;width:92%;max-width:1450px;margin:auto;padding:45px 0}
-.hero-tag{
-  display:inline-block;background:#ffd700;color:#111;
-  padding:6px 16px;border-radius:25px;font-weight:800;
-  font-size:13px;margin-bottom:14px
-}
-.hero h1{font-size:clamp(38px,5.5vw,65px);line-height:1.05;max-width:620px}
-.hero h1 span{color:#ffd700}
-.hero p{font-size:18px;max-width:560px;margin-top:16px;color:#eee}
+        body.viewer-open {
+            overflow: hidden;
+        }
 
-/* GALLERY INTRO */
-.gallery-section{padding:32px 0 22px}
-.heading{text-align:center;margin-bottom:23px}
-.heading .eyebrow{
-  color:#ffd700;font-size:16px;font-weight:800;
-  display:flex;align-items:center;justify-content:center;gap:18px
-}
-.heading .eyebrow:before,.heading .eyebrow:after{
-  content:"";width:90px;height:3px;background:#e5243b
-}
-.heading h2{
-  color:#ffd700;font-size:clamp(32px,4vw,47px);
-  font-weight:800;font-style:italic;margin:0 0 3px
-}
-.heading p{font-size:17px;color:#eee}
+        a {
+            text-decoration: none;
+        }
 
-/* FILTERS */
-.filters{
-  display:flex;justify-content:center;flex-wrap:wrap;
-  gap:12px;margin:0 auto 12px
-}
-.filter-btn{
-  border:1.5px solid #ffd700;background:transparent;color:white;
-  padding:10px 26px;border-radius:30px;font-size:15px;
-  font-weight:800;cursor:pointer;transition:.25s
-}
-.filter-btn:hover,.filter-btn.active{
-  background:#ffd700;color:#080808
-}
+        .uganda-stripe {
+            height: 7px;
+            background: linear-gradient(
+                to right,
+                #000 0 33.33%,
+                #FCDC04 33.33% 66.66%,
+                #D9232A 66.66% 100%
+            );
+        }
 
-/* PHOTO GRID */
-.gallery-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  gap:12px
-}
-.gallery-card{
-  position:relative;height:205px;border:3px solid #ffd700;
-  border-radius:15px;overflow:hidden;background:#242424;
-  cursor:pointer
-}
-.gallery-card img{
-  width:100%;height:100%;object-fit:cover;
-  display:block;transition:transform .4s
-}
-.gallery-card:hover img{transform:scale(1.07)}
-.gallery-card:after{
-  content:"";position:absolute;inset:40% 0 0;
-  background:linear-gradient(transparent,rgba(0,0,0,.7));
-  pointer-events:none
-}
-.caption{
-  position:absolute;bottom:12px;left:15px;z-index:2;
-  color:#fff;font-size:15px;font-weight:800
-}
-.gallery-card.hidden{display:none}
-.empty-gallery{display:none;text-align:center;padding:35px;color:#ccc}
-
-/* CONTACT BANNER */
-.cta{
-  margin:0 auto 10px;width:94%;max-width:1500px;
-  padding:18px 7%;border-radius:15px;
-  background:linear-gradient(110deg,#191400,#765900,#191400);
-  display:flex;align-items:center;justify-content:space-between;gap:20px
-}
-.cta-left{display:flex;align-items:center;gap:25px}
-.cta-icon{font-size:48px;color:#ffd700}
-.cta h2{font-size:27px;color:#ffd700}
-.cta p{font-size:15px;color:#fff}
-.cta a{
-  background:#e00000;border:2px solid #ffbd00;
-  color:white;border-radius:35px;padding:12px 35px;
-  font-weight:800;white-space:nowrap
-}
-.cta a:hover{background:#ffd700;color:#111}
-
-/* FOOTER */
-footer{
-  border-top:5px solid #e5243b;
-  border-bottom:4px solid #ffd700;
-  background:#050505;padding:20px 0
-}
-.footer-content{
-  display:flex;justify-content:space-between;
-  align-items:center;flex-wrap:wrap;gap:15px
-}
-.footer-content p{font-size:12px;color:#ddd}
-.social-icons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 25px;
-    margin-top: 25px;
-}
-
-.social-icons a {
-    width: 58px;
-    height: 58px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: white;
-    border-radius: 50%;
-    padding: 10px;
-    transition: .3s ease;
-}
-
-.social-icons img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.social-icons a:hover {
-    transform: translateY(-6px) scale(1.08);
-    box-shadow: 0 8px 20px rgba(255,255,255,.2);
-}
-
-@media(max-width: 600px) {
-    .social-icons {
-        gap: 18px;
-    }
-
-    .social-icons a {
-        width: 50px;
-        height: 50px;
-    }
-}
-
-        .social-links {
+        .gallery-hero {
+            min-height: 390px;
+            padding: 80px 7%;
             display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 18px;
-        }
-
-        .social-links a {
-            display: inline-block;
-            background: #111;
+            align-items: center;
             color: white;
-            padding: 11px 17px;
-            border-radius: 25px;
+            background:
+                linear-gradient(rgba(0,0,0,.72), rgba(0,0,0,.55)),
+                url("assets/gallery/our-story9.jpg") center/cover no-repeat;
+        }
+
+        .hero-content {
+            max-width: 750px;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            padding: 7px 15px;
+            background: #FCDC04;
+            color: #111;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .gallery-hero h1 {
+            font-size: clamp(38px, 6vw, 65px);
+            line-height: 1.1;
+            margin: 22px 0;
+            font-weight: 900;
+        }
+
+        .gallery-hero p {
+            max-width: 650px;
+            color: #eee;
+            font-size: 17px;
+        }
+
+        .section {
+            padding: 70px 7%;
+        }
+
+        .section-heading {
+            max-width: 760px;
+            margin: 0 auto 35px;
+            text-align: center;
+        }
+
+        .section-heading span {
+            color: #D9232A;
             font-size: 13px;
-            font-weight: bold;
-            transition: .3s;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
-        .social-links a:hover {
-            background: #D90000;
+        .section-heading h2 {
+            font-size: clamp(29px, 4vw, 42px);
+            line-height: 1.2;
+            color: #171717;
+            margin: 12px 0;
         }
 
+        .section-heading p {
+            color: #666;
+        }
 
+        .gallery-section {
+            background: #f8f8f8;
+        }
 
-/* LIGHTBOX */
-.lightbox{
-  display:none;position:fixed;inset:0;z-index:3000;
-  background:rgba(0,0,0,.96);
-  align-items:center;justify-content:center;padding:55px
-}
-.lightbox.active{display:flex}
-.lightbox img{
-  max-width:95%;max-height:85vh;
-  object-fit:contain;border:2px solid #ffd700;border-radius:10px
-}
-.lightbox button{
-  position:absolute;border:0;border-radius:50%;
-  width:45px;height:45px;background:#ffd700;
-  color:#111;font-size:25px;font-weight:bold;cursor:pointer
-}
-.close{top:18px;right:20px}
-.prev{left:15px;top:50%}
-.next{right:15px;top:50%}
+        .filters {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 0 auto 35px;
+        }
 
-@media(max-width:1050px){
-  .social-top{display:none}
-  .nav-links{gap:15px}
-  .brand strong{font-size:17px}
-}
-@media(max-width:850px){
-  .menu-toggle{display:block}
-  .nav-links{
-    display:none;position:absolute;top:82px;left:0;right:0;
-    background:#090909;padding:20px 5%;
-    flex-direction:column;align-items:flex-start;
-    border-bottom:2px solid #ffd700
-  }
-  .nav-links.open{display:flex}
-  .nav-links a{padding:8px 0}
-  .gallery-grid{grid-template-columns:repeat(2,1fr)}
-  .hero{background-position:center}
-}
-@media(max-width:550px){
-  .brand img{width:52px;height:52px}
-  .brand strong{font-size:13px}
-  .brand small{font-size:11px}
-  .hero{min-height:330px;background-position:60% center}
-  .hero p{font-size:15px}
-  .gallery-grid{grid-template-columns:1fr}
-  .gallery-card{height:240px}
-  .heading .eyebrow{font-size:12px;gap:8px}
-  .heading .eyebrow:before,.heading .eyebrow:after{width:35px}
-  .heading p{font-size:14px}
-  .filter-btn{padding:9px 16px;font-size:13px}
-  .cta{flex-direction:column;text-align:center;padding:24px 15px}
-  .cta-left{flex-direction:column;gap:8px}
-  .cta h2{font-size:23px}
-  .footer-content{justify-content:center;text-align:center}
-  .lightbox{padding:45px 12px}
-}
-</style>
+        .filter-btn {
+            border: 1px solid #ddd;
+            background: white;
+            color: #333;
+            padding: 10px 19px;
+            border-radius: 30px;
+            font-family: inherit;
+            font-size: 13px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: .25s;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #FCDC04;
+            color: #111;
+            border-color: #FCDC04;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .gallery-item {
+            position: relative;
+            height: 280px;
+            overflow: hidden;
+            border-radius: 13px;
+            background: #222;
+            box-shadow: 0 8px 22px rgba(0,0,0,.08);
+            cursor: pointer;
+            padding: 0;
+            border: 0;
+            text-align: left;
+            font-family: inherit;
+        }
+
+        .gallery-item.hidden {
+            display: none;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform .4s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.06);
+        }
+
+        .gallery-item:focus-visible {
+            outline: 4px solid #D9232A;
+            outline-offset: 4px;
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 35px 18px 18px;
+            color: white;
+            background: linear-gradient(transparent, rgba(0,0,0,.85));
+            pointer-events: none;
+        }
+
+        .gallery-caption h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .gallery-caption p {
+            margin: 3px 0 0;
+            color: #eee;
+            font-size: 12px;
+        }
+
+        .tap-hint {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            padding: 6px 10px;
+            border-radius: 20px;
+            color: #fff;
+            background: rgba(0,0,0,.65);
+            font-size: 11px;
+            font-weight: 800;
+            pointer-events: none;
+        }
+
+        .gallery-note {
+            max-width: 900px;
+            margin: 40px auto 0;
+            text-align: center;
+            color: #666;
+            font-size: 13px;
+        }
+
+        /* FULL-SCREEN IMAGE VIEWER */
+
+        .image-viewer {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 99999;
+            width: 100%;
+            height: 100%;
+            height: 100dvh;
+            background: rgba(0,0,0,.97);
+            color: white;
+            align-items: center;
+            justify-content: center;
+            padding: 65px 75px 80px;
+        }
+
+        .image-viewer.open {
+            display: flex;
+        }
+
+        .viewer-image {
+            display: block;
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        .viewer-close,
+        .viewer-prev,
+        .viewer-next {
+            position: absolute;
+            display: grid;
+            place-items: center;
+            border: none;
+            border-radius: 50%;
+            color: white;
+            background: rgba(255,255,255,.15);
+            cursor: pointer;
+            z-index: 2;
+            transition: .2s;
+        }
+
+        .viewer-close:hover,
+        .viewer-prev:hover,
+        .viewer-next:hover {
+            background: #D9232A;
+        }
+
+        .viewer-close {
+            top: 18px;
+            right: 20px;
+            width: 48px;
+            height: 48px;
+            font-size: 30px;
+        }
+
+        .viewer-prev,
+        .viewer-next {
+            top: 50%;
+            transform: translateY(-50%);
+            width: 52px;
+            height: 52px;
+            font-size: 28px;
+        }
+
+        .viewer-prev {
+            left: 15px;
+        }
+
+        .viewer-next {
+            right: 15px;
+        }
+
+        .viewer-caption {
+            position: absolute;
+            left: 15px;
+            right: 15px;
+            bottom: 18px;
+            text-align: center;
+            color: #fff;
+            font-size: 14px;
+        }
+
+        .viewer-caption strong {
+            display: block;
+            font-size: 17px;
+        }
+
+        .viewer-caption span {
+            color: #ccc;
+            font-size: 12px;
+        }
+
+        .cta-section {
+            padding: 70px 7%;
+            text-align: center;
+            color: white;
+            background: #171717;
+        }
+
+        .cta-section h2 {
+            font-size: clamp(29px, 4vw, 42px);
+            margin: 0 0 15px;
+        }
+
+        .cta-section p {
+            max-width: 700px;
+            margin: 0 auto 25px;
+            color: #ddd;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 14px 24px;
+            margin: 6px;
+            border-radius: 7px;
+            background: #FCDC04;
+            color: #111;
+            font-weight: 900;
+            transition: .25s;
+        }
+
+        .button:hover {
+            background: white;
+            transform: translateY(-2px);
+        }
+
+        .button.red {
+            background: #D9232A;
+            color: white;
+        }
+
+        .button.red:hover {
+            background: #a90008;
+        }
+
+        .site-footer {
+            background: #090909;
+            color: white;
+            padding: 45px 7% 20px;
+        }
+
+        .footer-content {
+            max-width: 1150px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 35px;
+        }
+
+        .site-footer h3 {
+            color: #FCDC04;
+            margin-top: 0;
+        }
+
+        .site-footer p,
+        .site-footer a {
+            color: #ccc;
+            font-size: 14px;
+        }
+
+        .site-footer a:hover {
+            color: #FCDC04;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .copyright {
+            max-width: 1150px;
+            margin: 30px auto 0;
+            padding-top: 18px;
+            border-top: 1px solid #333;
+            text-align: center;
+            color: #aaa;
+            font-size: 12px;
+        }
+
+        @media (max-width: 850px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .image-viewer {
+                padding: 65px 55px 85px;
+            }
+        }
+
+        @media (max-width: 550px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-hero {
+                min-height: 330px;
+                padding: 60px 6%;
+            }
+
+            .section {
+                padding: 50px 6%;
+            }
+
+            .gallery-item {
+                height: 260px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .image-viewer {
+                padding: 65px 10px 85px;
+            }
+
+            .viewer-prev,
+            .viewer-next {
+                width: 42px;
+                height: 42px;
+                font-size: 23px;
+                background: rgba(0,0,0,.55);
+            }
+
+            .viewer-prev {
+                left: 8px;
+            }
+
+            .viewer-next {
+                right: 8px;
+            }
+
+            .viewer-close {
+                top: 12px;
+                right: 12px;
+                width: 43px;
+                height: 43px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<header>
-  <div class="container nav-wrap">
-    <a href="index.html" class="brand">
-      <img src="assets/logo.png" alt="All Eyes on Us Uganda logo">
-      <span>
-        <strong>ALL EYES ON US<br>UGANDA</strong>
-        <small>Kalleous Organization Ltd.</small>
-      </span>
-    </a>
+    <div id="site-header"></div>
+    <div class="uganda-stripe"></div>
 
-    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <!-- HERO -->
+    <section class="gallery-hero">
+        <div class="hero-content">
+            <span class="eyebrow">Moments That Matter</span>
 
-    <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="people.html">Our People</a></li>
-      <li><a href="gallery.html" class="active">Gallery</a></li>
-      <li><a href="donation.html">Donate</a></li>
-      <li><a href="contact.html">Contact Us</a></li>
-    </ul>
+            <h1>Our Gallery</h1>
 
-    
-  </div>
-</header>
+            <p>
+                Every photograph tells a story of creativity,
+                participation, teamwork and the experiences
+                that bring our community together.
+            </p>
+        </div>
+    </section>
 
-<section class="hero">
-  <div class="hero-content">
-    <span class="hero-tag">OUR MEMORIES • OUR STORY</span>
-    <h1>Moments That <span>Tell Our Story</span></h1>
-    <p>Explore the people, creativity, community and unforgettable memories of All Eyes on Us Uganda.</p>
-  </div>
-</section>
+    <!-- GALLERY -->
+    <section class="section gallery-section">
 
-<main>
-<section class="gallery-section">
-  <div class="container">
+        <div class="section-heading">
+            <span>Explore Our Activities</span>
+            <h2>Stories Through Pictures</h2>
+            <p>
+                Tap any photograph to view it across your full screen.
+            </p>
+        </div>
 
-    <div class="heading">
-      <div class="eyebrow">CAPTURING OUR JOURNEY</div>
-      <h2>Our Photo Gallery</h2>
-      <p>Every picture tells a story. Discover our journey through photographs.</p>
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">All Photos</button>
+            <button class="filter-btn" data-filter="dance">Dance</button>
+            <button class="filter-btn" data-filter="acrobatics">Acrobatics</button>
+            <button class="filter-btn" data-filter="music">Music & Band</button>
+            <button class="filter-btn" data-filter="scouting">Scouting</button>
+            <button class="filter-btn" data-filter="our-story">our story</button>
+            <button class="filter-btn" data-filter="schools and communities">Community</button>
+        </div>
+
+        <div class="gallery-grid">
+
+            <button class="gallery-item" type="button"
+                    data-category="dance"
+                    data-title="Dance and Expression">
+                <img src="assets/Dance performance.jpg"
+                     alt="Dance activity"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Dance and Expression</h3>
+                    <p>Creativity through movement</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="dance"
+                    data-title="Dance and Expression">
+                <img src="assets/gallery/dance1.jpg"
+                     alt="Dance activity"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Dance and Expression</h3>
+                    <p>Creativity through movement</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="dance"
+                    data-title="Dance and Expression">
+                <img src="assets/gallery/dance2.jpg"
+                     alt="Dance activity"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Dance and Expression</h3>
+                    <p>Creativity through movement</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="dance"
+                    data-title="Dance and Expression">
+                <img src="assets/gallery/dance3.jpg"
+                     alt="Dance activity"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Dance and Expression</h3>
+                    <p>Creativity through movement</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="dance"
+                    data-title="Dance and Expression">
+                <img src="assets/gallery/dance4.jpg"
+                     alt="Dance activity"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Dance and Expression</h3>
+                    <p>Creativity through movement</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="dance"
+                    data-title="Dance and Expression">
+                <img src="assets/gallery/dance5.jpg"
+                     alt="Dance activity"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Dance and Expression</h3>
+                    <p>Creativity through movement</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="dance"
+                    data-title="Dance and Expression">
+                <img src="assets/gallery/dance6.jpg"
+                     alt="Dance activity"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Dance and Expression</h3>
+                    <p>Creativity through movement</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="dance"
+                    data-title="Dance and Expression">
+                <img src="assets/gallery/dance7.jpg"
+                     alt="Dance activity"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Dance and Expression</h3>
+                    <p>Creativity through movement</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="dance"
+                    data-title="Dance and Expression">
+                <img src="assets/gallery/dance8.jpg"
+                     alt="Dance activity"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Dance and Expression</h3>
+                    <p>Creativity through movement</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="dance"
+                    data-title="Dance and Expression">
+                <img src="assets/gallery/dance9.jpg"
+                     alt="Dance activity"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Dance and Expression</h3>
+                    <p>Creativity through movement</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="dance"
+                    data-title="Dance and Expression">
+                <img src="assets/gallery/dance10.jpg"
+                     alt="Dance activity"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Dance and Expression</h3>
+                    <p>Creativity through movement</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="dance"
+                    data-title="Dance and Expression">
+                <img src="assets/gallery/dance11.jpg"
+                     alt="Dance activity"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Dance and Expression</h3>
+                    <p>Creativity through movement</p>
+                </span>
+            </button>
+            
+
+
+            <button class="gallery-item" type="button"
+                    data-category="acrobatics"
+                    data-title="Acrobatics">
+                <img src="assets/gallery/acrobatics1.jpg"
+                     alt="Acrobatics performance"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Acrobatics</h3>
+                    <p>Skill, discipline and teamwork</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="acrobatics"
+                    data-title="Acrobatics">
+                <img src="assets/gallery/acrobatics2.jpg"
+                     alt="Acrobatics performance"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Acrobatics</h3>
+                    <p>Skill, discipline and teamwork</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="acrobatics"
+                    data-title="Acrobatics">
+                <img src="assets/gallery/acrobatics3.jpg"
+                     alt="Acrobatics performance"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Acrobatics</h3>
+                    <p>Skill, discipline and teamwork</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="acrobatics"
+                    data-title="Acrobatics">
+                <img src="assets/gallery/acrobatics4.jpg"
+                     alt="Acrobatics performance"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Acrobatics</h3>
+                    <p>Skill, discipline and teamwork</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="acrobatics"
+                    data-title="Acrobatics">
+                <img src="assets/gallery/acrobatics5.jpg"
+                     alt="Acrobatics performance"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Acrobatics</h3>
+                    <p>Skill, discipline and teamwork</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="acrobatics"
+                    data-title="Acrobatics">
+                <img src="assets/gallery/acrobatics6.jpg"
+                     alt="Acrobatics performance"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Acrobatics</h3>
+                    <p>Skill, discipline and teamwork</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="acrobatics"
+                    data-title="Acrobatics">
+                <img src="assets/gallery/acrobatics7.jpg"
+                     alt="Acrobatics performance"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Acrobatics</h3>
+                    <p>Skill, discipline and teamwork</p>
+                </span>
+            </button><button class="gallery-item" type="button"
+                    data-category="acrobatics"
+                    data-title="Acrobatics">
+                <img src="assets/gallery/acrobatics8.jpg"
+                     alt="Acrobatics performance"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Acrobatics</h3>
+                    <p>Skill, discipline and teamwork</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="acrobatics"
+                    data-title="Acrobatics">
+                <img src="assets/gallery/acrobatics9.jpg"
+                     alt="Acrobatics performance"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Acrobatics</h3>
+                    <p>Skill, discipline and teamwork</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="acrobatics"
+                    data-title="Acrobatics">
+                <img src="assets/gallery/acrobatics10.jpg"
+                     alt="Acrobatics performance"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Acrobatics</h3>
+                    <p>Skill, discipline and teamwork</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="acrobatics"
+                    data-title="Acrobatics">
+                <img src="assets/gallery/acrobatics11.jpg"
+                     alt="Acrobatics performance"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Acrobatics</h3>
+                    <p>Skill, discipline and teamwork</p>
+                </span>
+            </button>
+
+            <button class="gallery-item" type="button"
+                    data-category="music"
+                    data-title="Music and Band">
+                <img src="assets/Band performing live.jpg"
+                     alt="Music band activity"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Music and Band</h3>
+                    <p>Making music together</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="music"
+                    data-title="Music and Band">
+                <img src="assets/band2.jpg"
+                     alt="Music band activity"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Music and Band</h3>
+                    <p>Making music together</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="music"
+                    data-title="Music and Band">
+                <img src="assets/gallery/band3.jpg"
+                     alt="Music band activity"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Music and Band</h3>
+                    <p>Making music together</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="music"
+                    data-title="Music and Band">
+                <img src="assets/gallery/band4.jpg"
+                     alt="Music band activity"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Music and Band</h3>
+                    <p>Making music together</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="music"
+                    data-title="Music and Band">
+                <img src="assets/gallery/band5.jpg"
+                     alt="Music band activity"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Music and Band</h3>
+                    <p>Making music together</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="music"
+                    data-title="Music and Band">
+                <img src="assets/gallery/band6.jpg"
+                     alt="Music band activity"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Music and Band</h3>
+                    <p>Making music together</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="music"
+                    data-title="Music and Band">
+                <img src="assets/gallery/band7.jpg"
+                     alt="Music band activity"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Music and Band</h3>
+                    <p>Making music together</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="music"
+                    data-title="Music and Band">
+                <img src="assets/gallery/band8.jpg"
+                     alt="Music band activity"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Music and Band</h3>
+                    <p>Making music together</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="music"
+                    data-title="Music and Band">
+                <img src="assets/gallery/band9.jpg"
+                     alt="Music band activity"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Music and Band</h3>
+                    <p>Making music together</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="music"
+                    data-title="Music and Band">
+                <img src="assets/gallery/band10.jpg"
+                     alt="Music band activity"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Music and Band</h3>
+                    <p>Making music together</p>
+                </span>
+            </button>
+
+            <button class="gallery-item" type="button"
+                    data-category="scouting"
+                    data-title="Scouting">
+                <img src="assets/gallery/Scouting3.jpg"
+                     alt="Scouting activities"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Scouting</h3>
+                    <p>Participation and teamwork</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="scouting"
+                    data-title="Scouting">
+                <img src="assets/gallery/Scouting1.jpg"
+                     alt="Scouting activities"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Scouting</h3>
+                    <p>Participation and teamwork</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="scouting"
+                    data-title="Scouting">
+                <img src="assets/gallery/Scouting3.jpg"
+                     alt="Scouting activities"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Scouting</h3>
+                    <p>Participation and teamwork</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="scouting"
+                    data-title="Scouting">
+                <img src="assets/gallery/Scouting2.jpg"
+                     alt="Scouting activities"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Scouting</h3>
+                    <p>Participation and teamwork</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="scouting"
+                    data-title="Scouting">
+                <img src="assets/gallery/Scouting3.jpg"
+                     alt="Scouting activities"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Scouting</h3>
+                    <p>Participation and teamwork</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="scouting"
+                    data-title="Scouting">
+                <img src="assets/gallery/Scouting9.jpg"
+                     alt="Scouting activities"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Scouting</h3>
+                    <p>Participation and teamwork</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="scouting"
+                    data-title="Scouting">
+                <img src="assets/gallery/Scouting5.jpg"
+                     alt="Scouting activities"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Scouting</h3>
+                    <p>Participation and teamwork</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="scouting"
+                    data-title="Scouting">
+                <img src="assets/gallery/Scouting8.jpg"
+                     alt="Scouting activities"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Scouting</h3>
+                    <p>Participation and teamwork</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="scouting"
+                    data-title="Scouting">
+                <img src="assets/gallery/Scouting7.jpg"
+                     alt="Scouting activities"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Scouting</h3>
+                    <p>Participation and teamwork</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="scouting"
+                    data-title="Scouting">
+                <img src="assets/gallery/Scouting8.jpg"
+                     alt="Scouting activities"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Scouting</h3>
+                    <p>Participation and teamwork</p>
+                </span>
+            </button>
+
+            <button class="gallery-item" type="button"
+                    data-category="our-story"
+                    data-title="Our Community">
+                <img src="assets/gallery/our-story3.jpg"
+                     alt="Organisation community activities"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Our Community</h3>
+                    <p>Growing together</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="our-story"
+                    data-title="Our Community">
+                <img src="assets/gallery/our-story4.jpg"
+                     alt="Organisation community activities"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Our Community</h3>
+                    <p>Growing together</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="our-story"
+                    data-title="Our Community">
+                <img src="assets/gallery/our-story5.jpg"
+                     alt="Organisation community activities"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Our Community</h3>
+                    <p>Growing together</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="our-story"
+                    data-title="Our Community">
+                <img src="assets/gallery/our-story6.jpg"
+                     alt="Organisation community activities"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Our Community</h3>
+                    <p>Growing together</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="our-story"
+                    data-title="Our Community">
+                <img src="assets/gallery/our-story7.jpg"
+                     alt="Organisation community activities"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Our Community</h3>
+                    <p>Growing together</p>
+                </span>
+            </button>
+
+            <button class="gallery-item" type="button"
+                    data-category="our-story"
+                    data-title="Our Community">
+                <img src="assets/gallery/our-story8.jpg"
+                     alt="Organisation community activities"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Our Community</h3>
+                    <p>Growing together</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="our-story"
+                    data-title="Our Community">
+                <img src="assets/gallery/our-story9.jpg"
+                     alt="Organisation community activities"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Our Community</h3>
+                    <p>Growing together</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="our-story"
+                    data-title="Our Community">
+                <img src="assets/gallery/our-story10.jpg"
+                     alt="Organisation community activities"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Our Community</h3>
+                    <p>Growing together</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="our-story"
+                    data-title="Our Community">
+                <img src="assets/gallery/our-story11.jpg"
+                     alt="Organisation community activities"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Our Community</h3>
+                    <p>Growing together</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="our-story"
+                    data-title="Our Community">
+                <img src="assets/gallery/our-story12.jpg"
+                     alt="Organisation community activities"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Our Community</h3>
+                    <p>Growing together</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="our-story"
+                    data-title="Our Community">
+                <img src="assets/gallery/our-story13.jpg"
+                     alt="Organisation community activities"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Our Community</h3>
+                    <p>Growing together</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="our-story"
+                    data-title="Our Community">
+                <img src="assets/gallery/our-story14.jpg"
+                     alt="Organisation community activities"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Our Community</h3>
+                    <p>Growing together</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="our-story"
+                    data-title="Our Community">
+                <img src="assets/gallery/our-story15.jpg"
+                     alt="Organisation community activities"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Our Community</h3>
+                    <p>Growing together</p>
+                </span>
+            </button>
+
+            <button class="gallery-item" type="button"
+                    data-category="schools and communities"
+                    data-title="Our impact in Schools and Communities">
+                <img src="assets/gallery/school1.jpg"
+                     alt="Organisation community activities"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Our impact in Schools and Communities</h3>
+                    <p>Growing together</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="schools and communities"
+                    data-title="Our impact in Schools and Communities">
+                <img src="assets/gallery/school2.jpg"
+                     alt="Organisation community activities"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Our impact in Schools and Communities</h3>
+                    <p>Growing together</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="schools and communities"
+                    data-title="Our impact in Schools and Communities">
+                <img src="assets/gallery/school3.jpg"
+                     alt="Organisation community activities"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Our impact in Schools and Communities</h3>
+                    <p>Growing together</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="bands and music"
+                    data-title="Our impact in Bands and Music">
+                <img src="assets/band.jpg"
+                     alt="Organisation community activities"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Our impact in Bands and Music</h3>
+                    <p>Creating melodies together</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="bands and music"
+                    data-title="Our impact in Bands and Music">
+                <img src="assets/band2.jpg"
+                     alt="Organisation community activities"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Our impact in Bands and Music</h3>
+                    <p>Creating melodies together</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="bands and music"
+                    data-title="Our impact in Bands and Music">
+                <img src="assets/gallery/band3.jpg"
+                     alt="Organisation community activities"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Our impact in Bands and Music</h3>
+                    <p>Creating melodies together</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="bands and music"
+                    data-title="Our impact in Bands and Music">
+                <img src="assets/gallery/band4.jpg"
+                     alt="Organisation community activities"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Our impact in Bands and Music</h3>
+                    <p>Creating melodies together</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="bands and music"
+                    data-title="Our impact in Bands and Music">
+                <img src="assets/gallery/band5.jpg"
+                     alt="Organisation community activities"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Our impact in Bands and Music</h3>
+                    <p>Creating melodies together</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="bands and music"
+                    data-title="Our impact in Bands and Music">
+                <img src="assets/gallery/band6.jpg"
+                     alt="Organisation community activities"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Our impact in Bands and Music</h3>
+                    <p>Creating melodies together</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="bands and music"
+                    data-title="Our impact in Bands and Music">
+                <img src="assets/gallery/band7.jpg"
+                     alt="Organisation community activities"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Our impact in Bands and Music</h3>
+                    <p>Creating melodies together</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="bands and music"
+                    data-title="Our impact in Bands and Music">
+                <img src="assets/gallery/band8.jpg"
+                     alt="Organisation community activities"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Our impact in Bands and Music</h3>
+                    <p>Creating melodies together</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="bands and music"
+                    data-title="Our impact in Bands and Music">
+                <img src="assets/gallery/band9.jpg"
+                     alt="Organisation community activities"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Our impact in Bands and Music</h3>
+                    <p>Creating melodies together</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="bands and music"
+                    data-title="Our impact in Bands and Music">
+                <img src="assets/gallery/band10.jpg"
+                     alt="Organisation community activities"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Our impact in Bands and Music</h3>
+                    <p>Creating melodies together</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="arts and crafts"
+                    data-title="Our impact in Arts and Crafts">
+                <img src="assets/gallery/art1.jpg"
+                     alt="Arts and crafts activities"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Our impact in Arts and Crafts</h3>
+                    <p>Creating beautiful pieces together</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="arts and crafts"
+                    data-title="Our impact in Arts and Crafts">
+                <img src="assets/gallery/art2.jpg"
+                     alt="Arts and crafts activities"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Our impact in Arts and Crafts</h3>
+                    <p>Creating beautiful pieces together</p>
+                </span>
+            </button><button class="gallery-item" type="button"
+                    data-category="arts and crafts"
+                    data-title="Our impact in Arts and Crafts">
+                <img src="assets/gallery/art3.jpg"
+                     alt="Arts and crafts activities"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Our impact in Arts and Crafts</h3>
+                    <p>Creating beautiful pieces together</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="arts and crafts"
+                    data-title="Our impact in Arts and Crafts">
+                <img src="assets/gallery/art4.jpg"
+                     alt="Arts and crafts activities"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Our impact in Arts and Crafts</h3>
+                    <p>Creating beautiful pieces together</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="arts and crafts"
+                    data-title="Our impact in Arts and Crafts">
+                <img src="assets/gallery/art5.jpg"
+                     alt="Arts and crafts activities"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Our impact in Arts and Crafts</h3>
+                    <p>Creating beautiful pieces together</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="arts and crafts"
+                    data-title="Our impact in Arts and Crafts">
+                <img src="assets/gallery/art6.jpg"
+                     alt="Arts and crafts activities"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Our impact in Arts and Crafts</h3>
+                    <p>Creating beautiful pieces together</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="arts and crafts"
+                    data-title="Our impact in Arts and Crafts">
+                <img src="assets/gallery/art7.jpg"
+                     alt="Arts and crafts activities"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Our impact in Arts and Crafts</h3>
+                    <p>Creating beautiful pieces together</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="arts and crafts"
+                    data-title="Our impact in Arts and Crafts">
+                <img src="assets/gallery/art8.jpg"
+                     alt="Arts and crafts activities"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Our impact in Arts and Crafts</h3>
+                    <p>Creating beautiful pieces together</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="arts and crafts"
+                    data-title="Our impact in Arts and Crafts">
+                <img src="assets/gallery/art9.jpg"
+                     alt="Arts and crafts activities"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Our impact in Arts and Crafts</h3>
+                    <p>Creating beautiful pieces together</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="arts and crafts"
+                    data-title="Our impact in Arts and Crafts">
+                <img src="assets/gallery/art10.jpg"
+                     alt="Arts and crafts activities"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Our impact in Arts and Crafts</h3>
+                    <p>Creating beautiful pieces together</p>
+                </span>
+            </button>
+            <button class="gallery-item" type="button"
+                    data-category="founders and mentors"
+                    data-title="Our Founders and Mentors">
+                <img src="assets/gallery/Founder2.jpg"
+                     alt="organisation founders and mentors"
+                     loading="lazy">
+                <span class="tap-hint">⛶ View Full Screen</span>
+                <span class="gallery-caption">
+                    <h3>Our Founders and Mentors</h3>
+                    <p>Leading the way in education and community development</p>
+                </span>
+            </button>
+
+
+        </div>
+
+        <p class="gallery-note">
+            More photographs can be added as activities and events
+            are documented. Please obtain appropriate permission
+            before publishing identifiable photographs of children
+            and young people.
+        </p>
+
+    </section>
+
+    <!-- FULL-SCREEN VIEWER -->
+    <div class="image-viewer"
+         id="imageViewer"
+         role="dialog"
+         aria-modal="true"
+         aria-label="Full-screen photo viewer"
+         aria-hidden="true">
+
+        <button class="viewer-close"
+                id="viewerClose"
+                type="button"
+                aria-label="Close image viewer">
+            &times;
+        </button>
+
+        <button class="viewer-prev"
+                id="viewerPrev"
+                type="button"
+                aria-label="Previous photograph">
+            &#10094;
+        </button>
+
+        <img class="viewer-image"
+             id="viewerImage"
+             src=""
+             alt="">
+
+        <button class="viewer-next"
+                id="viewerNext"
+                type="button"
+                aria-label="Next photograph">
+            &#10095;
+        </button>
+
+        <div class="viewer-caption">
+            <strong id="viewerTitle"></strong>
+            <span id="viewerCounter"></span>
+        </div>
+
     </div>
 
-    <div class="filters">
-      <button class="filter-btn active" data-filter="all">All Photos</button>
-      <button class="filter-btn" data-filter="people">Our People</button>
-      <button class="filter-btn" data-filter="events">Events</button>
-      <button class="filter-btn" data-filter="community">Community</button>
-      <button class="filter-btn" data-filter="creativity">Creativity</button>
-    </div>
+    <!-- CALL TO ACTION -->
+    <section class="cta-section">
 
-    <div class="gallery-grid" id="galleryGrid">
+        <h2>Be Part of Our Story</h2>
 
-      <div class="gallery-card" data-category="people">
-        <img src="assets/gallery/1000059890.jpg" alt="All Eyes on Us Uganda members">
-        <div class="caption">Our People</div>
-      </div>
+        <p>
+            Join us in creating opportunities for children and
+            young people through talent, creativity and community
+            participation.
+        </p>
 
-      <div class="gallery-card" data-category="events">
-        <img src="assets/gallery/1000059894.jpg" alt="Organization event">
-        <div class="caption">Our Events</div>
-      </div>
-
-      <div class="gallery-card" data-category="creativity">
-        <img src="assets/gallery/1000059392.jpg" alt="Art and creative work">
-        <div class="caption">Art & Creativity</div>
-      </div>
-
-      <div class="gallery-card" data-category="community">
-        <img src="assets/gallery/1000059804.jpg" alt="Community activities">
-        <div class="caption">Community Activities</div>
-      </div>
-
-      <div class="gallery-card" data-category="people">
-        <img src="assets/gallery/1000060127.jpg" alt="Our members together">
-        <div class="caption">Our Members</div>
-      </div>
-
-      <div class="gallery-card" data-category="events">
-        <img src="assets/gallery/1000059414.jpg" alt="Special moments">
-        <div class="caption">Special Moments</div>
-      </div>
-
-    </div>
-
-    <div class="empty-gallery" id="emptyGallery">
-      No photos in this category yet.
-    </div>
-
-  </div>
-</section>
-</main>
-
-<section class="cta">
-  <div class="cta-left">
-    <div class="cta-icon"></div>
-    <div>
-      <h2>Be Part of Our Story</h2>
-      <p>Connect with All Eyes on Us Uganda and become part of our journey.</p>
-    </div>
-  </div>
-  <a href="contact.html">Contact Us →</a>
-</section>
-
-<footer>
-  <div class="container footer-content">
-    <p><strong>All Eyes on Us Uganda</strong> &nbsp; | &nbsp; Kalleous Organization Ltd. &nbsp; | &nbsp; Established 2016</p>
-    <div class="social-icons">
-       <a href="https://www.facebook.com/share/1FsStoq5JU/?mibextid=wwXIfr"
-           target="_blank" rel="noopener noreferrer"
-           aria-label="Facebook">
-            <img src="assets/facebook.png" alt="Facebook">
+        <a href="program.html" class="button">
+            Explore Our Programs
         </a>
 
-        <a href="https://www.tiktok.com/@alleyesonusuganda1"
-           target="_blank" rel="noopener noreferrer"
-           aria-label="TikTok">
-            <img src="assets/tiktok.png" alt="TikTok">
+        <a href="contact.html" class="button red">
+            Contact Us
         </a>
 
-        <a href="https://www.instagram.com/alleyesonusugandaofficial/"
-           target="_blank" rel="noopener noreferrer"
-           aria-label="Instagram">
-            <img src="assets/instagram.png" alt="Instagram">
-        </a>
+    </section>
 
-        <a href="https://www.youtube.com/@alleyesonusugandaofficial"
-           target="_blank" rel="noopener noreferrer"
-           aria-label="YouTube">
-            <img src="assets/YouTube.png" alt="YouTube">
-        </a>
-    </div>
-    <p>© <span id="year"></span> All Eyes on Us Uganda. All rights reserved.</p>
-  </div>
-</footer>
+    <!-- FOOTER -->
+    <footer class="site-footer">
 
-<div class="lightbox" id="lightbox">
-  <button class="close" id="closeLightbox" aria-label="Close">×</button>
-  <button class="prev" id="prevImage" aria-label="Previous image">‹</button>
-  <img src="" alt="Expanded gallery photograph" id="lightboxImage">
-  <button class="next" id="nextImage" aria-label="Next image">›</button>
-</div>
+        <div class="footer-content">
 
-<script>
-const menuToggle = document.getElementById("menuToggle");
-const navLinks = document.getElementById("navLinks");
+            <div>
+                <h3>All Eyes on Us Uganda</h3>
+                <p>Kalleous Organization Ltd.</p>
+                <p>
+                    Turning Talent Into Opportunity.
+                    Transforming Lives Through Creativity.
+                </p>
+                <p>Nsambya Kevina, Makindye, Kampala, Uganda.</p>
+            </div>
 
-menuToggle.addEventListener("click", () => {
-  const opened = navLinks.classList.toggle("open");
-  menuToggle.setAttribute("aria-expanded", opened);
-  menuToggle.textContent = opened ? "×" : "☰";
-});
+            <div>
+                <h3>Quick Links</h3>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="people.html">About Us</a>
+                    <a href="program.html">Our Programs</a>
+                    <a href="impact.html">Our Impact</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="partners.html">Partner With Us</a>
+                    <a href="donation.html">Donate</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
 
-navLinks.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click", () => {
-    navLinks.classList.remove("open");
-    menuToggle.setAttribute("aria-expanded", "false");
-    menuToggle.textContent = "☰";
-  });
-});
+            <div>
+                <h3>Contact</h3>
+                <p>
+                    <a href="tel:+256705446043">+256 705 446 043</a>
+                </p>
+                <p>
+                    <a href="mailto:luwaga02moses@gmail.com">
+                        luwaga02moses@gmail.com
+                    </a>
+                </p>
+                <p>
+                    <a href="https://wa.me/256705446043"
+                       target="_blank" rel="noopener">
+                        WhatsApp Us
+                    </a>
+                </p>
+            </div>
 
-const cards = [...document.querySelectorAll(".gallery-card")];
-const filterButtons = [...document.querySelectorAll(".filter-btn")];
-const emptyGallery = document.getElementById("emptyGallery");
+        </div>
 
-filterButtons.forEach(button => {
-  button.addEventListener("click", () => {
-    filterButtons.forEach(item => item.classList.remove("active"));
-    button.classList.add("active");
+        <div class="copyright">
+            © <span id="copyright-year"></span>
+            All Eyes on Us Uganda – Kalleous Organization Ltd.
+            All rights reserved.
+        </div>
 
-    const filter = button.dataset.filter;
-    let count = 0;
+    </footer>
 
-    cards.forEach(card => {
-      const visible = filter === "all" || card.dataset.category === filter;
-      card.classList.toggle("hidden", !visible);
-      if (visible) count++;
-    });
+    <!-- GALLERY AND FULL-SCREEN VIEWER SCRIPT -->
+    <script>
+        const filterButtons = document.querySelectorAll(".filter-btn");
+        const galleryItems = Array.from(
+            document.querySelectorAll(".gallery-item")
+        );
 
-    emptyGallery.style.display = count ? "none" : "block";
-  });
-});
+        const viewer = document.getElementById("imageViewer");
+        const viewerImage = document.getElementById("viewerImage");
+        const viewerTitle = document.getElementById("viewerTitle");
+        const viewerCounter = document.getElementById("viewerCounter");
 
-const lightbox = document.getElementById("lightbox");
-const lightboxImage = document.getElementById("lightboxImage");
-let currentIndex = 0;
+        const closeButton = document.getElementById("viewerClose");
+        const previousButton = document.getElementById("viewerPrev");
+        const nextButton = document.getElementById("viewerNext");
 
-function visibleCards() {
-  return cards.filter(card => !card.classList.contains("hidden"));
-}
+        let visiblePhotos = [];
+        let currentIndex = 0;
+        let lastFocusedElement = null;
+        let touchStartX = 0;
 
-function showImage(index) {
-  const visible = visibleCards();
-  if (!visible.length) return;
+        function getVisiblePhotos() {
+            return galleryItems.filter(function(item) {
+                return !item.classList.contains("hidden");
+            });
+        }
 
-  currentIndex = (index + visible.length) % visible.length;
-  const image = visible[currentIndex].querySelector("img");
+        // CATEGORY FILTERS
+        filterButtons.forEach(function(button) {
+            button.addEventListener("click", function() {
 
-  lightboxImage.src = image.src;
-  lightboxImage.alt = image.alt;
-  lightbox.classList.add("active");
-}
+                const selectedFilter = button.dataset.filter;
 
-cards.forEach(card => {
-  card.addEventListener("click", () => {
-    showImage(visibleCards().indexOf(card));
-  });
-});
+                filterButtons.forEach(function(item) {
+                    item.classList.remove("active");
+                });
 
-document.getElementById("closeLightbox").onclick = () => {
-  lightbox.classList.remove("active");
-};
+                button.classList.add("active");
 
-document.getElementById("prevImage").onclick = () => showImage(currentIndex - 1);
-document.getElementById("nextImage").onclick = () => showImage(currentIndex + 1);
+                galleryItems.forEach(function(photo) {
+                    const category = photo.dataset.category;
 
-lightbox.addEventListener("click", event => {
-  if (event.target === lightbox) lightbox.classList.remove("active");
-});
+                    if (
+                        selectedFilter === "all" ||
+                        category === selectedFilter
+                    ) {
+                        photo.classList.remove("hidden");
+                    } else {
+                        photo.classList.add("hidden");
+                    }
+                });
+            });
+        });
 
-document.addEventListener("keydown", event => {
-  if (!lightbox.classList.contains("active")) return;
-  if (event.key === "Escape") lightbox.classList.remove("active");
-  if (event.key === "ArrowLeft") showImage(currentIndex - 1);
-  if (event.key === "ArrowRight") showImage(currentIndex + 1);
-});
+        // OPEN FULL-SCREEN VIEWER
+        function openViewer(photo) {
+            visiblePhotos = getVisiblePhotos();
+            currentIndex = visiblePhotos.indexOf(photo);
 
-document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+            if (currentIndex < 0) return;
+
+            lastFocusedElement = document.activeElement;
+
+            viewer.classList.add("open");
+            viewer.setAttribute("aria-hidden", "false");
+            document.body.classList.add("viewer-open");
+
+            showPhoto(currentIndex);
+
+            closeButton.focus();
+        }
+
+        // DISPLAY SELECTED PHOTO
+        function showPhoto(index) {
+            if (!visiblePhotos.length) return;
+
+            currentIndex =
+                (index + visiblePhotos.length) % visiblePhotos.length;
+
+            const selectedPhoto = visiblePhotos[currentIndex];
+            const image = selectedPhoto.querySelector("img");
+
+            viewerImage.src = image.src;
+            viewerImage.alt = image.alt;
+
+            viewerTitle.textContent =
+                selectedPhoto.dataset.title || image.alt;
+
+            viewerCounter.textContent =
+                (currentIndex + 1) + " of " + visiblePhotos.length;
+        }
+
+        // CLOSE VIEWER
+        function closeViewer() {
+            viewer.classList.remove("open");
+            viewer.setAttribute("aria-hidden", "true");
+            document.body.classList.remove("viewer-open");
+
+            viewerImage.src = "";
+
+            if (lastFocusedElement) {
+                lastFocusedElement.focus();
+            }
+        }
+
+        // NEXT AND PREVIOUS
+        function nextPhoto() {
+            showPhoto(currentIndex + 1);
+        }
+
+        function previousPhoto() {
+            showPhoto(currentIndex - 1);
+        }
+
+        galleryItems.forEach(function(photo) {
+            photo.addEventListener("click", function() {
+                openViewer(photo);
+            });
+        });
+
+        closeButton.addEventListener("click", closeViewer);
+        nextButton.addEventListener("click", nextPhoto);
+        previousButton.addEventListener("click", previousPhoto);
+
+        // CLOSE WHEN BACKGROUND IS CLICKED
+        viewer.addEventListener("click", function(event) {
+            if (event.target === viewer) {
+                closeViewer();
+            }
+        });
+
+        // KEYBOARD CONTROLS
+        document.addEventListener("keydown", function(event) {
+            if (!viewer.classList.contains("open")) return;
+
+            if (event.key === "Escape") {
+                closeViewer();
+            }
+
+            if (event.key === "ArrowRight") {
+                nextPhoto();
+            }
+
+            if (event.key === "ArrowLeft") {
+                previousPhoto();
+            }
+        });
+
+        // MOBILE SWIPE CONTROLS
+        viewer.addEventListener("touchstart", function(event) {
+            touchStartX = event.changedTouches[0].screenX;
+        }, { passive: true });
+
+        viewer.addEventListener("touchend", function(event) {
+            const touchEndX = event.changedTouches[0].screenX;
+            const difference = touchEndX - touchStartX;
+
+            if (Math.abs(difference) < 50) return;
+
+            if (difference < 0) {
+                nextPhoto();
+            } else {
+                previousPhoto();
+            }
+        }, { passive: true });
+
+        // COPYRIGHT YEAR
+        document.getElementById("copyright-year").textContent =
+            new Date().getFullYear();
+    </script>
 
 </body>
 </html>
