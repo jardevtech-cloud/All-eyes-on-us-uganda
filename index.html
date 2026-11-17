@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -261,6 +262,12 @@
       color: var(--yellow);
     }
 
+    .impact-icon {
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
+    }
+
     .impact-card h3 {
       color: var(--yellow);
       font-size: 17px;
@@ -343,6 +350,67 @@
       border-radius: 10px;
     }
 
+    /* SOCIAL MEDIA */
+
+    .social-section {
+      padding: 65px 0;
+      text-align: center;
+      background: #111;
+      border-top: 3px solid var(--red);
+    }
+
+    .social-section h2 {
+      font-size: clamp(28px, 4vw, 38px);
+      margin: 10px 0;
+    }
+
+    .social-section > .container > p {
+      color: #ccc;
+      line-height: 1.8;
+    }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 25px;
+      margin-top: 32px;
+    }
+
+    .social-link {
+      width: 125px;
+      min-height: 130px;
+      padding: 17px 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: #202020;
+      border: 1px solid #444;
+      border-radius: 13px;
+      transition: .3s;
+    }
+
+    .social-link:hover {
+      transform: translateY(-6px);
+      border-color: var(--yellow);
+      background: #292929;
+    }
+
+    .social-link img {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+    }
+
+    .social-link span {
+      font-size: 13px;
+      font-weight: 800;
+      color: white;
+    }
+
     /* SUPPORT BANNER */
 
     .support-section {
@@ -389,6 +457,42 @@
 
     .footer-grid a:hover { color: var(--yellow); }
 
+    /* FOOTER SPONSOR LOGOS */
+
+    .footer-sponsors {
+      text-align: center;
+      padding: 10px 0 25px;
+    }
+
+    .footer-sponsors h4 {
+      color: #aaa;
+      font-size: 11px;
+      letter-spacing: 2px;
+      margin-bottom: 18px;
+      text-transform: uppercase;
+    }
+
+    .footer-sponsor-logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .footer-sponsor-logos img {
+      width: 58px;
+      height: 58px;
+      object-fit: contain;
+      border-radius: 50%;
+      background: transparent;
+      transition: .3s;
+    }
+
+    .footer-sponsor-logos img:hover {
+      transform: scale(1.1);
+    }
+
     .footer-bottom {
       border-top: 1px solid #333;
       text-align: center;
@@ -400,9 +504,6 @@
 
     /* MOBILE */
 
-    @media(max-width: 1000px) {
-    }
-
     @media(max-width: 800px) {
       .about-layout { grid-template-columns: 1fr; }
 
@@ -410,9 +511,7 @@
 
       .impact-grid { grid-template-columns: repeat(2, 1fr); }
 
-      .partner-layout {
-        display: block;
-      }
+      .partner-layout { display: block; }
 
       .partner-actions { margin-top: 20px; }
 
@@ -442,22 +541,38 @@
       .gallery-grid img { height: 150px; }
 
       .footer-grid { grid-template-columns: 1fr; }
+
+      .footer-sponsor-logos { gap: 22px; }
+
+      .footer-sponsor-logos img {
+        width: 48px;
+        height: 48px;
+      }
+
+      .social-links { gap: 12px; }
+
+      .social-link {
+        width: 105px;
+        min-height: 115px;
+      }
+
+      .social-link img {
+        width: 42px;
+        height: 42px;
+      }
     }
+
     /* HOMEPAGE HERO ZOOM-OUT EFFECT */
 
-@keyframes heroZoomOut {
-    from {
-        transform: scale(1.25);
+    @keyframes heroZoomOut {
+      from { transform: scale(1.25); }
+      to { transform: scale(1); }
     }
-    to {
-        transform: scale(1);
-    }
-}
 
-.hero {
-    background-size: 125%;
-    animation: heroZoomOut 8s ease-out forwards;
-}
+    .hero {
+      background-size: 125%;
+      animation: heroZoomOut 8s ease-out forwards;
+    }
   </style>
 </head>
 
@@ -552,14 +667,17 @@
           <h2>All Eyes on Us Uganda</h2>
 
           <p>
-            All Eyes on Us Uganda – Kalleous Organization Ltd. is a community-based organization 
-            dealing with young homeless and needy children/youth ranging from 4 to 24 years who are skilled in art and craft , hairdressing, brass band, dance, acrobatics and other talents.
+            All Eyes on Us Uganda – Kalleous Organization Ltd. is a community-based organization
+            dealing with young homeless and needy children/youth ranging from 4 to 24 years who are skilled in art and craft, hairdressing, brass band, dance, acrobatics and other talents.
           </p>
+
           <p>
             All Eyes On Us Uganda has ever participated in East Africa Got Talent (EAGT) and we ended up in fist position in 2016 and we have also participated in other competitions.
-
           </p>
-          <p> All eyes on us has also performed in different parts of Uganda like Mukono, Jinja, Fort Portal,  Masaka, Rukingiri , and many others. </p>
+
+          <p>
+            All eyes on us has also performed in different parts of Uganda like Mukono, Jinja, Fort Portal, Masaka, Rukingiri, and many others.
+          </p>
 
           <a href="people.html" class="button button-yellow">Learn About Us →</a>
         </div>
@@ -705,6 +823,57 @@
       </div>
     </section>
 
+    <!-- FOLLOW US -->
+    <section class="social-section">
+      <div class="container">
+
+        <p class="section-kicker">STAY CONNECTED</p>
+        <h2>Follow Our Journey</h2>
+
+        <p>
+          Follow All Eyes on Us Uganda on social media.
+          See our performances, activities, achievements and community stories.
+        </p>
+
+        <div class="social-links">
+
+          <a class="social-link"
+             href="https://www.facebook.com/share/1FsStoq5JU/?mibextid=wwXIfr"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="Follow us on Facebook">
+            <img src="assets/facebook.png" alt="Facebook">
+            <span>Facebook</span>
+          </a>
+
+          <a class="social-link"
+             href="https://www.youtube.com/@alleyesonusugandaofficial"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="Subscribe on YouTube">
+            <img src="assets/YouTube.png" alt="YouTube">
+            <span>YouTube</span>
+          </a>
+
+          <a class="social-link"
+             href="https://www.instagram.com/Alleyesonusugandaofficial"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="Follow us on Instagram">
+            <img src="assets/instagram.png" alt="Instagram">
+            <span>Instagram</span>
+          </a>
+
+          <a class="social-link"
+             href="https://www.tiktok.com/@Alleyesonusuganda"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="Follow us on TikTok">
+            <img src="assets/tiktok.png" alt="TikTok">
+            <span>TikTok</span>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
     <!-- SUPPORT -->
     <section class="support-section">
       <div class="container">
@@ -732,6 +901,7 @@
 
   <!-- FOOTER -->
   <footer class="site-footer">
+
     <div class="container footer-grid">
 
       <div>
@@ -758,9 +928,50 @@
         <p>Phone: +256 705 446043</p>
         <p>Email: <a href="mailto:luwaga02moses@gmail.com">luwaga02moses@gmail.com</a></p>
         <p>Location: Nsambya Kevina, Kampala, Uganda</p>
-        <a href="https://wa.me/256705446043" target="_blank" rel="noopener">
+        <a href="https://wa.me/256705446043" target="_blank" rel="noopener noreferrer">
           WhatsApp Us →
         </a>
+      </div>
+
+    </div>
+
+    <!-- FOOTER SPONSORS -->
+    <div class="container footer-sponsors">
+
+      <h4>Our Sponsors & Supporters</h4>
+
+      <div class="footer-sponsor-logos">
+
+        <img src="assets/scout-logo.png"
+             alt="Makindye scouts"
+             title="Makindye scouts"
+             loading="lazy">
+
+        <img src="assets/jardevtech.jpg"
+             alt="JardevTech"
+             title="JardevTech"
+             loading="lazy">
+
+             <img src="assets/uwocaso.png"
+             alt="UWOCASO"
+             title="UWOCASO"
+             loading="lazy">
+
+             <img src="assets/wmf.png"
+             alt="WMF"
+             title="WMF"
+             loading="lazy">
+
+        <img src="assets/westscoutsuganda.png"
+             alt="West Scouts Uganda"
+             title="West Scouts Uganda"
+             loading="lazy">
+
+        <img src="assets/one-scout-uganda.png"
+             alt="One Scouts Uganda"
+             title="One Scouts Uganda"
+             loading="lazy">
+
       </div>
 
     </div>
@@ -770,6 +981,7 @@
       <br>
       Website supported by JardevTech.
     </div>
+
   </footer>
 
   <script>
